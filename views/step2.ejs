@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="step2.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <title></title>
+</head>
+<body>
+<style>
+.box {
+  background-image: url("S__15843402.jpg"); 
+  width: 90%;
+  height: 757px;
+  margin: auto;
+  background-position: center;
+  background-repeat: no-repeat no-repeat;
+  background-size: cover;
+}
+
+/*menuubar*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "Oswald";
+  outline: none;
+  border: none;
+}
+
+/*nav bar*/
+.menu{
+  background:white  ;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: block;
+  color: black;
+  font-family: Oswald;
+  font-size: 20px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  color: #2ECC71;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 151px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+ /*progress bar*/
+ .image {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  margin-top: 15px;
+}
+
+  /*schdule*/
+ .container3 {
+  width: 1023px;
+  margin-top: 15px;
+}
+  .bigcontainer3 {
+  background-color: #F39C12;
+  width: 1045.5px;
+  margin-left: 5px;
+}
+.bigcontainer {
+    width: 1050px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mainrow .bb {
+      list-style-type: none;
+      padding : 15px;
+      width: 20%;
+      font-family: Oswald;
+      font-size: 17px;
+      position: relative;
+      text-align: center;
+      color: white;
+      background : #F39C12;
+}
+
+.round {
+  width:100%;
+  
+}
+.round .cc {
+      list-style-type: none;
+      padding : 15px;
+      width: 20%;
+      font-family: Oswald;
+      font-size: 17px;
+      position: relative;
+      text-align: center;
+      color: black;
+      background : #ccc;
+      margin-top: 10px;
+}
+
+/*footer*/
+.footer-distributed{
+  
+  background-color: white;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+  margin-top: 0px;
+ }
+  
+ .container4{
+   width: 1000px;
+   height: 100px;
+   margin: auto;
+   padding: 20px;
+
+ }
+
+.column {
+  width: 50%;
+  float: left;
+}
+
+.left {
+  text-align: center;
+}
+.right{
+  text-align: center;
+}
+
+.by{
+  margin-top: 5px;
+  background-color:#aaa;
+  text-align: center;
+  padding: 7px;
+}
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #34495E  ; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:#283747   ; 
+}
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+</style>
+  <div class="box">
+    <ul class="menu">
+          <li><a href="/home">Home</a></li>
+          <li><a href="/promotion">Promotion</a></li>
+          <li><a href="/traveladvice">Travel Advice</a></li>
+          <li style="float:right"><a href="/login">Login</a></li>
+        </ul> 
+   <img src="step2.png" class="image">
+  <div class="bigcontainer">
+  <div class="bigcontainer3">
+  <div class="container3">
+    <div class="row">
+      <ul class="mainrow">
+        <li class="bb">Bus Number</li>
+        <li class="bb">Time Depart</li>
+        <li class="bb">Time Arrive</li>
+        <li class="bb">Average Time</li>
+        <li class="bb">Price</li>
+      </div>
+    </div>
+  </div>
+  <div class="containermini" style="width:1050px;height:455px;line-height:3em;overflow:auto;padding:5px;">
+    <div class="row">
+      <ul class="round">
+        <li class="cc">CM0912<br></br></li>
+        <li class="cc">Mo chit<br>24/05 07:00</br></li>
+        <li class="cc">Ching Mai<br>24/05 17:30</br></li>
+        <li class="cc">10h 30m<br></br></li>
+        <li class="cc">823 Bath<br></br></li>
+       </ul>
+    </div>
+    <div class="row">
+      <ul class="round">
+        <li class="cc">CM0919<br></br></li>
+        <li class="cc">Mo chit<br>24/05 08:00</br></li>
+        <li class="cc">Ching Mai<br>24/05 18:30</br></li>
+        <li class="cc">10h 30m<br></br></li>
+        <li class="cc">823 Bath<br></br></li>
+       </ul>
+    </div>
+    <div class="row">
+      <ul class="round">
+        <li class="cc">CM0922<br></br></li>
+        <li class="cc">Mo chit<br>24/05 08:30</br></li>
+        <li class="cc">Ching Mai<br>24/05 19:00</br></li>
+        <li class="cc">10h 30m<br></br></li>
+        <li class="cc">823 Bath<br></br></li>
+       </ul>
+    </div>
+    <div class="row">
+      <ul class="round">
+        <li class="cc">CM0928<br></br></li>
+        <li class="cc">Mo chit<br>24/05 10:00</br></li>
+        <li class="cc">Ching Mai<br>24/05 20:30</br></li>
+        <li class="cc">10h 30m<br></br></li>
+        <li class="cc">823 Bath<br></br></li>
+       </ul>
+    </div>
+    <div class="row">
+      <ul class="round">
+        <li class="cc">CM0935<br></br></li>
+        <li class="cc">Mo chit<br>24/05 12:00</br></li>
+        <li class="cc">Ching Mai<br>24/05 22:30</br></li>
+        <li class="cc">10h 30m<br></br></li>
+        <li class="cc">823 Bath<br></br></li>
+       </ul>
+    </div>
+    <div class="row">
+      <ul class="round">
+        <li class="cc">CM0938<br></br></li>
+        <li class="cc">Mo chit<br>24/05 12:30</br></li>
+        <li class="cc">Ching Mai<br>24/05 23:00</br></li>
+        <li class="cc">10h 30m<br></br></li>
+        <li class="cc">823 Bath<br></br></li>
+       </ul>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+</div>
+<footer class="footer-distributed">
+  <div class="container4">
+    <div class="row">
+      <div class="column left">
+        <div class="text">Contact</div>
+        <div class="text">Tour-Thai@gmail.com</div>
+        <div class="text">123-456-7890</div>
+      </div>
+      <div class="column right">
+        <div class="text">Address</div>
+        <div class="text">500 Ekachai Road</div>
+        <div class="text">Bangkok, Thailand</div>
+      </div>
+    </div>
+  </div>
+  <div class="by">©2020 by KS.Plunchyy & NJ.Sky</div>
+</footer>
+</body>
+</html>

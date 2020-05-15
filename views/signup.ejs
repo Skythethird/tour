@@ -368,14 +368,17 @@ form {
     <div class="align">
 		<div class="card">
 			<div class="head">
-				<div></div>
+                <div></div>
 				<a id="login" class="selected" href="/login">Login</a>
 				<a id="register" href="/signup">Register</a>
 				<div></div>
 			</div>
-			<div class="tabs">
-				<form class="login" action="/login" method="POST">
-					<div class="inputs">
+                <form class="register" action="/signup" method="POST">
+					<div class="inputs2">
+						<div class="input">
+							<input placeholder="Email" type="text" name="email">
+							<img src="mail.svg">
+						</div>
 						<div class="input">
 							<input placeholder="Username" type="text" name="username">
 							<img src="user.svg">
@@ -384,15 +387,29 @@ form {
 							<input placeholder="Password" type="password" name="password">
 							<img src="pass.svg">
 						</div>
-						<label class="checkbox">
-							<input type="checkbox">
-							<span>Remember me</span>
-						</label>
 					</div>
-					<button class="loginb">Login</button>
+					<button class="regis">Register</button>
 				</form>
 			</div>
 		</div>
-	</div>
-	</div>
-  <%- include("partials/footer") %>
+    </div>
+    </div>
+    <footer class="footer-distributed">
+		<div class="container2">
+		  <div class="row">
+			<div class="column left">
+			  <div class="text">Contact</div>
+			  <div class="text">Tour-Thai@gmail.com</div>
+			  <div class="text">123-456-7890</div>
+			</div>
+			<div class="column right">
+			  <div class="text">Address</div>
+			  <div class="text">500 Ekachai Road</div>
+			  <div class="text">Bangkok, Thailand</div>
+			</div>
+		  </div>
+		</div>
+		<div class="by">©2020 by KS.Plunchyy & NJ.Sky</div>
+	  </footer>
+</body>
+</html>

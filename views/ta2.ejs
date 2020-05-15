@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="ta2.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="js/ta2.js" defer></script>
+    </head>
+    <body>
+
+<style>
+.box {
+
+width: 90%;
+
+margin: auto;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "Oswald";
+  outline: none;
+  border: none;
+}
+
+/*nav bar*/
+.menu{
+  background:white  ;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: block;
+  color: black;
+  font-family: Oswald;
+  font-size: 20px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  color: #2ECC71;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 151px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/*slide show*/
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+
+
+
+
+/*footer*/
+.footer-distributed{
+
+background-color: white;
+box-sizing: border-box;
+width: 100%;
+text-align: left;
+font-size: 15px;
+margin-top: 0px;
+}
+
+.container2{
+ width: 1000px;
+ height: 100px;
+ margin: auto;
+ padding: 20px;
+}
+
+.column {
+width: 50%;
+float: left;
+}
+
+.left {
+text-align: center;
+}
+.right{
+text-align: center;
+}
+
+.by{
+margin-top: 5px;
+background-color:#aaa;
+text-align: center;
+padding: 7px;
+}
+
+
+/* text */
+.minibox {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  padding: 30px;
+}
+
+.indent  { 
+  padding-left: 1.8em }
+  
+.bigtext {
+  font-family: Oswald;
+  text-align: center;
+}
+
+p {
+font-size: 17px;
+}
+
+.headtext {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+/* booking */
+.booking {
+width: 30%;
+background-color: #F4D03F;
+color: #935116;
+padding: 14px 20px;
+margin-left: auto;
+margin-right: auto;
+display: block;
+border: none;
+border-radius: 12px;
+cursor: pointer;
+font-family: Oswald;
+font-size: 17px;
+text-align: center;
+
+}
+
+.booking:hover {
+background-color: #F1C40F;
+}
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #34495E  ; 
+border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background:#283747   ; 
+}
+    </style>
+      
+    <div class="box">
+        <ul class="menu">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/promotion">Promotion</a></li>
+        <li><a href="/traveladvice">Travel Advice</a></li>
+        <li style="float:right"><a href="/login">Login</a></li>
+      </ul>
+      
+      <div class="w3-content w3-display-container" style="max-width:100%">
+        <img class="mySlides" src="ta2-1.jpg" style="width:100%">
+        <img class="mySlides" src="ta2-2.jpg" style="width:100%">
+        <img class="mySlides" src="ta2-3.jpg" style="width:100%">
+
+            <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+                <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+            </div>
+         </div>
+         <div class="minibox">
+             <h1 class="bigtext">Wat Chaiwattanaram , Phra Nakhon Si Ayutthaya</h1>
+             <div class="headtext">Info</div>
+             <p class="indent">Located on the bank of the Maenam Chao Phraya, to the west of the city Island is Wat 
+                 Chaiwatthanaram. Built in 1630 by King Prasat Thong to honor his mother, </p>
+             <p>Wat Chai Wattanaram was conceived as a replica of the Angkor Temple.One of the most visited historical 
+                 site of Ayutthaya, Wat Chaiwattanaram rests on the bank of the Chao Phraya river, to the west of the
+                city Island. The Temple was ordered to built in 1630 by King Prasat Thong to honor his mother, featuring 
+                the architectural style influenced by Angkor temple in Cambodia-its unique feature is a large, central 
+                prang (Khmer-style pagoda) surrounded by smaller prangs, symbolizing Mount Sumeru, the gods' mountain 
+                according to Hindu belief. The lighting at night makes the temple even more exotic and beautiful.</p><br>
+             <div class="headtext">How to go</div>
+             <p class="indent">You can catch a train at Hua Lum Pong train station to Ayutthaya station. First departure 
+                 is 4:20 and last departure is 22:45. Then you ride Tuk-Tuk to </p>
+             <p>Wat Chaiwattanaram</p><br>
+             <div class="headtext">Activity</div>
+             <p class="indent">- Explore the temple</p>
+             <p class="indent">- Take some picture at the statue , walkway and ancient agoda</p><br>
+             <div class="headtext">Avialabiltity</div>
+             <p class="indent">Buy ticket : 6:30 – 19:30</p>
+             <p class="indent">Visiting : 6:30 – 22:00</p><br>
+             <input class="booking" value="Booking">
+
+        </div>
+    </div>
+    <footer class="footer-distributed">
+      <div class="container2">
+        <div class="row">
+          <div class="column left">
+            <div class="text">Contact</div>
+            <div class="text">Tour-Thai@gmail.com</div>
+            <div class="text">123-456-7890</div>
+          </div>
+          <div class="column right">
+            <div class="text">Address</div>
+            <div class="text">500 Ekachai Road</div>
+            <div class="text">Bangkok, Thailand</div>
+          </div>
+        </div>
+      </div>
+      <div class="by">©2020 by KS.Plunchyy & NJ.Sky</div>
+    </footer>
+    </body>
+</html>

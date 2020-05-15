@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="ta3.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="js/ta3.js" defer></script>
+    </head>
+    <body>
+      <style>
+          .box {
+
+width: 90%;
+
+margin: auto;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "Oswald";
+  outline: none;
+  border: none;
+}
+
+/*nav bar*/
+.menu{
+  background:white  ;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: block;
+  color: black;
+  font-family: Oswald;
+  font-size: 20px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  color: #2ECC71;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 151px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/*slide show*/
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+
+
+
+
+/*footer*/
+.footer-distributed{
+
+background-color: white;
+box-sizing: border-box;
+width: 100%;
+text-align: left;
+font-size: 15px;
+margin-top: 0px;
+}
+
+.container2{
+ width: 1000px;
+ height: 100px;
+ margin: auto;
+ padding: 20px;
+}
+
+.column {
+width: 50%;
+float: left;
+}
+
+.left {
+text-align: center;
+}
+.right{
+text-align: center;
+}
+
+.by{
+margin-top: 5px;
+background-color:#aaa;
+text-align: center;
+padding: 7px;
+}
+
+
+/* text */
+.minibox {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  padding: 30px;
+}
+
+.indent  { 
+  padding-left: 1.8em }
+  
+.bigtext {
+  font-family: Oswald;
+  text-align: center;
+}
+
+p {
+font-size: 17px;
+}
+
+.headtext {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+/* booking */
+.booking {
+width: 30%;
+background-color: #F4D03F;
+color: #935116;
+padding: 14px 20px;
+margin-left: auto;
+margin-right: auto;
+display: block;
+border: none;
+border-radius: 12px;
+cursor: pointer;
+font-family: Oswald;
+font-size: 17px;
+text-align: center;
+
+}
+
+.booking:hover {
+background-color: #F1C40F;
+}
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #34495E  ; 
+border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background:#283747   ; 
+}
+      </style>
+    <div class="box">
+        <ul class="menu">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/promotion">Promotion</a></li>
+        <li><a href="/traveladvice">Travel Advice</a></li>
+        <li style="float:right"><a href="/login">Login</a></li>
+      </ul>
+      
+      <div class="w3-content w3-display-container" style="max-width:100%">
+        <img class="mySlides" src="ta3-1.jpg" style="width:100%">
+        <img class="mySlides" src="ta3-2.jpg" style="width:100%">
+        <img class="mySlides" src="ta3-3.jpg" style="width:100%">
+
+            <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+                <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+            </div>
+         </div>
+         <div class="minibox">
+             <h1 class="bigtext">Doi Inthanon , Chiang Mai</h1>
+             <div class="headtext">Info</div>
+             <p class="indent">The highest peak, at the height of 2565 meters, in Thailand is a remarkable scenic location 
+               offering several grand attractions. The height provides a magnificent</p>
+             <p>panoramic view of the sloping hills with its rugged terrain of Chiang Mai and lush green forests interspersed 
+               with rivers interrupted by at least eight beautiful waterfalls. To view the natural beauty of Thailand, you 
+               must visit the summit and enjoy its pristine natural beauty. The area is a protected one, thus enabling 
+               visitors a glimpse of the myriad flora and fauna in their natural habitat.Very low temperatures in Thailand 
+               are almost non-existent but the peak allows Thais to experience temperatures below freezing point, as during 
+               the cool season temperatures can really plummet.</p><br>
+             <div class="headtext">How to go</div>
+             <p class="indent">You can get “Rot song taew” pickup “Chiang mai – Jom thong” line to Wat Phrathat Srijomthong 
+               and take another shuttle bus to Doi Inthanont national park. </p><br>
+             <div class="headtext">Activity</div>
+             <p class="indent">- See the highest point in Thailand</p>
+             <p class="indent">- Explore waterfalls such as Mae Ya , Wachirathan, Mae Klang, and Siritharn waterfall </p>
+             <p class="indent">- Visit Royal Pagodas and Gardens</p>
+             <p class="indent">- Visit a hill tribe</p><br>
+             <div class="headtext">Avialabiltity</div>
+             <p class="indent">Everyday , 6:00 - 18:00</p>
+             <input class="booking" value="Booking">
+
+        </div>
+    </div>
+    <footer class="footer-distributed">
+      <div class="container2">
+        <div class="row">
+          <div class="column left">
+            <div class="text">Contact</div>
+            <div class="text">Tour-Thai@gmail.com</div>
+            <div class="text">123-456-7890</div>
+          </div>
+          <div class="column right">
+            <div class="text">Address</div>
+            <div class="text">500 Ekachai Road</div>
+            <div class="text">Bangkok, Thailand</div>
+          </div>
+        </div>
+      </div>
+      <div class="by">©2020 by KS.Plunchyy & NJ.Sky</div>
+    </footer>
+    </body>
+</html>
