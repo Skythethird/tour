@@ -22,6 +22,13 @@ app.use(require('express-session')({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(function(req,res,next){
+    res.locals.currentUser = req.user;
+    next();
+});
+
+
+
 
 passport.use(new passportlocal(User.authenticate()));
 passport.serializeUser(User.serializeUser());
@@ -113,7 +120,7 @@ app.post('/signup', function(req, res){
 
 app.get('/logout',isloggedIn ,function(req, res){
     req.logout();
-    res.redirect('/home');
+    res.redirect('/');
 });
 
 app.get('/hidden',isloggedIn ,function(req, res){

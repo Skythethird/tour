@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="search.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="js/search.js" defer></script>
-</head>
-<body>
+<%- include("partials/header") %>
+
+<script type="text/javascript" src="js/search.js" defer></script>
 <style>
 .box {
   background-image: url("S__15843402.jpg");
@@ -289,14 +278,7 @@ select{
 ::-webkit-scrollbar-thumb:hover {
   background:#283747   ; 
 }
-    </style>
-      <div class="box">
-        <ul class="menu">
-          <li><a href="/home">Home</a></li>
-          <li><a href="/promotion">Promotion</a></li>
-          <li><a href="/traveladvice">Travel Advice</a></li>
-          <li style="float:right"><a href="/login">Login</a></li>
-        </ul> 
+</style>
     <div class="container3"><br>
     <div class="find">FIND YOUR NEXT TOUR</div>
     <div class="where">Where would you like to go?</div>
@@ -342,23 +324,4 @@ select{
     </div>
   </div>
 </div>
-<footer class="footer-distributed">
-  <div class="container2">
-    <div class="row">
-      <div class="column left">
-        <div class="text">Contact</div>
-        <div class="text">Tour-Thai@gmail.com</div>
-        <div class="text">123-456-7890</div>
-      </div>
-      <div class="column right">
-        <div class="text">Address</div>
-        <div class="text">500 Ekachai Road</div>
-        <div class="text">Bangkok, Thailand</div>
-      </div>
-    </div>
-  </div>
-  <div class="by">©2020 by KS.Plunchyy & NJ.Sky</div>
-</footer>
-</head>
-</body>
-</html>
+<%- include("partials/footer") %>

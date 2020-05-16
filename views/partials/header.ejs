@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+</head>
+<body>
+    <div class="box"> 
+    <ul class="menu">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/promotion">Promotion</a></li>
+        <li><a href="/traveladvice">Travel Advice</a></li>
+        <li style="float:right">
+            <form action = '/login' method = 'POST'>
+              <% if(!currentUser) { %>
+                <a href="/login">Login</a>
+              <% } else { %>
+                Welcome, you logged as <%= currentUser.username %>
+                <a href='/logout'>Log out</a>
+              <% } %>  
+          </form>
+        </li>
+    </ul>
+    
+

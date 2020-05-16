@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="step2.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
-    <title></title>
-</head>
-<body>
+<%- include("partials/header") %>
 <style>
 .box {
   background-image: url("S__15843402.jpg"); 
@@ -211,13 +200,7 @@ display: block;
   width: 15px;
 }
 </style>
-  <div class="box">
-    <ul class="menu">
-          <li><a href="/home">Home</a></li>
-          <li><a href="/promotion">Promotion</a></li>
-          <li><a href="/traveladvice">Travel Advice</a></li>
-          <li style="float:right"><a href="/login">Login</a></li>
-        </ul> 
+ 
    <img src="step2.png" class="image">
   <div class="bigcontainer">
   <div class="bigcontainer3">
@@ -292,22 +275,4 @@ display: block;
   </div>
   </div>
 </div>
-<footer class="footer-distributed">
-  <div class="container4">
-    <div class="row">
-      <div class="column left">
-        <div class="text">Contact</div>
-        <div class="text">Tour-Thai@gmail.com</div>
-        <div class="text">123-456-7890</div>
-      </div>
-      <div class="column right">
-        <div class="text">Address</div>
-        <div class="text">500 Ekachai Road</div>
-        <div class="text">Bangkok, Thailand</div>
-      </div>
-    </div>
-  </div>
-  <div class="by">©2020 by KS.Plunchyy & NJ.Sky</div>
-</footer>
-</body>
-</html>
+<%- include("partials/footer") %>

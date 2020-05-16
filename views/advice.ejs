@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="advice.css">
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    </head>
-    <body>
+<%- include("partials/header") %>
+
     <style>
     .box {
   background-image: url("messageImage_1587394152425.jpg");
@@ -201,14 +192,7 @@ div.desc {
 ::-webkit-scrollbar-thumb:hover {
   background:#283747   ; 
 }
-    </style>
-    <div class="box">
-        <ul class="menu">
-        <li><a href="/home">Home</a></li>
-        <li><a href="/promotion">Promotion</a></li>
-        <li><a href="/traveladvice">Travel Advice</a></li>
-        <li style="float:right"><a href="/login">Login</a></li>
-      </ul>
+</style>
     <div class="travel">Travel Advice</div>
     <div class="container">
       
@@ -259,22 +243,4 @@ div.desc {
     </div>
     </div>
   </div>
-    <footer class="footer-distributed">
-      <div class="container2">
-        <div class="row">
-          <div class="column left">
-            <div class="text">Contact</div>
-            <div class="text">Tour-Thai@gmail.com</div>
-            <div class="text">123-456-7890</div>
-          </div>
-          <div class="column right">
-            <div class="text">Address</div>
-            <div class="text">500 Ekachai Road</div>
-            <div class="text">Bangkok, Thailand</div>
-          </div>
-        </div>
-      </div>
-      <div class="by">©2020 by KS.Plunchyy & NJ.Sky</div>
-    </footer>
-    </body>
-</html>
+  <%- include("partials/footer") %>

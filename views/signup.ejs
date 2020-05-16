@@ -1,14 +1,7 @@
-<!DOCTYPE html>
+<%- include("partials/header") %>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="js/login.js" defer></script>
-    <title>user login</title>
-</head>
-<body>
+<script type="text/javascript" src="js/login.js" defer></script>
+
 <style>
 .box {
     background-image: url("messageImage_1586493383111.jpg");
@@ -357,14 +350,7 @@ form {
   background:#283747   ; 
 }
 </style>
-    <ul>
-        <div class="box">
-			<ul class="menu">
-			  <li><a href="/home">Home</a></li>
-			  <li><a href="/promotion">Promotion</a></li>
-			  <li><a href="/traveladvice">Travel Advice</a></li>
-			  <li style="float:right"><a href="/login">Login</a></li>
-			</ul>  
+   
     <div class="align">
 		<div class="card">
 			<div class="head">
@@ -394,22 +380,4 @@ form {
 		</div>
     </div>
     </div>
-    <footer class="footer-distributed">
-		<div class="container2">
-		  <div class="row">
-			<div class="column left">
-			  <div class="text">Contact</div>
-			  <div class="text">Tour-Thai@gmail.com</div>
-			  <div class="text">123-456-7890</div>
-			</div>
-			<div class="column right">
-			  <div class="text">Address</div>
-			  <div class="text">500 Ekachai Road</div>
-			  <div class="text">Bangkok, Thailand</div>
-			</div>
-		  </div>
-		</div>
-		<div class="by">©2020 by KS.Plunchyy & NJ.Sky</div>
-	  </footer>
-</body>
-</html>
+    <%- include("partials/footer") %>
