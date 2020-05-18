@@ -1,0 +1,262 @@
+
+<%- include("partials/header") %>
+
+
+<style>
+    .box {
+    background-image: url("/S__15843402.jpg"); 
+    width: 90%;
+    height: 757px;
+    margin: auto;
+    background-position: center;
+    background-repeat: no-repeat no-repeat;
+    background-size: cover;
+  }
+  
+  /*menuubar*/
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Oswald";
+    outline: none;
+    border: none;
+  }
+  
+  /*nav bar*/
+  .menu{
+    background:white  ;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+  }
+  
+  li {
+    float: left;
+  }
+  
+  .nav a {
+    display: block;
+    color: black;
+    font-family: Oswald;
+    font-size: 20px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .nav a:hover {
+    color: #2ECC71;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+/*box*/
+/*/nav mini/*/
+.containerbotton {
+    width: 400px;
+    height: 41px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    margin-top: 140px;
+}
+.row2{
+    width: 40%;
+    margin-left: 10px;
+    height: 50px;
+
+}
+.profile {
+    width: 100%;
+    display: block;
+	  color: #2ECC71;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    list-style-type: none;
+}
+
+.history {
+    width: 100%;
+    display: block;
+  	color: black;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*container/*/
+.container {
+    font-size: 17px;
+    background-color: #bbbb;
+    width: 400px;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding : 7px;
+}
+
+  /*schdule*/
+  .container3 {
+    width: 360px;
+    margin-top: 7px;
+  }
+    .bigcontainer3 {
+    background-color: #F39C12;
+    width: 378px;
+    margin-left: 5px;
+  }
+  
+  .mainrow .bb {
+    list-style-type: none;
+    padding : 15px;
+    width: 33.33%;
+    font-family: Oswald;
+    font-size: 17px;
+    position: relative;
+    text-align: center;
+    color: white;
+    background : #F39C12;
+}
+
+.round .cc {
+    list-style-type: none;
+    padding : 15px;
+    width: 33.33%;
+    font-family: Oswald;
+    font-size: 17px;
+    position: relative;
+    text-align: center;
+    color: black;
+    background : #ccc;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+
+  /*footer*/
+.footer-distributed{
+  
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+    margin-top: 0px;
+   }
+    
+   .container4{
+     width: 1000px;
+     height: 100px;
+     margin: auto;
+     padding: 20px;
+  
+   }
+  
+  .column {
+    width: 50%;
+    float: left;
+  }
+  
+  .left {
+    text-align: center;
+  }
+  .right{
+    text-align: center;
+  }
+  
+  .by{
+    margin-top: 5px;
+    background-color:#aaa;
+    text-align: center;
+    padding: 7px;
+  }
+
+  /* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #34495E  ; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:#283747   ; 
+}
+</style>
+    <div class="containerbotton">
+        <div class="row2">
+            <div class="column left">
+               <li class="profile nav"><a href="/profile">Profile</a></li> 
+            </div class="row">
+            <div class="column right">
+               <li class="history nav"><a href="/history">History</a></li> 
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="bigcontainer3">
+        <div class="container3">
+        <div class="row">
+            <ul class="mainrow">
+                <li class="bb">From-To</li>
+                <li class="bb">Date</li>
+                <li class="bb">Time-Depart</li>
+            </ul>
+        </div>
+        </div>
+        </div>
+        <div class="containermini" style="height: 265px; line-height:3em;overflow:auto;padding:5px;">
+            <div class="row">
+              <ul class="round">
+                <li class="cc">BKK - CM</li>
+                <li class="cc">24/05</li>
+                <li class="cc">07:00</li>
+               </ul>
+            </div>
+            <div class="row">
+                <ul class="round">
+                  <li class="cc">BKK - CM</li>
+                  <li class="cc">24/05</li>
+                  <li class="cc">07:00</li>
+                 </ul>
+              </div>
+              <div class="row">
+                <ul class="round">
+                  <li class="cc">BKK - CM</li>
+                  <li class="cc">24/05</li>
+                  <li class="cc">07:00</li>
+                 </ul>
+              </div>
+              <div class="row">
+                <ul class="round">
+                  <li class="cc">BKK - CM</li>
+                  <li class="cc">24/05</li>
+                  <li class="cc">07:00</li>
+                 </ul>
+              </div>
+        </div>
+    </div>    
+    
+</div>
+<%- include("partials/footer") %>

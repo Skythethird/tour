@@ -1,0 +1,247 @@
+<%- include("partials/header") %>
+
+<style>
+    .box {
+    background-image: url("/S__15843402.jpg"); 
+    width: 90%;
+    height: 757px;
+    margin: auto;
+    background-position: center;
+    background-repeat: no-repeat no-repeat;
+    background-size: cover;
+  }
+  
+  /*menuubar*/
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Oswald";
+    outline: none;
+    border: none;
+  }
+  
+  /*nav bar*/
+  .menu{
+    background:white  ;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+  }
+  
+  li {
+    float: left;
+  }
+  
+  .nav a {
+    display: block;
+    color: black;
+    font-family: Oswald;
+    font-size: 20px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .nav a:hover {
+    color: #2ECC71;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+/*box*/
+/*/nav mini/*/
+.containerbotton {
+    width: 400px;
+    height: 41px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    margin-top: 140px;
+}
+.row2{
+    width: 40%;
+    margin-left: 10px;
+    height: 50px;
+
+}
+.profile {
+    width: 100%;
+    display: block;
+	  color: #2ECC71;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    list-style-type: none;
+}
+
+.history {
+    width: 100%;
+    display: block;
+  	color: black;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*container/*/
+.container {
+    font-size: 17px;
+    background-color: #bbbb;
+    width: 400px;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding : 20px;
+}
+.username {
+    padding-top: 10px;
+    margin-left: 63px;
+    margin-top: 50px;
+}
+.email {
+    padding-top: 10px;
+    margin-left: 63px;
+}
+
+input[type=text]{
+    padding: 12px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 70%;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+.save{
+    display: block;
+    background: #4CAF50;
+	padding: 14px ;
+	border-radius: 12px;
+	color: #003B15;
+	font-weight: 700;
+	font-size: 17px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    margin-top: 25px;
+}
+.save:hover {
+    background-color:#45a049 ;
+  }
+
+.delete{
+    display: block;
+    background: #E74C3C ;
+	padding: 14px ;
+	border-radius: 12px;
+	color: #641E16  ;
+	font-weight: 700;
+	font-size: 17px;
+    cursor: pointer;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.delete:hover {
+    background-color: #CB4335  ;
+  }
+
+  /*footer*/
+.footer-distributed{
+  
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+    margin-top: 0px;
+   }
+    
+   .container4{
+     width: 1000px;
+     height: 100px;
+     margin: auto;
+     padding: 20px;
+  
+   }
+  
+  .column {
+    width: 50%;
+    float: left;
+  }
+  
+  .left {
+    text-align: center;
+  }
+  .right{
+    text-align: center;
+  }
+  
+  .by{
+    margin-top: 5px;
+    background-color:#aaa;
+    text-align: center;
+    padding: 7px;
+  }
+
+  /* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #34495E  ; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:#283747   ; 
+}
+</style>
+      <div class="containerbotton">
+        <div class="row2">
+            <div class="column left">
+               <li class="profile nav"><a href="/profile">Profile</a></li> 
+            </div>
+            <div class="column right">
+               <li class="history nav"><a href="/history">History</a></li> 
+            </div>
+        </div>
+      </div>
+      <form class="edit" action="/profile/edit" method="POST">
+      <div class="container">
+        <input type="hidden" name="id" value="<%= currentUser._id %>" ></input>
+        <label for="username" class="username" >Username</label><br>
+        <input type="text" placeholder="New Username" name="username">
+        <label for="email" class="email" >E-mail</label><br>
+        <input type="text" placeholder="New E-mail" name="email">
+        <button class="save" type="submit">Save Change</button> 
+        <button class="delete">Delete Account</button>
+      </div>
+    </form>
+    </div>
+    <%- include("partials/footer") %>

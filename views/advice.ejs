@@ -1,5 +1,31 @@
-<%- include("partials/header") %>
-
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+   
+</head>
+<body>
+    <div class="box"> 
+    <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/promotion">Promotion</a></li>
+        <li><a href="/traveladvice">Travel Advice</a></li>
+        <li style="float:right">
+            <form action = '/login' method = 'POST'>
+              <% if(!currentUser) { %>
+                <a href="/login">Login</a>
+              <% } else { %>
+                <a href='/profile'>Profile</a>
+              <% } %>  
+          </form>
+        </li>
+    </ul>
     <style>
     .box {
   background-image: url("messageImage_1587394152425.jpg");
@@ -199,7 +225,7 @@ div.desc {
       <div class="responsive">
         <div class="gallery">
             <div class="a">
-            <a href="/traveladvice/bangkok" ><img src="1.jpg" style="height:auto;">
+            <a href="/bangkok" ><img src="1.jpg" style="height:auto;">
             </a>
             </div>
           <div class="desc" >Wat Phra Kaew, Bangkok</div>
@@ -208,7 +234,7 @@ div.desc {
       <div class="responsive">
         <div class="gallery">
             <div class="a">
-            <a href="/traveladvice/ayutthaya">
+            <a href="/ayutthaya">
             <img src="2.jpg">
           </a>
           </div>
@@ -218,14 +244,14 @@ div.desc {
       <div class="responsive">
         <div id="3" class="gallery">
             <div class="a"> 
-          <a href="/traveladvice/chiangmai"><img src="3.jpg"></a></div>
+          <a href="/chiangmai"><img src="3.jpg"></a></div>
           <div class="desc" >Doi Inthanon, Chiang Mai</div>
         </div>
       </div>
       <div class="responsive">
         <div class="gallery">
             <div class="a">
-        <a href="/traveladvice/chonburi">
+        <a href="/chonburi">
             <img src="4.jpg">
           </a></div>
           <div class="desc">Samea San Island, Chonburi</div>
@@ -234,7 +260,7 @@ div.desc {
       <div class="responsive">
         <div class="gallery">
             <div class="a">
-            <a href="/traveladvice/krabi">
+            <a href="/krabi">
             <img src="5.jpg">
           </a></div>
           <div class="desc">Maya Bay, Krabi</div>

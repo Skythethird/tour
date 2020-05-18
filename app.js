@@ -5,6 +5,7 @@ const express = require('express'),
       passport = require('passport'),
       passportlocal = require('passport-local'),
       passportlocalMongoose = require('passport-local-mongoose') ,
+      middleware = require('./middleware'),
       User = require('./models/user'),
       path = require('path'),
       indexRoutes = require('./routes/index'),
@@ -12,6 +13,7 @@ const express = require('express'),
     
 
 mongoose.connect('mongodb://localhost/auth_test',{useNewUrlParser: true});
+mongoose.set('useFindAndModify', false);
 let app = express();
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -32,10 +34,6 @@ app.use(function(req,res,next){
     res.locals.success = req.flash('success');
     next();
 });
-
-
-
-
 
 passport.use(new passportlocal(User.authenticate()));
 passport.serializeUser(User.serializeUser());
@@ -67,24 +65,50 @@ app.get('/traveladvice', function(req, res){
     res.render('advice');
 });
 
-app.get('/traveladvice/bangkok', function(req, res){
+app.get('/bangkok', function(req, res){
     res.render('ta1');
 });
 
-app.get('/traveladvice/ayutthaya', function(req, res){
+app.get('/ayutthaya', function(req, res){
     res.render('ta2');
 });
 
-app.get('/traveladvice/chiangmai', function(req, res){
+app.get('/chiangmai', function(req, res){
     res.render('ta3');
 });
 
-app.get('/traveladvice/chonburi', function(req, res){
+app.get('/chonburi', function(req, res){
     res.render('ta4');
 });
 
-app.get('/traveladvice/krabi', function(req, res){
+app.get('/krabi', function(req, res){
     res.render('ta5');
+});
+
+app.get('/profile',middleware.isloggedIn,function(req, res){
+    res.render('profile');
+});
+
+app.get('/profile/edit',middleware.isloggedIn ,function(req, res){
+    res.render('edit');
+});
+
+app.post("/profile/edit",middleware.isloggedIn, function(req,res){
+    let id = req.body.id;
+    User.update({_id:id},{$set:{username : req.body.username,email : req.body.email}}, function(err,profile){
+    if(err){
+        console.log("error");
+    } else {
+        console.log("edit");
+        req.flash('success','You changed successfully please login again');
+        res.redirect("/login");
+    }
+    });
+});
+
+
+app.get('/profile/history',middleware.isloggedIn ,function(req, res){
+    res.render('history');
 });
 
 app.use('/',indexRoutes);
