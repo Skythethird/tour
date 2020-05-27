@@ -2,243 +2,63 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <script type="text/javascript" src="js/search.js" defer></script>
 <style>
-.box {
-  background-image: url("S__15843402.jpg");
-  width: 90%;
-  height: 757px;
-  margin: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/*menuubar*/
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  font-family: "Oswald";
-  outline: none;
-  border: none;
-}
-
 /*nav bar*/
-.menu{
-  background:white  ;
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+.box1 {
+    width: 90%;
+    margin: auto;
+    }
+
+li a {
+    display:block;
+    color: black;
+    font-family: Oswald;
+    font-size: 20px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
   
-}
+li a:hover {
+    color: #2ECC71;
+    }
+/*content*/
+.box2 {
+    background-image: url("S__15843402.jpg");
+    width: 90%;
+    height: 727px;
+    margin: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
 
-li {
-  float: left;
-}
+.find {
+    color: #F1C40F;
+    font-family: Oswald;
+    font-size: 85px;
+    text-align: center;
+    padding-top: 190px;
+    }
 
-li a, .dropbtn {
-  display: block;
-  color: black;
-  font-family: Oswald;
-  font-size: 20px;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+.where {
+    color: white;
+    font-family: Oswald;
+    font-size: 30px;
+    margin-left: 120px;
+    }
 
-li a:hover, .dropdown:hover .dropbtn {
-  color: #2ECC71;
-}
-
-li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 151px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-display: block;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-
-
-/*���͡*/
-select {
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  color: #616A6B ;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-select{
+/*container1*/
+.container1 {
+    width: 90%;
+    height: 125px;
+    border-radius: 10px;
+    margin :  auto;
+    background-color: #bbbb;
+    padding: 10px;
     font-family: Oswald;
     font-size: 17px;
-}
-.city {
-  width:100%;
-  opacity:1;   
-}
-.start {
-  display: block;
-}
+    }
 
-/* dd/mm/yy */
-.day {
-  position: relative;
-  width: 100%;
-  height: 53px;
-  color: #616A6B;
-  margin: 8px 0;
-  padding: 12px 20px;
-  display: inline-block;
-  border: 1px solid #ccc;
-  color: #616A6B ;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.day:before {
-  position: absolute;
-  top: 3px; left: 3px;
-  content: attr(data-date);
-  display: inline-block;
-  color: #616A6B;
-  font-family: Oswald;
-  font-size: 17px;
-  margin-top: 10px;
-  margin-left: 20px;
-}
-
-.day::-webkit-datetime-edit, .day::-webkit-inner-spin-button, .day::-webkit-clear-button {
-  display: none;
-
-}
-
-.day::-webkit-calendar-picker-indicator {
-  position: absolute;
-  top: 3px;
-  right: 0;
-  color: #616A6B;
-  opacity: 1;
-  margin: 15px;
-}
-
-
-
-#submit {
-  width: 100%;
-  background-color: #F4D03F;
-  color: #935116;
-  padding: 14px 20px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: Oswald;
-  font-size: 17px;
-  text-align: center;
-  
-}
-
-#submit:hover {
-  background-color: #F1C40F;
-}
-
-.container {
-  border-radius: 10px;
-  margin :  auto;
-  border : 3px ;
-  background-color: #bbbb;
-  padding: 10px;
-  width: 1000px;
-  height: 125px;
-  font-family: Oswald;
-  font-size: 17px;
-}
-.container3 {
-  width: 1000px;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 180px;
-}
-.find {
-  color: #F1C40F;
-  font-size: 80px;
-  text-align: center;
-}
-.where {
-  color: white;
-  font-size: 20px;
-  margin-bottom: 8px;
-  margin-left: 35px;
-}
-
-
-/*footer*/
-.footer-distributed{
-  
-  background-color: white;
-  box-sizing: border-box;
-  width: 100%;
-  text-align: left;
-  font-size: 15px;
-  margin-top: 0px;
- }
-  
- .container2{
-   width: 1000px;
-   height: 100px;
-   margin: auto;
-   padding: 20px;
- }
-
-.column {
-  width: 50%;
-  float: left;
-}
-
-.left {
-  text-align: center;
-}
-.right{
-  text-align: center;
-}
-
-.by{
-  margin-top: 5px;
-  background-color:#aaa;
-  text-align: center;
-  padding: 7px;
-}
-
-/*search*/
 .column1 {
   float: left;
   margin: 5px;
@@ -253,9 +73,93 @@ select{
   width: 20.8%;
 }
 
-#submit {
-  margin-top: 33px;
-}
+/* select */
+select {
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    color: #616A6B ;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: Oswald;
+    font-size: 17px;
+  }
+
+.city {
+    width:100%;
+    opacity:1;   
+  }
+
+/* dd/mm/yy */
+.date {
+    position: relative;
+    width: 100%;
+    height: 53px;
+    color: #616A6B;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    color: #616A6B ;
+    border-radius: 10px;
+    font-size: 17px;
+    box-sizing: border-box;
+  }
+
+/* button */
+.search {
+    width: 100%;
+    background-color: #F4D03F;
+    color: #935116;
+    padding: 14px 20px;
+    margin-top: 33px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: Oswald;
+    font-size: 17px;
+    text-align: center;
+  }
+  
+.search:hover {
+    background-color: #F1C40F;
+  }
+
+/*footer*/
+.footer-distributed{
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font-family: Oswald;
+    font-size: 15px;
+    margin-top: 0px;
+    }
+    
+.container2{
+    margin: auto;
+    padding: 20px;
+    }
+  
+.column {
+    width: 50%;
+    float: left;
+    }
+  
+.left {
+    text-align: center;
+    }
+
+.right{
+    text-align: center;
+    }
+  
+.by{
+    margin-top: 5px;
+    background-color:#aaa;
+    text-align: center;
+    font-family: Oswald;
+    padding: 7px;
+    }
 
 /* scrollbar */
 /* width */
@@ -278,50 +182,197 @@ select{
 ::-webkit-scrollbar-thumb:hover {
   background:#283747   ; 
 }
+
+/*responsive*/
+@media only screen and (max-width: 1024px) {
+    .box2{
+        height: 1110px;
+    }
+    .find {
+        padding-top: 380px;
+    }
+    .a ,.b {
+        width: 25%;
+    }
+    .c {
+        width: 25%;
+    }
+    .d {
+        width: 20%;
+    }
+    li a {
+        font-size: 30px;
+    }
+    .footer-distributed{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .box1 {
+        width: 100%;
+    }
+    .box2{
+        width: 100%;
+        height: 834px;
+    }
+    
+    .find {
+        padding-top: 285px;
+        font-size: 55px;
+    }
+
+    .where {
+        margin-left: 65px;
+        font-size: 25px;
+    }
+
+    .column1 {
+        margin: 3px;
+    }
+
+    .container1 {
+        height: 120px;
+    }
+
+    .city , .date , .search {
+        width:100%;   
+    }
+
+    .a ,.b {
+        width: 25%;
+    }
+    .c {
+        width: 25%;
+    }
+    .d {
+        width: 21%;
+    }
+
+    li a {
+        font-size: 20px;
+    }
+    .footer-distributed{
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .find {
+        padding-top: 20px;
+        font-size: 45px;
+    }
+    .box2{
+        width: 100%;
+        height: 557px;
+    }
+    .a ,.b ,.c ,.d{
+        width: 100%;
+      }
+      .container1 {
+        height: 395px;
+    }
+
+    .city , .date , .search {
+        width:100%;   
+      }
+}
+
+
+@media only screen and (max-width: 375px) {
+    .box1 {
+        width: 100%;
+    }
+    .box2{
+        width: 100%;
+        height: 617px;
+    }
+    
+    .find {
+        padding-top: 80px;
+        font-size: 40px;
+    }
+
+    .where {
+        margin-left: 20px;
+        font-size: 17px;
+    }
+
+    .search {
+        margin-top: 15px;
+        margin-bottom: 0px;
+    }
+
+    .column1 {
+        margin: 0px;
+    }
+
+    .a ,.b ,.c ,.d{
+        width: 100%;
+      }
+
+    .container1 {
+        height: 355px;
+    }
+
+    .city , .date , .search {
+        width:100%;   
+      }
+  }
+
+  @media only screen and (max-width: 320px) {
+    .box2{
+        width: 100%;
+        height: 508px;
+    }
+    .find {
+        padding-top: 30px;
+        font-size: 35px;
+    }
+  }
+
 </style>
-    <div class="container3"><br>
-    <div class="find">FIND YOUR NEXT TOUR</div>
-    <div class="where">Where would you like to go?</div>
-  </div>
-    <div class="container">
-      <div class="row">
-        <div class="column1 a">
-            <div id="from">
-            <label for="citys" class="text">From</label><br>
-            <select class="city" name="city">
-              <option>Select Province</option>
-              <option>Ayutthaya</option>
-			        <option>Bangkok</option>
-              <option>Chiang Mai</option>
-              <option>Chonburi</option>
-              <option>Krabi</option>
-            </select>
+<div class="box2">
+  <h1 class="find">FIND YOUR NEXT TRIP</h1>
+  <p class="where">Where would you like to go?</p>
+
+  <div class="container1">
+          <div class="column1 a">
+              <label for="citye" class="text" id="from">From</label><br>
+              <select class="city" name="city" >
+                  <option>Select Province</option>
+                  <option>Ayutthaya</option>
+                  <option>Bangkok</option>
+                  <option>Chiang Mai</option>
+                  <option>Chonburi</option>
+                  <option>Krabi</option>
+              </select>
             </div>
+            <div class="column1 b">
+              <label for="citye" class="text" id="to">To</label><br>
+              <select class="city" name="city" >
+                  <option>Select Province</option>
+                  <option>Ayutthaya</option>
+                  <option>Bangkok</option>
+                  <option>Chiang Mai</option>
+                  <option>Chonburi</option>
+                  <option>Krabi</option>
+              </select>
+            </div>
+            <div class="column1 c">
+              <label>When</label><br>
+              <input id="today" class="date" type="date">
+            </div>
+            <div class="column1 d">
+              <a href="/step2">
+                <button class="search">Search</button>
+              </a>
+            </div>
+          
         </div>
-        <div class="column1 b">
-          <div id="to">
-          <label for="citye" class="text">To</label><br>
-          <select class="city" name="city" >
-            <option>Select Province</option>
-            <option>Ayutthaya</option>
-            <option>Bangkok</option>
-            <option>Chiang Mai</option>
-            <option>Chonburi</option>
-            <option>Krabi</option>
-          </select>
-          </div>
-        </div>
-        <div class="column1 c">
-          <label>When</label><br>
-          <input class="day" type="date" data-date="" data-date-format="DD MMMM YYYY" value="2020-04-20" min="2020-04-20" max="2020-05-31">
-        </div>
-        <div class="column1 d">
-          <a href="/step2">
-          <input id="submit" value="Search">
-          </a>
-        </div>
-      </div>
-    </div>
+
   </div>
+</div>
+
 </div>
 <%- include("partials/footer") %>
