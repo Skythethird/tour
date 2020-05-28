@@ -117,4 +117,3 @@ app.use('/',indexRoutes);
 app.listen(3000, function(req,res){
     console.log("Server is Started");
 });
-

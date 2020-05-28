@@ -1,111 +1,70 @@
 <%- include("partials/header") %>
 <style>
-.box {
-  background-image: url("S__15843402.jpg"); 
-  width: 90%;
-  height: 757px;
-  margin: auto;
-  background-position: center;
-  background-repeat: no-repeat no-repeat;
-  background-size: cover;
-}
-
-/*menuubar*/
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  font-family: "Oswald";
-  outline: none;
-  border: none;
-}
-
 /*nav bar*/
-.menu{
-  background:white  ;
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  
-}
+.box1 {
+    width: 90%;
+    margin: auto;
+    }
 
-li {
-  float: left;
+li a {
+    display: block;
+    color: black;
+    font-family: Oswald;
+    font-size: 20px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+  .buttonlogin {
+  float: right;
 }
+li a:hover {
+    color: #2ECC71;
+    }
 
-li a, .dropbtn {
-  display: block;
-  color: black;
-  font-family: Oswald;
-  font-size: 20px;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-  color: #2ECC71;
-}
-
-li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 151px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-display: block;
-}
-
-* {
-  box-sizing: border-box;
-}
  /*progress bar*/
  .image {
   margin-right: auto;
   margin-left: auto;
   display: block;
-  margin-top: 15px;
+  padding-top: 15px;
 }
-
-  /*schdule*/
- .container3 {
-  width: 1023px;
-  margin-top: 15px;
-}
-  .bigcontainer3 {
-  background-color: #F39C12;
-  width: 1045.5px;
-  margin-left: 5px;
-}
+/*content*/
+.box2 {
+    background-image: url("S__15843402.jpg");
+    width: 90%;
+    height: 727px;
+    margin: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+/*schdule*/
 .bigcontainer {
-    width: 1050px;
+    width: 1045px;
     margin-right: auto;
     margin-left: auto;
 }
 
-.mainrow .bb {
+.bigcontainer3 {
+  background-color: #F39C12;
+  width: 1045.5px;
+  margin-left: 5px;
+}
+
+.container3 {
+  width: 1023px;
+  margin-top: 15px;
+}
+
+.containermini{
+  width:1050px;
+  height:455px;
+  line-height:3em;
+  overflow:auto;
+  padding:5px;
+}
+.bb {
       list-style-type: none;
       padding : 15px;
       width: 20%;
@@ -116,14 +75,14 @@ display: block;
       color: white;
       background : #F39C12;
 }
-
-.round {
-  width:100%;
-  
+.rowincon {
+  width: 1045px;
 }
-.round .cc {
+
+.cc {
       list-style-type: none;
-      padding : 15px;
+      padding-top : 15px;
+      padding-bottom: 15px;
       width: 20%;
       font-family: Oswald;
       font-size: 17px;
@@ -131,8 +90,10 @@ display: block;
       text-align: center;
       color: black;
       background : #ccc;
+      opacity: 0.85;
       margin-top: 10px;
 }
+
 
 /*footer*/
 .footer-distributed{
@@ -142,6 +103,7 @@ display: block;
   width: 100%;
   text-align: left;
   font-size: 15px;
+  font-family: Oswald;
   margin-top: 0px;
  }
   
@@ -194,85 +156,226 @@ display: block;
   background:#283747   ; 
 }
 
-/* scrollbar */
-/* width */
-::-webkit-scrollbar {
-  width: 15px;
+/*responsive*/
+@media only screen and (max-width: 1024px) {
+  .image{
+    padding-top: 60px;
+  }
+  li a{
+    font-size: 30px;
+  }
+
+  .box2{
+    height: 1119px;
+  }
+  .footer-distributed{
+    font-size: 20px;
+    padding-top: 20px;
+    width: auto;
+  }
+  .by{
+    margin-top: 25px;
+  }
+  .bigcontainer{
+    width: 95%;
+  }
+  .bigcontainer3{
+    width: 100%;
+  }
+  .container3{
+    width: 96%;
+  }
+  .containermini{
+    width: 100%;
+    height: 800px;
+  }
+  .rowincon{
+    width: 102%;
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
 }
+
+@media only screen and (max-width: 768px) {
+  .image{
+    padding-top: 20px;
+  }
+  .box2{
+    width: auto;
+    height: 830px;
+  }
+  .box1{
+    width: auto;
+  }
+  .bigcontainer3{
+    width: 99.5%;
+  }
+  .containermini{
+    width: 100%;
+    height: 580px;
+  }
+  .footer-distributed{
+    width: 100%;
+    font-size: 16px;
+    padding-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .image{
+    width: 100%;
+  }
+  .box1{
+    width: auto;
+  }
+  .footer-distributed{
+    width: auto;
+  }
+  .box2{
+    width: auto;
+    height: 658px;
+  }
+
+  .bigcontainer{
+    width: 90%;
+  }
+  .bigcontainer3{
+    width: 100%;
+  }
+  .container3{
+    width: 96%;
+  }
+  .containermini{
+    width: 105%;
+    height: 430px;
+  }
+  .bb{
+    font-size: 15px;
+  }
+  .cc{
+    font-size: 15px;
+  }
+  .rowincon{
+    width: 100%;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .box1{
+    width: auto;
+  }
+  .box2{
+    width: auto;
+    height: 658px;
+  }
+  .footer-distributed{
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .box2{
+    width: auto;
+    height: 555px;
+  }
+  .containermini{
+    width: 106.5%;
+    height: 350px;
+  }
+  .bb{
+    font-size: 13px;
+  }
+  .cc{
+    font-size: 12px;
+  }
+}
+
 </style>
- 
+ <div class="box2">
    <img src="step2.png" class="image">
-  <div class="bigcontainer">
-  <div class="bigcontainer3">
-  <div class="container3">
-    <div class="row">
-      <ul class="mainrow">
-        <li class="bb">Bus Number</li>
-        <li class="bb">Time Depart</li>
-        <li class="bb">Time Arrive</li>
-        <li class="bb">Average Time</li>
-        <li class="bb">Price</li>
+   <div class="bigcontainer">
+    <div class="bigcontainer3">
+      <div class="container3">
+        <div class="row">
+            <div class="bb">Trip Number</div>
+            <div class="bb">Time Depart</div>
+            <div class="bb">Time Arrive</div>
+            <div class="bb">Average Time</div>
+            <div class="bb">Price</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="containermini" style="width:1050px;height:455px;line-height:3em;overflow:auto;padding:5px;">
-    <div class="row">
-      <ul class="round">
-        <li class="cc">CM0912<br></br></li>
-        <li class="cc">Mo chit<br>24/05 07:00</br></li>
-        <li class="cc">Ching Mai<br>24/05 17:30</br></li>
-        <li class="cc">10h 30m<br></br></li>
-        <li class="cc">823 Bath<br></br></li>
-       </ul>
+    <div class="containermini">
+      <div class="row rowincon">
+        <div class="cc">CM0912</div>
+        <div class="cc">Mo chit<br>24/05 07:00</div>
+        <div class="cc">Ching Mai<br>24/05 17:30</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath</div>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0919</div>
+        <div class="cc">Mo chit<br>24/05 08:00</div>
+        <div class="cc">Ching Mai<br>24/05 18:30</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath</div>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0922</div>
+        <div class="cc">Mo chit<br>24/05 08:30</div>
+        <div class="cc">Ching Mai<br>24/05 19:00</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath</div>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0928</div>
+        <div class="cc">Mo chit<br>24/05 10:00</div>
+        <div class="cc">Ching Mai<br>24/05 20:30</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath</div>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0935</div>
+        <div class="cc">Mo chit<br>24/05 12:00</div>
+        <div class="cc">Ching Mai<br>24/05 22:30</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath</div>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0938</div>
+        <div class="cc">Mo chit<br>24/05 12:30</div>
+        <div class="cc">Ching Mai<br>24/05 23:00</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath</div>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0938</div>
+        <div class="cc">Mo chit<br>24/05 12:30</div>
+        <div class="cc">Ching Mai<br>24/05 23:00</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath</div>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0938</div>
+        <div class="cc">Mo chit<br>24/05 12:30</div>
+        <div class="cc">Ching Mai<br>24/05 23:00</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath</div>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0938</div>
+        <div class="cc">Mo chit<br>24/05 12:30</div>
+        <div class="cc">Ching Mai<br>24/05 23:00</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath</div>
+      </div>
     </div>
-    <div class="row">
-      <ul class="round">
-        <li class="cc">CM0919<br></br></li>
-        <li class="cc">Mo chit<br>24/05 08:00</br></li>
-        <li class="cc">Ching Mai<br>24/05 18:30</br></li>
-        <li class="cc">10h 30m<br></br></li>
-        <li class="cc">823 Bath<br></br></li>
-       </ul>
-    </div>
-    <div class="row">
-      <ul class="round">
-        <li class="cc">CM0922<br></br></li>
-        <li class="cc">Mo chit<br>24/05 08:30</br></li>
-        <li class="cc">Ching Mai<br>24/05 19:00</br></li>
-        <li class="cc">10h 30m<br></br></li>
-        <li class="cc">823 Bath<br></br></li>
-       </ul>
-    </div>
-    <div class="row">
-      <ul class="round">
-        <li class="cc">CM0928<br></br></li>
-        <li class="cc">Mo chit<br>24/05 10:00</br></li>
-        <li class="cc">Ching Mai<br>24/05 20:30</br></li>
-        <li class="cc">10h 30m<br></br></li>
-        <li class="cc">823 Bath<br></br></li>
-       </ul>
-    </div>
-    <div class="row">
-      <ul class="round">
-        <li class="cc">CM0935<br></br></li>
-        <li class="cc">Mo chit<br>24/05 12:00</br></li>
-        <li class="cc">Ching Mai<br>24/05 22:30</br></li>
-        <li class="cc">10h 30m<br></br></li>
-        <li class="cc">823 Bath<br></br></li>
-       </ul>
-    </div>
-    <div class="row">
-      <ul class="round">
-        <li class="cc">CM0938<br></br></li>
-        <li class="cc">Mo chit<br>24/05 12:30</br></li>
-        <li class="cc">Ching Mai<br>24/05 23:00</br></li>
-        <li class="cc">10h 30m<br></br></li>
-        <li class="cc">823 Bath<br></br></li>
-       </ul>
-    </div>
-  </div>
-  </div>
-  </div>
-  </div>
-</div>
+
+   </div>
+ </div>
 <%- include("partials/footer") %>
