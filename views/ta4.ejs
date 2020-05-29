@@ -1,152 +1,62 @@
 <%- include("partials/header") %>
         <script type="text/javascript" src="js/ta4.js" defer></script>
 
-    <style>
-       .box {
-
-width: 90%;
-
-margin: auto;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-}
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  font-family: "Oswald";
-  outline: none;
-  border: none;
-}
-
-/*nav bar*/
-.menu{
-  background:white  ;
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  
-}
-
-li {
-  float: left;
-}
-
-li a, .dropbtn {
-  display: block;
-  color: black;
-  font-family: Oswald;
-  font-size: 20px;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-  color: #2ECC71;
-}
-
-li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 151px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-display: block;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-
+<style>
 /*slide show*/
 .mySlides {display:none}
 .w3-left, .w3-right, .w3-badge {cursor:pointer}
 .w3-badge {height:13px;width:13px;padding:0}
 
+/*nav bar*/
+.box1 {
+    width: 90%;
+    margin: auto;
+    }
 
-
-
-/*footer*/
-.footer-distributed{
-
-background-color: white;
-box-sizing: border-box;
-width: 100%;
-text-align: left;
-font-size: 15px;
-margin-top: 0px;
+li a {
+    display: block;
+    color: black;
+    font-family: Oswald;
+    font-size: 20px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+  .buttonlogin {
+  float: right;
 }
+li a:hover {
+    color: #2ECC71;
+    } 
 
-.container2{
- width: 1000px;
- height: 100px;
- margin: auto;
- padding: 20px;
-}
-
-.column {
-width: 50%;
-float: left;
-}
-
-.left {
-text-align: center;
-}
-.right{
-text-align: center;
-}
-
-.by{
-margin-top: 5px;
-background-color:#aaa;
-text-align: center;
-padding: 7px;
-}
-
-
+/*content*/
+.box2 {
+    width: 90%;
+    height: 700px;
+    margin: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
 /* text */
 .minibox {
   margin-left: auto;
   margin-right: auto;
   width: 1200px;
   padding: 30px;
+  font-family: Oswald;
 }
 
 .indent  { 
-  padding-left: 1.8em }
+  padding-left: 30px;
+  font-size: 17px; 
+  padding-bottom: 30px;
+  }
   
 .bigtext {
   font-family: Oswald;
   text-align: center;
-}
-
-p {
-font-size: 17px;
+  font-size: 35px;
 }
 
 .headtext {
@@ -176,30 +86,161 @@ text-align: center;
 background-color: #F1C40F;
 }
 
+/*footer*/
+.footer-distributed{
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font-family: Oswald;
+    font-size: 15px;
+    margin-top: 0px;
+    }
+    
+.container2{
+    margin: auto;
+    padding: 20px;
+    }
+  
+.column {
+    width: 50%;
+    float: left;
+    }
+  
+.left {
+    text-align: center;
+    }
+
+.right{
+    text-align: center;
+    }
+  
+.by{
+    margin-top: 5px;
+    background-color:#aaa;
+    text-align: center;
+    font-family: Oswald;
+    padding: 7px;
+    }
+
 /* scrollbar */
 /* width */
 ::-webkit-scrollbar {
-width: 15px;
+  width: 15px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-border-radius: 10px;
+  border-radius: 10px;
 }
-
+ 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-background: #34495E  ; 
-border-radius: 10px;
+  background: #34495E  ; 
+  border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-background:#283747   ; 
-} 
+  background:#283747   ; 
+}
+
+/*responsive*/
+@media only screen and (max-width: 1024px) {
+  li a{
+    font-size: 30px;
+  }
+  .box2{
+    height: 452px;
+  }
+  .minibox{
+    width: 900px;
+  }
+  .footer-distributed{
+    font-size: 20px;
+    width: auto;
+  }
+  .indent{
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  li a {
+    font-size: 20px;
+    }
+  .box1{
+    width: auto;
+  }
+  .box2{
+    width: auto;
+    height: 377px;
+  }
+  .bigtext{
+    font-size: 30px;
+  }
+  .minibox{
+    width: 700px;
+  }
+  .footer-distributed{
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .box2{
+    height: 208px;
+  }
+  .minibox{
+    width: auto;
+  }
+  .bigtext{
+    font-size: 18px;
+  }
+  .headtext{
+    font-size: 18px;
+  }
+  .indent{
+    font-size: 15px;
+  }
+  .booking {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .box2{
+    height: 182px;
+  }
+  .bigtext{
+    font-size: 17px;
+  }
+  .headtext{
+    font-size: 16px;
+  }
+  .indent{
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .box2{
+    height: 156px;
+  }
+  .bigtext{
+    font-size: 14px;
+  }
+  .headtext{
+    font-size: 14px;
+  }
+  .indent{
+    font-size: 14px;
+  }
+}
+
 </style>
 
-      
+<div class="box2">
       <div class="w3-content w3-display-container" style="max-width:100%">
         <img class="mySlides" src="/ta4-1.jpg" style="width:100%">
         <img class="mySlides" src="/ta4-3.jpg" style="width:100%">
@@ -212,38 +253,44 @@ background:#283747   ;
                 <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
                 <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
             </div>
-         </div>
-         <div class="minibox">
-             <h1 class="bigtext">Samae Sarn island , Chon Buri</h1>
-             <div class="headtext">Info</div>
-             <p class="indent">Koh Samae San is taken care by Thai Marines and is one out of the nine islands under a 
-               royal project of Princess Maha Chakri Sirindhorn that preserves the plants and</p>
-             <p>animals of the sea and island The island is taken care by Thai Marines. We based ourselves in Jomtien 
-               beach and took 45 mins drive to Khao Ma Jor Pier in Sattahip and only 10 mins riding in a boat to the 
-               island. The fee for the boat was 300 Baht for adult and 220 Baht for a child over 3 years old. This 
-               includes the entrance fee to the museum. We arrived at the pier around 8:20 am and got the first ride 
-               at 9 am. The boat carried a only 100 passengers per trip so plan ahead during peak period. They sold 
-               drinks and small local snacks on the boat and the officers gave you a brief of the island with sense 
-               of humor. On the island, we did snorkeling - 50 Baht for 30 mins, kayaking – 100 Baht per hour, 15 
-               mins ride on glass bottom boat to see the corel under - 20 Baht, and just enjoy the beach and crystal
-               clear water. Easy lunch (run our fast), instant noodle, snacks and drinks are available on the island. 
-               Shades and caKids really love the island.</p><br>
-             <div class="headtext">How to go</div>
-             <p class="indent">You can come to Samae Sarn island by shuttle van from Ekkamai van terminal to Satta 
-               Hib , Chon Buri and catch some Rod Song Thaew pickup or motorcycle taxi to</p>
-             <p>Khao Ma Jor pier. Then you can take a Ferry boat to the island.</p><br>
-             <div class="headtext">Activity</div>
-             <p class="indent">- Explore island</p>
-             <p class="indent">- Snorkeling</p>
-             <p class="indent">- Ride mirror-bottom boat</p>
-             <p class="indent">- Ride Kayak </p><br>
-             <div class="headtext">Avialabiltity</div>
-             <p class="indent">9:00 – 16:00 on weekday</p>
-             <p class="indent">9:00 – 16:30 on weekend</p><br>
-             <a href="/">
-             <input class="booking" value="Booking">
-            </a>
+      </div>
+</div>
+<div class="minibox">
+  <div class="bigtext" id="placename">Samae Sarn island</div>
+  <div class="bigtext" id="province">Chon Buri</div>
+  <div class="headtext">Info</div>
+  <div class="indent" id="info">Koh Samae San is taken care by Thai Marines and is one out of the nine islands under a 
+    royal project of Princess Maha Chakri Sirindhorn that preserves the plants and animals of the sea and island 
+    The island is taken care by Thai Marines. We based ourselves in Jomtien 
+    beach and took 45 mins drive to Khao Ma Jor Pier in Sattahip and only 10 mins riding in a boat to the 
+    island. The fee for the boat was 300 Baht for adult and 220 Baht for a child over 3 years old. This 
+    includes the entrance fee to the museum. We arrived at the pier around 8:20 am and got the first ride 
+    at 9 am. The boat carried a only 100 passengers per trip so plan ahead during peak period. They sold 
+    drinks and small local snacks on the boat and the officers gave you a brief of the island with sense 
+    of humor. On the island, we did snorkeling - 50 Baht for 30 mins, kayaking – 100 Baht per hour, 15 
+    mins ride on glass bottom boat to see the corel under - 20 Baht, and just enjoy the beach and crystal
+    clear water. Easy lunch (run our fast), instant noodle, snacks and drinks are available on the island. 
+    Shades and caKids really love the island.
+  </div>
+  <div class="headtext">How to go</div>
+  <div class="indent" id="howtogo">You can come to Samae Sarn island by shuttle van from Ekkamai van terminal to Satta 
+    Hib , Chon Buri and catch some Rod Song Thaew pickup or motorcycle taxi to Khao Ma Jor pier. Then you can 
+    take a Ferry boat to the island.
+  </div>
+  <div class="headtext">Activity</div>
+  <div class="indent" id="activity">- Explore island<br>
+                      - Snorkeling<br>
+                      - Ride mirror-bottom boat<br>
+                      - Ride Kayak 
+  </div>
+  <div class="headtext">Avialabiltity</div>
+       <div class="indent" id="availability">9:00 – 16:00 on weekday<br>
+                                             9:00 – 16:30 on weekend
+      </div>
+       <a href="/">
+       <input class="booking" value="Booking">
+      </a>
+</div>
 
-        </div>
-    </div>
+
     <%- include("partials/footer") %>
