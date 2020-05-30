@@ -2,131 +2,128 @@
         <script type="text/javascript" src="js/step4.js" defer></script>
 
 <style>
-.box {
-  width: 90%;
-  height: 757px;
-  margin: auto;
-  background-image: url("S__15843402.jpg"); 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+/*nav bar*/
+.box1 {
+    width: 90%;
+    margin: auto;
+    }
+
+li a {
+    display: block;
+    color: black;
+    font-family: Oswald;
+    font-size: 20px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+  .buttonlogin {
+  float: right;
+}
+li a:hover {
+    color: #2ECC71;
+    } 
+
+/*footer*/
+.footer-distributed{
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font-family: Oswald;
+    font-size: 15px;
+    margin-top: 0px;
+    }
+    
+.container2{
+    margin: auto;
+    padding: 20px;
+    }
+  
+.column {
+    width: 50%;
+    float: left;
+    }
+  
+.left {
+    text-align: center;
+    }
+
+.right{
+    text-align: center;
+    }
+  
+.by{
+    margin-top: 5px;
+    background-color:#aaa;
+    text-align: center;
+    font-family: Oswald;
+    padding: 7px;
+    }
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
 }
 
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #34495E  ; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:#283747   ; 
+}
+
+
+/*content*/
 /*menuubar*/
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  font-family: "Oswald";
-  outline: none;
-  border: none;
-}
-
-/*nav bar*/
-.menu{
-  background:white  ;
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  
-}
-
-li {
-  float: left;
-}
-
-li a, .dropbtn {
-  display: block;
-  color: black;
-  font-family: Oswald;
-  font-size: 20px;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-  color: #2ECC71;
-}
-
-li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 151px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-display: block;
-}
-
-* {
-  box-sizing: border-box;
-}
-
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Oswald";
+    outline: none;
+    border: none;
+  }
+.box2 {
+    width: 90%;
+    background-image: url("S__15843402.jpg");
+    height: 727px;
+    margin: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Oswald;
+    }
  /*progress bar*/
  .image {
   margin-right: auto;
   margin-left: auto;
   display: block;
-  margin-top: 15px;
+  padding-top: 15px;
 }
-
-
-/*container*/
-
 .bigrow{
   display: flex;
   justify-content: center;
   height: 530px;
-  margin-top: 5px;
+  margin-top: 25px;
 }
-    
-.row {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .column {
-    float: right;
-  }
-
-#left {
-    margin-left : auto;
-    margin-top: 0px;
-    flex: 30%;
-    padding: 0px 5px 5px 5px;
-    height: 500px;
+.column1 #left{
+  width: 30%;
 }
-
-#right {
-    flex: 80%;
-    padding: 0px 5px 5px 5px;
-    height: 500px;
-    margin-right: auto;
+.column1 #right{
+  width: 50%;
 }
+/*left*/
 
-/*left #34495E */
 .choose {
     border: 5px solid tomato;
     background-color: tomato;
@@ -138,7 +135,6 @@ display: block;
     margin-top: 5px; 
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .seat {
@@ -152,36 +148,37 @@ display: block;
     background-color: cornflowerblue;
 }
 
-.row1{
-  margin-top: 3px;
+.a {
+  margin-left: 30px;
+}
+.b{
+  margin-left: 70px;
+  margin-right: 5px;
 }
 
-.line1 {
-  margin-left: 10px;
-  margin-right:60px ;
-}
-.line3 {
-  margin-left: 0px;
-}
-
-.a3,.a5,.b6,.c4,.c6 {
+#a3,#a5,#b6,#c4,#c6 {
   background-image: url("seat.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
-.a1.selected,.a2.selected,.a3.selected,.a4.selected,.a5.selected,.a6.selected,.a7.selected{
+#a1.selected,#a2.selected,#a3.selected,#a4.selected,#a5.selected,#a6.selected,#a7.selected{
   background: #FDD835;
 }
-.b1.selected,.b2.selected,.b3.selected,.b4.selected,.b5.selected,.b6.selected,.b7.selected{
+#b1.selected,#b2.selected,#b3.selected,#b4.selected,#b5.selected,#b6.selected,#b7.selected{
   background: #FDD835;
 }
-.c1.selected,.c2.selected,.c3.selected,.c4.selected,.c5.selected,.c6.selected,.c7.selected{
+#c1.selected,#c2.selected,#c3.selected,#c4.selected,#c5.selected,#c6.selected,#c7.selected{
   background: #FDD835;
 }
-
 
 /*right*/
+.column2{
+  width: 50%;
+}
 .container3 {
-  /* border: 5px solid #34495E; */
   background-color: #bbbb;
   width: 700px;
   height: 520px;
@@ -189,6 +186,7 @@ display: block;
   padding-top: 10px;
   padding-left: 4px;
   margin-top: 5px; 
+  margin-left: 15px;
   font-family: Oswald;
   font-size: 17px;
 }
@@ -221,21 +219,10 @@ display: block;
   background-color: #F39C12 ;
   margin-right: 5px;
   padding: 5px;
-
 }
-
-.column2 {
-  float: left;
-  width: 49.6%;
-  padding: 10px;
-  height: 260px; /* Should be removed. Only for demonstration */
-}
-
-/* Clear floats after the columns */
-.row2:after {
-  content: "";
-  display: table;
-  clear: both;
+.bigrow2{
+  width: 95%;
+  margin-left: 15px;
 }
 
 .amount {
@@ -244,57 +231,17 @@ display: block;
 .totalprice {
   margin-left: 30px;
 }
-
-
 #bookinfo {
   font-size: 22px;
 }
-
-#left2{
-  height: 285px;
-}
-#right2{
-  height: 285px;
-}
-input[type=text]{
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  width: 100%;
-  font-size: 15px;
-}
-
-button {
-	display: block;
-  background: #4CAF50;
-	padding: 14px 52px;
-	border-radius: 12px;
-	color: #003B15;
-	font-weight: 700;
-	font-size: 17px;
-  cursor: pointer;
-  margin-top: 30px;
-}
-
-button:hover {
-    background-color: #45a049;
-  }
-.submit{
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .fill {
   padding: 11px;
 }
-.fill2 {
-  padding: 9px;
-}
 
+.pd{
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 /*radio*/
 /* The container */
@@ -364,195 +311,298 @@ button:hover {
 	background: white;
 }
 
-/*footer*/
-.footer-distributed{
-  
-  background-color: white;
+
+input[type=text]{
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   box-sizing: border-box;
   width: 100%;
-  text-align: left;
   font-size: 15px;
-  margin-top: 0px;
- }
-  
- .container2{
-   width: 1000px;
-   height: 100px;
-   margin: auto;
-   padding: 20px;
- }
-
-.column {
-  width: 50%;
-  float: left;
 }
 
-.left {
-  text-align: center;
-}
-.right{
-  text-align: center;
-}
-
-.by{
+.submit {
+	display: block;
+  background: #4CAF50;
+	padding: 14px 52px;
+	border-radius: 12px;
+	color: #003B15;
+	font-weight: 700;
+	font-size: 17px;
+  cursor: pointer;
   margin-top: 5px;
-  background-color:#aaa;
-  text-align: center;
-  padding: 7px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* scrollbar */
-/* width */
-::-webkit-scrollbar {
-  width: 15px;
+.submit:hover {
+    background-color: #45a049;
+  }
+
+label{
+    margin-bottom: -10px;
+  }
+
+.frow{
+  margin-top: 10px;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  border-radius: 10px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #34495E  ; 
-  border-radius: 10px;
+
+/*responsive*/
+@media only screen and (max-width: 1024px) {
+  .image{
+    padding-top: 60px;
+  }
+    .box2{
+        height: 1330px;
+    }
+    li a {
+        font-size: 30px;
+    }
+    .footer-distributed{
+        font-size: 20px;
+    }
+    .bigrow{
+      width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+    }
+    #left{
+      margin-bottom: 20px;
+    }
+    .container3{
+      margin-left: 0px;
+    }
+    
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background:#283747   ; 
+@media only screen and (max-width: 768px) {
+  .image{
+    padding-top: 20px;
+  }
+    .box1 {
+        width: 100%;
+    }
+    .box2{
+        width: 100%;
+        height: 1290px;
+    }
+    li a {
+        font-size: 20px;
+    }
+    .footer-distributed{
+        font-size: 15px;
+    }
+    .bigrow{
+      width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+    }
 }
 
-    </style>
-       
-        <img src="step4.png" class="image">
-      <div class="bigrow" > 
-        <div class="row justify-content-center align-items-center " >
-          <div class="column" id="left"   >
+@media only screen and (max-width: 425px) {
+  .image{
+    width: 100%;
+    padding-top: 10px;
+  }
+    .box2{
+        width: 100%;
+        height: 1533px;
+    }
+    .bigrow{
+      width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+    }
+    .container3{
+      width: 400px;
+      height: 815px;
+      font-size: 16px;
+      
+    }
+    .column2{
+      width: 100%;
+      display: grid;
+    }
+    input[type=text]{
+      width: 90%;
+      margin-left: 15px;
+    }
+    label{
+      margin-left: 15px;
+      margin-bottom: 0px;
+    }
+    .pd{
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+    .fill{
+    padding: 7px;
+    }
+    .submit{
+      margin-top: 10px ;
+    }
+}
+
+
+@media only screen and (max-width: 375px) {
+    .box1 {
+        width: 100%;
+    }
+    .box2{
+        width: 100%;
+        height: 1450px;
+    }
+    .bigrow{
+      width: 320px;
+    }
+    .choose{
+      width: 320px;
+      height: 445px;
+    }
+    .seat{
+      width: 75px;
+      height: 55px;
+    }
+    .container3{
+      width: 320px;
+      height: 815px;
+    }
+    .b{
+      margin-left: 40px;
+    }
+    input[type=text]{
+      width: 85%;
+      margin-left: 15px;
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+    .box2{
+        width: 100%;
+        height: 1370px;
+    }
+    .choose{
+      width: 280px;
+      height: 375px;
+    }
+    .seat{
+      width: 65px;
+      height: 45px;
+    }
+    .container3{
+      width: 280px;
+      height: 815px;
+    }
+    .a{
+      margin-left: 25px;
+    }
+    .pd{
+    padding-left: 4px;
+    }
+    .submit{
+      padding: 14px 10px;
+    }
+  }
+</style>
+<div class="box2">
+      <img src="step4.png" class="image">
+      <div class="bigrow"> 
+          <div class="column1" id="left">
               <div class="choose">
-                  <div class="row row1 ">
-                      <div class="column line1">
-                          <li class="seat a a1 ">A1</li>
-                      </div> 
-                      <div class="column line2">
-                          <li class="seat b b1">B1</li>
-                      </div>
-                      <div class="column line3">
-                          <li class="seat c c1">C1</li>
-                      </div>
+                  <div class="row">
+                    <div class="seat a" id="a1">A1</div>
+                    <div class="seat b" id="b1">B1</div>
+                    <div class="seat c" id="c1">C1</div>
                   </div>
-                  <div class="row row2">
-                      <div class="column line1">
-                          <li class="seat a a2">A2</li>
-                      </div> 
-                      <div class="column line2">
-                          <li class="seat b b2">B2</li>
-                      </div>
-                      <div class="column line3">
-                          <li class="seat c c2">C2</li>
-                      </div>
-                  </div>  
-                  <div class="row row3">
-                      <div class="column line1">
-                          <li class="seat a a3">A3</li>
-                      </div> 
-                      <div class="column line2">
-                          <li class="seat b b3">B3</li>
-                      </div>
-                      <div class="column line3">
-                          <li class="seat c c3">C3</li>
-                      </div>
-                  </div>  
-                  <div class="row row4">
-                      <div class="column line1">
-                          <li class="seat a a4">A4</li>
-                      </div> 
-                      <div class="column line2">
-                          <li class="seat b b4">B4</li>
-                      </div>
-                      <div class="column line3">
-                          <li class="seat c c4">C4</li>
-                      </div>     
-                  </div>  
-                  <div class="row row5">
-                      <div class="column line1">
-                          <li class="seat a a5">A5</li>
-                      </div> 
-                      <div class="column line2">
-                          <li class="seat b b5">B5</li>
-                      </div>
-                      <div class="column line3">
-                          <li class="seat c c5">C5</li>
-                      </div>  
-                  </div>  
-                  <div class="row row6">
-                      <div class="column line1">
-                          <li class="seat a a6">A6</li>
-                      </div> 
-                      <div class="column line2">
-                          <li class="seat b b6">B6</li>
-                      </div>
-                      <div class="column line3">
-                          <li class="seat c c6">C6</li>
-                      </div>    
-                  </div>  
-                  <div class="row row7">
-                      <div class="column line1">
-                      <li class="seat a a7">A7</li>
-                      </div> 
-                      <div class="column line2">
-                          <li class="seat b b7">B7</li>
-                      </div>
-                      <div class="column line3">
-                          <li class="seat c c7">C7</li>
-                      </div>  
-                  </div>
+                  <div class="row">
+                    <div class="seat a" id="a2">A2</div>
+                    <div class="seat b" id="b2">B2</div>
+                    <div class="seat c" id="c2">C2</div>
+                </div>  
+                <div class="row">
+                  <div class="seat a" id="a3">A3</div>
+                  <div class="seat b" id="b3">B3</div>
+                  <div class="seat c" id="c3">C3</div>
+                </div>  
+                <div class="row">
+                  <div class="seat a" id="a4">A4</div>
+                  <div class="seat b" id="b4">B4</div>
+                  <div class="seat c" id="c4">C4</div> 
+                </div>  
+                <div class="row">
+                  <div class="seat a" id="a5">A5</div>
+                  <div class="seat b" id="b5">B5</div>
+                  <div class="seat c" id="c5">C5</div>
+                </div>  
+                <div class="row">
+                  <div class="seat a" id="a6">A6</div>
+                  <div class="seat b" id="b6">B6</div>
+                  <div class="seat c" id="c6">C6</div>
+                </div>     
+                <div class="row">
+                  <div class="seat a" id="a7">A7</div> 
+                  <div class="seat b" id="b7">B7</div>
+                  <div class="seat c" id="c7">C7</div>
+                </div>
               </div>
           </div>
-            <div class="column" id="right">
-                <div class="container3">
-                      <div class="selectseat">Selected Seat :
-                        <span class="ss" id="texta1">A1 </span><span class="ss" id="texta2">A2 </span><span class="ss" id="texta3">A3 </span> <span class="ss" id="texta4">A4 </span> <span class="ss" id="texta5">A5 </span> <span class="ss" id="texta6">A6 </span> <span class="ss" id="texta7">A7 </span>
-                        <span class="ss" id="textb1">B1 </span><span class="ss" id="textb2">B2 </span><span class="ss" id="textb3">B3 </span> <span class="ss" id="textb4">B4 </span> <span class="ss" id="textb5">B5 </span> <span class="ss" id="textb6">B6 </span> <span class="ss" id="textb7">B7 </span>
-                        <span class="ss" id="textc1">C1 </span><span class="ss" id="textc2">C2 </span><span class="ss" id="textc3">C3 </span> <span class="ss" id="textc4">C4 </span> <span class="ss" id="textc5">C5 </span> <span class="ss" id="textc6">C6 </span> <span class="ss" id="textc7">C7 </span> 
-                      </div>
-                      <div class="amount">Amount :</div>
-                      <div class="totalprice">Total Price :</div>
-                      <div id="bookinfo">Booking info</div>
-                      <div class="row2">
-                          <div class="column2" id="left2">
-                              <label for="fname" id="fname">First Name</label><br>
-                              <input type="text" placeholder="Your name"><br>
-                              <label for="idnum" id="idnum">ID Number</label><br>
-                              <input type="text" placeholder="Your ID Number."><br>
-                              <label for="tel" id="tel">Phone Number</label><br>
-                              <input type="text" placeholder="Your Phone Number">
-                          </div>
-                          <div class="column2" id="right2">
-                              <label for="lname">Last Name</label><br>
-                              <input type="text" id="lname" placeholder="Your last name"><br>
-                              
-                              <label>Gender</label>
-                              <div class="fill"></div>
-                              <label class="gender male">Male
-                                  <input type="radio" checked="checked" name="radio">
-                                  <span class="checkmark"></span>
-                                </label>
-                                <label class="gender female">Female
-                                  <input type="radio" name="radio">
-                                  <span class="checkmark"></span>
-                                </label>
-                              <br>
-                              <div class="fill2"></div>
-                              <label for="email" id="email">E-mail</label><br>
-                              <input type="text" placeholder="Your E-mail">
-                          </div>
-                          
-                          <button class="submit">Submit</button>
-                        </div>
+          <div class="column1" id="right">
+            <div class="container3">
+              <div class="selectseat">Selected Seat :
+                <span class="ss" id="texta1">A1 </span><span class="ss" id="texta2">A2 </span><span class="ss" id="texta3">A3 </span> <span class="ss" id="texta4">A4 </span> <span class="ss" id="texta5">A5 </span> <span class="ss" id="texta6">A6 </span> <span class="ss" id="texta7">A7 </span>
+                <span class="ss" id="textb1">B1 </span><span class="ss" id="textb2">B2 </span><span class="ss" id="textb3">B3 </span> <span class="ss" id="textb4">B4 </span> <span class="ss" id="textb5">B5 </span> <span class="ss" id="textb6">B6 </span> <span class="ss" id="textb7">B7 </span>
+                <span class="ss" id="textc1">C1 </span><span class="ss" id="textc2">C2 </span><span class="ss" id="textc3">C3 </span> <span class="ss" id="textc4">C4 </span> <span class="ss" id="textc5">C5 </span> <span class="ss" id="textc6">C6 </span> <span class="ss" id="textc7">C7 </span> 
+              </div>
+              <div class="amount">Amount :</div>
+              <div class="totalprice">Total Price :</div>
+              <div id="bookinfo">Booking info</div>
+              <div class="bigrow2">
+                <div class="row frow">
+                  <div class="column column2 pd"><label for="fname">First Name</label>
+                                      <input type="text" id="fname">
+                  </div>
+                  <div class="column column2 pd"><label for="lname">Last Name</label>
+                                      <input type="text" id="lname">
+                  </div>
                 </div>
+                <div class="row">
+                  <div class="column column2 pd"><label for="idnum" >ID Number</label>
+                                      <input type="text" id="idnum">
+                  </div>
+                  <div class="column column2 pd"><label>Gender</label>
+                                      <div class="fill"></div>
+                                      <label class="gender male">Male
+                                      <input type="radio" checked="checked" name="radio">
+                                      <span class="checkmark"></span>
+                                      </label>
+                                      <label class="gender female">Female
+                                      <input type="radio" name="radio">
+                                      <span class="checkmark"></span>
+                                      </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="column column2 pd"><label for="tel">Phone Number</label>
+                                      <input type="text" id="tel">
+                  </div>
+                  <div class="column column2 pd"><label for="email">E-mail</label>
+                                      <input type="text" id="email">
+                  </div>
+                </div>
+              </div>
+              <a href="/step5">
+                <button class="submit">Submit</button>
+              </a>
             </div>
-        </div>
-    </div>
-    </div>
+          </div>
+
+      </div>
+</div>
     <%- include("partials/footer") %>
