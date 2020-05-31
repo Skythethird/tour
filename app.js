@@ -44,11 +44,11 @@ app.get('/step2', function(req, res){
     res.render('step2');
 });
 
-app.get('/step4', function(req, res){
+app.get('/step4',middleware.isloggedIn, function(req, res){
     res.render('step4');
 });
 
-app.get('/step5', function(req, res){
+app.get('/step5',middleware.isloggedIn, function(req, res){
     res.render('step5');
 });
 
@@ -110,6 +110,19 @@ app.post("/profile/edit",middleware.isloggedIn, function(req,res){
 app.get('/profile/history',middleware.isloggedIn ,function(req, res){
     res.render('history');
 });
+
+
+
+// app.post('/',function(req,res){
+//     var city = req.body.city
+//     console.log('city is', city)
+//     res.redirect('/step2');
+// })
+
+app.post('/step2',function(req,res){
+    res.render('step2',{city1 :req.body.city1,city2 :req.body.city2});
+})
+
 
 app.use('/',indexRoutes);
 

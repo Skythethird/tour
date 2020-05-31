@@ -335,11 +335,11 @@ select {
 <div class="box2">
   <h1 class="find">FIND YOUR NEXT TRIP</h1>
   <p class="where">Where would you like to go?</p>
-
+  <form action="/step2" method="post">
   <div class="container1">
             <div class="column1 a">
               <label for="citye" class="text" id="from">From</label><br>
-              <select class="city" name="city" >
+              <select class="city" name="city1" >
                   <option>Select Province</option>
                   <option>Ayutthaya</option>
                   <option>Bangkok</option>
@@ -350,7 +350,7 @@ select {
             </div>
             <div class="column1 b">
               <label for="citye" class="text" id="to">To</label><br>
-              <select class="city" name="city" >
+              <select class="city" name="city2" >
                   <option>Select Province</option>
                   <option>Ayutthaya</option>
                   <option>Bangkok</option>
@@ -364,12 +364,12 @@ select {
               <input id="today" class="date" type="date">
             </div>
             <div class="column1 d">
-              <a href="/step2">
-                <button class="search">Search</button>
-              </a>
+              <!-- <a href="/step2"> -->
+                <button class="search" type="submit" value='Submit'>Search</button>
+              <!-- </a> -->
             </div>
     </div>
-
+  </form>
 </div>
 
 <%- include("partials/footer") %>
