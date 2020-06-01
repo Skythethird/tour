@@ -1,0 +1,352 @@
+<%- include("partials/header") %>
+<style>
+    /*nav bar*/
+    .box1 {
+       width: 90%;
+       margin: auto;
+       }
+   
+   li a {
+       display: block;
+       color: black;
+       font-family: Oswald;
+       font-size: 20px;
+       text-align: center;
+       padding: 14px 16px;
+       text-decoration: none;
+       }
+     .buttonlogin {
+     float: right;
+   }
+   li a:hover {
+       color: #2ECC71;
+       } 
+   
+   /*footer*/
+   .footer-distributed{
+       background-color: white;
+       box-sizing: border-box;
+       width: 100%;
+       text-align: left;
+       font-family: Oswald;
+       font-size: 15px;
+       }
+       
+   .container2{
+       margin: auto;
+       padding: 20px;
+       }
+     
+   .column {
+       width: 50%;
+       float: left;
+       }
+     
+   .left {
+       text-align: center;
+       }
+   
+   .right{
+       text-align: center;
+       }
+     
+   .by{
+       margin-top: 5px;
+       background-color:#aaa;
+       text-align: center;
+       font-family: Oswald;
+       padding: 7px;
+       }
+   
+   
+   /* scrollbar */
+   /* width */
+   ::-webkit-scrollbar {
+     width: 15px;
+   }
+   
+   /* Track */
+   ::-webkit-scrollbar-track {
+     border-radius: 10px;
+   }
+    
+   /* Handle */
+   ::-webkit-scrollbar-thumb {
+     background: #34495E  ; 
+     border-radius: 10px;
+   }
+   
+   /* Handle on hover */
+   ::-webkit-scrollbar-thumb:hover {
+     background:#283747   ; 
+   }
+   
+   
+   /*content*/
+   /*menuubar*/
+   * {
+       box-sizing: border-box;
+       text-decoration: none;
+       font-family: "Oswald";
+       outline: none;
+       border: none;
+     }
+   .box2 {
+       width: 90%;
+       background-image: url("/S__15843402.jpg");
+       height: 727px;
+       margin: auto;
+       background-position: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+       font-family: Oswald;
+       }
+    
+    /*box*/
+/*/nav mini/*/
+.containerbotton {
+    width: 400px;
+    height: 41px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    padding-top: 140px;
+}
+.row2{
+    width: 40%;
+    margin-left: 10px;
+    height: 50px;
+
+}
+.profile {
+    width: 100%;
+    display: block;
+	color: #2ECC71;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    list-style-type: none;
+}
+
+.history {
+    width: 100%;
+    display: block;
+  	color: black;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*container/*/
+.container {
+    font-size: 17px;
+    background-color: #bbbb;
+    width: 400px;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding : 20px;
+}
+
+.aa{
+    margin-bottom: 10px;
+}
+.name{
+    margin-left: 55px;
+    margin-top: 15px;
+}
+.tripnum{
+    margin-left: 11px;
+}
+.time{
+    margin-left: 12px;
+}
+.fromto{
+    margin-left: 30px;
+}
+.gate{
+    margin-left: 62px;
+}
+.seat{
+    margin-left: 67px;
+}
+
+.cancel{
+    display: block;
+    background: #E74C3C ;
+	padding: 14px ;
+	border-radius: 12px;
+	color: #641E16  ;
+	font-weight: 700;
+	font-size: 17px;
+    cursor: pointer;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+.cancel:hover {
+    background-color: #CB4335  ;
+  }
+
+/*responsive*/
+@media only screen and (max-width: 1024px) {
+  li a{
+    font-size: 30px;
+  }
+  .box2{
+    height: 1110px;
+  }
+  .footer-distributed{
+    font-size: 20px;
+    width: auto; 
+  }
+  .containerbotton{
+   padding-top: 330px;
+  }
+  .container{
+    margin-top: 65px;
+  }
+  .history{
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  li a {
+    font-size: 20px;
+    }
+  .box2{
+    width: auto;
+    height: 833px;
+  }
+  .box1{
+    width: auto;
+  }
+  .footer-distributed{
+    font-size: 15px;
+  }
+  .containerbotton{
+   padding-top: 200px;
+  }
+  .container{
+    margin-top: 50px;
+  }
+  .history{
+    margin-left: -10px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .box1{
+    width: auto;
+  }
+  .footer-distributed{
+    width: auto;
+  }
+  .box2{
+    width: auto;
+    height: 633px;
+  }
+  .containerbotton{
+    padding-top: 100px;
+  }
+  .container{
+    width: 380px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .box1{
+    width: auto;
+  }
+  .box2{
+    width: auto;
+    height: 629px;
+  }
+  .footer-distributed{
+    width: auto;
+  }
+  .containerbotton{
+    padding-top: 100px;
+    width: 350px;
+  }
+  .profile{
+    margin-left: 20px;
+  }
+  .history{
+    margin-left: 10px;
+  }
+  .container{
+    width: 330px;
+  }
+  .name{
+    margin-left: 44px;
+    margin-top: 15px;
+    }
+  .tripnum{
+    margin-left: 0px;
+    }
+  .time{
+    margin-left: 1px;
+    }
+  .fromto{
+    margin-left: 19px;
+    }
+  .gate{
+    margin-left: 51px;
+    }
+  .seat{
+    margin-left: 56px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+  .box2{
+    width: auto;
+    height: 525px;
+  }
+  .containerbotton{
+    padding-top: 45px;
+    width: 300px;
+  }
+  .profile{
+    margin-left: 0px;
+  }
+  .history{
+    margin-left: 5px;
+  }
+  .container{
+    width: 290px;
+  }
+}
+
+</style>
+<div class="box2">
+<div class="containerbotton">
+    <div class="row2">
+        <div class="column left">
+           <li class="profile nav"><a href="/profile">Profile</a></li> 
+        </div>
+        <div class="column right">
+           <li class="history nav"><a href="/profile/history">History</a></li> 
+        </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="name aa">Name :</div>
+    <div class="tripnum aa">Trip Number :</div>
+    <div class="time aa">Time Depart :</div>
+    <div class="fromto aa">From - To :</div>
+    <div class="gate aa">Gate :</div>
+    <div class="seat aa">Seat:</div>
+    <a href="/profile/history/info/cancel">
+        <button class="cancel aa">Cancel Ticket</button>
+    </a>
+  </div>
+</div>
+
+
+<%- include("partials/footer") %>

@@ -1,0 +1,385 @@
+<%- include("partials/header") %>
+<style>
+    /*nav bar*/
+    .box1 {
+       width: 90%;
+       margin: auto;
+       }
+   
+   li a {
+       display: block;
+       color: black;
+       font-family: Oswald;
+       font-size: 20px;
+       text-align: center;
+       padding: 14px 16px;
+       text-decoration: none;
+       }
+     .buttonlogin {
+     float: right;
+   }
+   li a:hover {
+       color: #2ECC71;
+       } 
+   
+   /*footer*/
+   .footer-distributed{
+       background-color: white;
+       box-sizing: border-box;
+       width: 100%;
+       text-align: left;
+       font-family: Oswald;
+       font-size: 15px;
+       }
+       
+   .container2{
+       margin: auto;
+       padding: 20px;
+       }
+     
+   .column {
+       width: 50%;
+       float: left;
+       }
+     
+   .left {
+       text-align: center;
+       }
+   
+   .right{
+       text-align: center;
+       }
+     
+   .by{
+       margin-top: 5px;
+       background-color:#aaa;
+       text-align: center;
+       font-family: Oswald;
+       padding: 7px;
+       }
+   
+   
+   /* scrollbar */
+   /* width */
+   ::-webkit-scrollbar {
+     width: 15px;
+   }
+   
+   /* Track */
+   ::-webkit-scrollbar-track {
+     border-radius: 10px;
+   }
+    
+   /* Handle */
+   ::-webkit-scrollbar-thumb {
+     background: #34495E  ; 
+     border-radius: 10px;
+   }
+   
+   /* Handle on hover */
+   ::-webkit-scrollbar-thumb:hover {
+     background:#283747   ; 
+   }
+   
+   
+   /*content*/
+   /*menuubar*/
+   * {
+       box-sizing: border-box;
+       text-decoration: none;
+       font-family: "Oswald";
+       outline: none;
+       border: none;
+     }
+   .box2 {
+       width: 90%;
+       background-image: url("/S__15843402.jpg");
+       height: 727px;
+       margin: auto;
+       background-position: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+       font-family: Oswald;
+       }
+  
+/*box*/
+/*/nav mini/*/
+.containerbotton {
+    width: 400px;
+    height: 41px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    padding-top: 140px;
+}
+.row2{
+    width: 40%;
+    margin-left: 10px;
+    height: 50px;
+
+}
+.profile {
+    width: 100%;
+    display: block;
+	color: #2ECC71;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    list-style-type: none;
+}
+
+.history {
+    width: 100%;
+    display: block;
+  	color: black;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*container/*/
+.container {
+    font-size: 17px;
+    background-color: #bbbb;
+    width: 400px;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding : 18px 20px;
+}
+
+select {
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    color: #616A6B ;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Oswald;
+    font-size: 15px;
+    width:60%;
+    height: 15%;
+  }
+  .bank {
+    margin-left: 87px;
+  }
+
+input[type=text]{
+    padding: 12px 20px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 60%;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+.account{
+    margin-left: 12px;
+}
+.fname{
+    margin-left: 50px;
+}
+.lname{
+    margin-left: 52px;
+}
+.save{
+    display: block;
+    background: #4CAF50;
+	padding: 14px ;
+	border-radius: 12px;
+	color: #003B15;
+	font-weight: 700;
+	font-size: 17px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.save:hover {
+    background-color:#45a049 ;
+  }
+
+.text1{
+      font-size: 13px;
+      text-align: center;
+      margin-top: 10px;
+  }
+
+/*responsive*/
+@media only screen and (max-width: 1024px) {
+  li a{
+    font-size: 30px;
+  }
+  .box2{
+    height: 1110px;
+  }
+  .footer-distributed{
+    font-size: 20px;
+    width: auto; 
+  }
+  .containerbotton{
+   padding-top: 330px;
+  }
+  .container{
+    margin-top: 65px;
+  }
+  .history{
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  li a {
+    font-size: 20px;
+    }
+  .box2{
+    width: auto;
+    height: 834px;
+  }
+  .box1{
+    width: auto;
+  }
+  .footer-distributed{
+    font-size: 15px;
+  }
+  .containerbotton{
+   padding-top: 200px;
+  }
+  .container{
+    margin-top: 50px;
+  }
+  .history{
+    margin-left: -10px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .box1{
+    width: auto;
+  }
+  .footer-distributed{
+    width: auto;
+  }
+  .box2{
+    width: auto;
+    height: 633px;
+  }
+  .containerbotton{
+    padding-top: 100px;
+  }
+  .container{
+    width: 380px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .box1{
+    width: auto;
+  }
+  .box2{
+    width: auto;
+    height: 629px;
+  }
+  .footer-distributed{
+    width: auto;
+  }
+  .containerbotton{
+    padding-top: 100px;
+    width: 350px;
+  }
+  .profile{
+    margin-left: 20px;
+  }
+  .history{
+    margin-left: 10px;
+  }
+  .container{
+    width: 350px;
+    padding : 18px 5px;
+  }
+  select {
+    width: 58%;
+  }
+  input[type=text]{
+    width: 58%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .box2{
+    width: auto;
+    height: 525px;
+  }
+  .containerbotton{
+    padding-top: 40px;
+    width: 300px;
+  }
+  .profile{
+    margin-left: 0px;
+  }
+  .history{
+    margin-left: 5px;
+  }
+  .container{
+    width: 300px;
+    font-size: 15px;
+  }
+  select {
+    width: 55%;
+  }
+  input[type=text]{
+    width: 55%;
+  }
+  .bank{
+    margin-left: 79px;
+  }
+  .fname{
+    margin-left: 45px;
+  }
+  .lname{
+    margin-left: 47px;
+  }
+  .text1{
+    font-size: 11px;
+  }
+}
+
+</style>
+<div class="box2">
+<div class="containerbotton">
+    <div class="row2">
+        <div class="column left">
+           <li class="profile nav"><a href="/profile">Profile</a></li> 
+        </div>
+        <div class="column right">
+           <li class="history nav"><a href="/profile/history">History</a></li> 
+        </div>
+    </div>
+  </div>
+  <div class="container">
+    <label for="bank" class="bank">Bank :</label>
+    <select class="city" name="city">
+        <option>Select Bank</option>
+        <option>Bangkok Bank</option>
+        <option>Bank of Ayudthaya</option>
+        <option>Kasikorn Bank</option>
+        <option>Krung Thai Bank</option>
+        <option>Siam Commercial Bank</option>
+    </select><br>
+    <label for="account" class="account">Account Number :</label>
+    <input type="text" placeholder="Your Account Number"><br>
+    <label for="fname" class="fname">First Name :</label>
+    <input type="text" placeholder="Your first name"><br>
+    <label for="lname" class="lname">Last Name :</label>
+    <input type="text" placeholder="Your last name">
+    <div class="text1">Request a refund 7 days before the departure. get 100% refund</div>
+    <a href="/profile/history">
+      <button class="save">Submit</button> 
+    </a>
+  </div>
+</div>
+
+<%- include("partials/footer") %>

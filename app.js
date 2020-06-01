@@ -115,6 +115,17 @@ app.get('/profile/history',middleware.isloggedIn ,function(req, res){
 });
 
 
+app.get('/profile/password',middleware.isloggedIn,function(req, res){
+    res.render('password');
+});
+
+app.get('/profile/history/info',middleware.isloggedIn ,function(req, res){
+    res.render('info');
+});
+
+app.get('/profile/history/info/cancel',middleware.isloggedIn ,function(req, res){
+    res.render('cancel');
+});
 
 // app.post('/step4',function(req,res){
 //     var city = req.body.;
