@@ -555,11 +555,13 @@ label{
           </div>
           <div class="column1" id="right">
             <div class="container3">
-              <div class="selectseat">Selected Seat :
+              <form action="/step4" method="POST">
+              <div class="selectseat" name="sos">Selected Seat :
                 <span class="ss" id="texta1">A1 </span><span class="ss" id="texta2">A2 </span><span class="ss" id="texta3">A3 </span> <span class="ss" id="texta4">A4 </span> <span class="ss" id="texta5">A5 </span> <span class="ss" id="texta6">A6 </span> <span class="ss" id="texta7">A7 </span>
                 <span class="ss" id="textb1">B1 </span><span class="ss" id="textb2">B2 </span><span class="ss" id="textb3">B3 </span> <span class="ss" id="textb4">B4 </span> <span class="ss" id="textb5">B5 </span> <span class="ss" id="textb6">B6 </span> <span class="ss" id="textb7">B7 </span>
                 <span class="ss" id="textc1">C1 </span><span class="ss" id="textc2">C2 </span><span class="ss" id="textc3">C3 </span> <span class="ss" id="textc4">C4 </span> <span class="ss" id="textc5">C5 </span> <span class="ss" id="textc6">C6 </span> <span class="ss" id="textc7">C7 </span> 
               </div>
+            </form>
               <div class="amount">Amount :</div>
               <div class="totalprice">Total Price :</div>
               <div id="bookinfo">Booking info</div>
@@ -597,9 +599,9 @@ label{
                   </div>
                 </div>
               </div>
-              <a href="/step5">
-                <button class="submit">Submit</button>
-              </a>
+              <!-- <a href="/step5"> -->
+                <button class="submit" type="submit" value='Submit'>Submit</button>
+              <!-- </a> -->
             </div>
           </div>
 

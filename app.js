@@ -8,10 +8,12 @@ const express = require('express'),
       middleware = require('./middleware'),
       User = require('./models/user'),
       path = require('path'),
+      seedDB = require('./seeds'),
+      Bus = require('./models/bus'),
       indexRoutes = require('./routes/index'),
 
     
-
+mongoose.set('useUnifiedTopology',true);
 mongoose.connect('mongodb://localhost/auth_test',{useNewUrlParser: true});
 mongoose.set('useFindAndModify', false);
 let app = express();
@@ -19,6 +21,7 @@ app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
+seedDB();
 
 app.use(require('express-session')({
     secret: 'CSS227',
@@ -113,16 +116,28 @@ app.get('/profile/history',middleware.isloggedIn ,function(req, res){
 
 
 
-// app.post('/',function(req,res){
-//     var city = req.body.city
+// app.post('/step4',function(req,res){
+//     var city = req.body.;
 //     console.log('city is', city)
-//     res.redirect('/step2');
+//     //res.redirect('/step2');
 // })
 
-app.post('/step2',function(req,res){
-    res.render('step2',{city1 :req.body.city1,city2 :req.body.city2});
-})
+// app.post('/step2',function(req,res){
+//     res.render('step2',{city1 :req.body.city1,city2 :req.body.city2});
+// })
 
+
+
+
+app.get("/step2", function(req,res){
+    Bus.find({},function(error, aBus){
+        if(error){
+            console.log("Error!");
+        } else {
+            res.render("step2",{Bus:aBus});
+        }
+    })
+});
 
 app.use('/',indexRoutes);
 

@@ -1,15 +1,14 @@
-<!-- <%- include("partials/header") %>
+<%- include("partials/header") %>
+<% Bus.forEach(function(bus){ %>
+    <div class="containermini">
+      <div class="row rowincon">
+        <div class="cc">CM0912</div>
+        <div class="cc"><%= bus.city1 %><br>24/05 07:00</div>
+        <div class="cc"><%= bus.city2 %><br>24/05 17:30</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath</div>
+      </div>
+    </div>
+    <% }); %> 
 
-<form id="tableForm" action="/salary-sheet" method="post">
-    <select class="selectpicker" data-style="btn-info" name="selectpicker">
-        <optgroup label="Select Table">
-            <option value="">Select Month Year</option>
-            <% rows.forEach(function(row){ %>
-            <option value="<%= row %>"><%= row %></option>
-            <% }) %>
-        </optgroup>
-    </select>
-    <input type="submit" value="Submit" />
-</form>
-
-<%- include("partials/footer") %> -->
+<%- include("partials/footer") %>

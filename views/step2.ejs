@@ -309,15 +309,17 @@ li a:hover {
         </div>
       </div>
     </div>
+    <% Bus.forEach(function(bus){ %>
     <div class="containermini">
       <div class="row rowincon">
         <div class="cc">CM0912</div>
-        <div class="cc"><%= city1 %><br>24/05 07:00</div>
-        <div class="cc"><%= city2 %><br>24/05 17:30</div>
+        <div class="cc"><%= bus.city1 %><br>24/05 07:00</div>
+        <div class="cc"><%= bus.city2 %><br>24/05 17:30</div>
         <div class="cc">10h 30m</div>
         <div class="cc">823 Bath</div>
       </div>
-      <div class="row rowincon">
+   
+      <!-- <div class="row rowincon">
         <div class="cc">CM0919</div>
         <div class="cc">Mo chit<br>24/05 08:00</div>
         <div class="cc">Ching Mai<br>24/05 18:30</div>
@@ -372,9 +374,9 @@ li a:hover {
         <div class="cc">Ching Mai<br>24/05 23:00</div>
         <div class="cc">10h 30m</div>
         <div class="cc">823 Bath</div>
-      </div>
+      </div> -->
     </div>
-
+ <% }); %> 
    </div>
  </div>
 <%- include("partials/footer") %>
