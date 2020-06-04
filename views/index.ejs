@@ -1,14 +1,24 @@
 <%- include("partials/header") %>
-<% Bus.forEach(function(bus){ %>
+
+
+  <center>
+ 
+    <div ><%= city1 %><br><%= city2 %></div>
+    
+    
+    <% Bus.forEach(function(bus){ %>
+  
+
     <div class="containermini">
       <div class="row rowincon">
-        <div class="cc">CM0912</div>
-        <div class="cc"><%= bus.city1 %><br>24/05 07:00</div>
-        <div class="cc"><%= bus.city2 %><br>24/05 17:30</div>
-        <div class="cc">10h 30m</div>
-        <div class="cc">823 Bath</div>
+        <div ><%= bus.busnum %></div>
+        <div ><%= bus.depart %></div>
+        <div ><%= bus.atime %> </div>
+        <div ><%= bus.price %></div>
       </div>
     </div>
     <% }); %> 
 
-<%- include("partials/footer") %>
+ </center>
+
+ <%- include("partials/footer") %>

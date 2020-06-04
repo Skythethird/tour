@@ -3,13 +3,12 @@ const Bus = require('./models/bus');
 
 const data = [
     {
-        city1: "Bangkok",
-        city2: "ching mai",
+       busnum: "CM2502",
         depart: "07:00",
-        arrive: "17:30",
         atime: "10h 30m",
         price: "823"
-    }
+    },
+   
 ]
 function seedDB(){
     Bus.remove({}, function(err){

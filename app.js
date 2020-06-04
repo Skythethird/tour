@@ -127,28 +127,29 @@ app.get('/profile/history/info/cancel',middleware.isloggedIn ,function(req, res)
     res.render('cancel');
 });
 
-// app.post('/step4',function(req,res){
-//     var city = req.body.;
-//     console.log('city is', city)
-//     //res.redirect('/step2');
-// })
+app.post('/',function(req,res){
+    res.render('index',{city1:req.body.city1,city2:req.body.city2});
+})
 
-// app.post('/step2',function(req,res){
-//     res.render('step2',{city1 :req.body.city1,city2 :req.body.city2});
-// })
+app.post('/step4',function(req,res){
+    let s = req.body.a1
+    console.log(s)
 
-
+});
 
 
-app.get("/step2", function(req,res){
+
+
+app.get("/index", function(req,res){
     Bus.find({},function(error, aBus){
         if(error){
             console.log("Error!");
         } else {
-            res.render("step2",{Bus:aBus});
+            res.render("index",{Bus:aBus});
         }
-    })
+    });
 });
+
 
 app.use('/',indexRoutes);
 
