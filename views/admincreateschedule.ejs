@@ -1,0 +1,397 @@
+<%- include("partials/header2") %>
+<!-- <script type="text/javascript" src="js/schedule.js" defer></script> -->
+<!-- เชื่อม js ไม่ได้ -->
+
+
+<style>
+/*nav bar*/
+.box1 {
+    width: 90%;
+    margin: auto;
+    }
+
+li a {
+    display: block;
+    color: black;
+    font-family: Oswald;
+    font-size: 20px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+  .buttonlogin {
+  float: right;
+}
+li a:hover {
+    color: #2ECC71;
+    } 
+
+/*footer*/
+.footer-distributed{
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font-family: Oswald;
+    font-size: 15px;
+    }
+    
+.container2{
+    margin: auto;
+    padding: 20px;
+    }
+  
+.column {
+    width: 50%;
+    float: left;
+    }
+  
+.left {
+    text-align: center;
+    }
+
+.right{
+    text-align: center;
+    }
+  
+.by{
+    margin-top: 5px;
+    background-color:#aaa;
+    text-align: center;
+    font-family: Oswald;
+    padding: 7px;
+    }
+
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #34495E  ; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:#283747   ; 
+}
+
+
+/*content*/
+/*menuubar*/
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Oswald";
+    outline: none;
+    border: none;
+  }
+.box2 {
+    width: 90%;
+    background-image: url("/S__15843402.jpg");
+    height: 727px;
+    margin: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Oswald;
+    }
+
+/*container*/
+.empty{
+    padding-top: 110px;
+}
+.container {
+      width: 850px;
+      height: 510px;
+      background-color: #bbbb;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      font-size: 17px;
+      padding: 40px;
+  }
+
+    input[type=text]{
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 15px;
+      }
+
+    .column2{
+        width: 50%;
+    }
+    .pd{
+         padding-left: 10px;
+        padding-right: 10px;
+    }
+    .frow{
+        margin-top: -15px;
+    }
+
+
+.save{
+    display: block;
+    background: #4CAF50;
+ padding: 14px ;
+ border-radius: 12px;
+ color: #003B15;
+ font-weight: 700;
+ font-size: 17px;
+    width: 97.5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.save:hover {
+    background-color:#45a049 ;
+  }
+
+  .delete{
+    display: block;
+    background: #E74C3C ;
+    padding: 14px ;
+   border-radius: 12px;
+   color: #641E16  ;
+   font-weight: 700;
+   font-size: 17px;
+    cursor: pointer;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10px;
+    margin-bottom: -10px;
+  }
+  .delete:hover {
+    background-color: #CB4335  ;
+  }
+
+
+/* dd/mm/yy */
+.date {
+    position: relative;
+    width: 59%;
+    height: 53px;
+    color: #616A6B;
+    margin: 8px 0;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    color: #616A6B ;
+    border-radius: 4px;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+  .time {
+    position: relative;
+    width: 39.5%;
+    height: 53px;
+    color: #616A6B;
+    margin: 8px 0;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    color: #616A6B ;
+    border-radius: 4px;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+
+/*responsive*/
+@media only screen and (max-width: 1024px) {
+    .box2{
+        height: 1100px;
+    }
+    li a {
+        font-size: 30px;
+    }
+    .footer-distributed{
+        font-size: 20px;
+    }
+    .empty{
+        padding-top: 280px;
+    }
+    .container{
+      width: 650px;
+      height: 510px;
+    }
+    .date{
+        width: 59%;
+    }
+    .time{
+        width: 39.5%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .box1 {
+        width: 100%;
+    }
+    .box2{
+        width: 100%;
+        height: 834px;
+    }
+    li a {
+        font-size: 20px;
+    }
+    .footer-distributed{
+        font-size: 15px;
+    }
+    .empty{
+        padding-top: 180px;
+    }
+    .date{
+        width: 63%;
+        padding: 10px;
+    }
+    .time{
+        width: 35%;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .box2{
+        width: 100%;
+        height: 632px;
+    }
+    .empty{
+        padding-top: 45px;
+    }
+    .container{
+        width: 390px;
+        height: 545px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .date{
+        width: 100%;
+    }
+    .time{
+        margin-top: 0px;
+        width: 100%;
+    }
+    input[type=text]{
+        margin-top: 0px;
+    }
+}
+
+
+@media only screen and (max-width: 375px) {
+    .box2{
+        width: 100%;
+        height: 629px;
+    }
+    .container{
+        width: 350px;
+        height: 520px;
+        font-size: 16px;
+        padding-top: 30px;
+    }
+    input[type=text]{
+        font-size: 14px;
+    }
+    .date{
+        width: 100%;
+        font-size: 14px;
+    }
+    .time{
+        width: 100%;
+        font-size: 14px;
+    }
+    .empty{
+        padding-top: 55px;
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+    .box2{
+        width: 100%;
+        height: 525px;
+    }
+    .container{
+        width: 295px;
+        height: 480px;
+        font-size: 15px;
+        padding: 20px;
+    }
+    .empty{
+        padding-top: 23px;
+    }
+    input[type=text]{
+        font-size: 13px;
+    }
+    .date{
+        width: 100%;
+        font-size: 12.5px;
+        margin-top: 0px;
+        padding: 5px;
+    }
+    .time{
+        width: 100%;
+        font-size: 12.5px;
+        padding: 5px;
+    }
+  }
+</style>
+<div class="box2">
+    <div class="empty"></div>
+    <div class="container">
+            <div class="row frow">
+                <div class="column column2 pd"><label for="tripnum">Trip Number</label>
+                                               <input type="text" id="tripnum"><br>
+                </div>
+                <div class="column column2 pd"><label for="tripnum" >Trip Number</label>
+                                               <input type="text" id="tripnum"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column column2 pd"><label for="from">From</label>
+                                               <input type="text" id="from">
+                </div>
+                <div class="column column2 pd"><label for="to">To</label>
+                                               <input type="text" id="to">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column column2 pd"><label for="dayde">Day Depart</label><br>
+                                               <input id="today" class="date" type="date">
+                                               <input type="time" class="time" value="00:00"><br>
+                </div>
+                <div class="column column2 pd"><label for="dayar">Day Arrive</label><br>
+                                               <input id="today2" class="date" type="date">
+                                               <input type="time" class="time" value="00:00">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column column2 pd"><label for="averagetime" id="averagetime">Average Time</label>
+                                               <input type="text"placeholder="">
+                                    
+                </div>
+                <div class="column column2 pd"><label for="price" id="price">Price</label>
+                                               <input type="text"placeholder="">
+                                    
+                </div>
+            </div>
+            <div class="row">
+                    <button class="save">Save Trip</button> 
+            </div>
+
+    </div>
+</div>
+
+<%- include("partials/footer") %>

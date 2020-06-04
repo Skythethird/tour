@@ -137,6 +137,17 @@ app.post('/step4',function(req,res){
 
 });
 
+app.get('/admin/schedule', function(req, res){
+    res.render('adminschedule');
+});
+
+app.get('/admin/schedule/create', function(req, res){
+    res.render('admincreateschedule');
+});
+
+app.get('/admin/schedule/edit', function(req, res){
+    res.render('admineditschedule');
+});
 
 
 

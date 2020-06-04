@@ -1,0 +1,433 @@
+<%- include("partials/header2") %>
+<style>
+/*nav bar*/
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Oswald";
+    outline: none;
+    border: none;
+  }
+.box1 {
+    width: 90%;
+    margin: auto;
+    }
+
+li a {
+    display: block;
+    color: black;
+    font-family: Oswald;
+    font-size: 20px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+  .buttonlogin {
+  float: right;
+}
+li a:hover {
+    color: #2ECC71;
+    }
+
+/*content*/
+.box2 {
+    background-image: url("/S__15843402.jpg");
+    width: 90%;
+    height: 727px;
+    margin: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+/*footer*/
+.footer-distributed{
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font-family: Oswald;
+    font-size: 15px;
+    margin-top: 0px;
+    }
+    
+.container2{
+    margin: auto;
+    padding: 20px;
+    }
+  
+.column {
+    width: 50%;
+    float: left;
+    }
+  
+.left {
+    text-align: center;
+    }
+
+.right{
+    text-align: center;
+    }
+  
+.by{
+    margin-top: 5px;
+    background-color:#aaa;
+    text-align: center;
+    font-family: Oswald;
+    padding: 7px;
+    }
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #34495E  ; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:#283747   ; 
+}
+
+/*schdule*/
+.bigcontainer {
+    width: 1045px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 110px;
+}
+
+.bigcontainer3 {
+  background-color: #F39C12;
+  width: 1045.5px;
+  margin-left: 5px;
+}
+
+.container3 {
+  width: 1023px;
+}
+
+.containermini{
+  width:1050px;
+  height:455px;
+  line-height:3em;
+  overflow:auto;
+  padding:5px;
+}
+.bb {
+      list-style-type: none;
+      padding : 15px;
+      width: 20%;
+      font-family: Oswald;
+      font-size: 17px;
+      position: relative;
+      text-align: center;
+      color: white;
+      background : #F39C12;
+}
+.rowincon {
+  width: 1045px;
+  background-color: #cccc;
+  margin-top: 10px;
+}
+
+.cc {
+      list-style-type: none;
+      padding-top : 15px;
+      padding-bottom: 15px;
+      width: 20%;
+      font-family: Oswald;
+      font-size: 17px;
+      position: relative;
+      text-align: center;
+      color: black;
+      opacity: 0.85;
+}
+.edit{
+    display: block;
+    background: #F4D03F;
+ border-radius: 12px;
+ color: #935116   ;
+   font-weight: 700;
+ font-size: 15px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.edit:hover {
+    background-color: #F1C40F ;
+  }
+
+.empty{
+    height: 89.5px;
+}
+
+.empty2 {
+      height: 35px;
+  }
+
+.rows {
+    background-color: #cccc;
+    margin-left: -10px;
+    width: 1040px;
+  }
+
+.rows:hover{
+    background-color: #bbbb;
+  }
+
+/*responsive*/
+@media only screen and (max-width: 1024px) {
+  li a{
+    font-size: 30px;
+  }
+
+  .box2{
+    height: 1110px;
+  }
+  .footer-distributed{
+    font-size: 20px;
+    width: auto;
+    
+  }
+  .bigcontainer{
+    width: 95%;
+  }
+  .bigcontainer3{
+    width: 100%;
+  }
+  .container3{
+    width: 96%;
+  }
+  .containermini{
+    width: 100%;
+    height: 800px;
+  }
+  .rowincon{
+    width: 102%;
+  }
+  .rows{
+      width: 101.5%;
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  li a {
+    font-size: 20px;
+    }
+  .box2{
+    width: auto;
+    height: 834px;
+  }
+  .box1{
+    width: auto;
+  }
+  .bigcontainer3{
+    width: 99.5%;
+  }
+  .containermini{
+    width: 100%;
+    height: 580px;
+  }
+  .footer-distributed{
+    width: 100%;
+    font-size: 15px;
+  }
+  .rows{
+      width: 101.3%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .box1{
+    width: auto;
+  }
+  .footer-distributed{
+    width: auto;
+  }
+  .box2{
+    width: auto;
+    height: 632px;
+  }
+
+  .bigcontainer{
+    width: 90%;
+    padding-top: 67px;
+  }
+  .bigcontainer3{
+    width: 100%;
+  }
+  .container3{
+    width: 96%;
+  }
+  .containermini{
+    width: 105%;
+    height: 430px;
+  }
+  .bb{
+    font-size: 16px;
+  }
+  .cc{
+    font-size: 16px;
+    padding: 0px;
+  }
+  .rowincon{
+    width: 100%;
+  }
+  .rows{
+    width: 98.8%;
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .box1{
+    width: auto;
+  }
+  .box2{
+    width: auto;
+    height: 629px;
+  }
+  .footer-distributed{
+    width: auto;
+  }
+  .bigcontainer{
+    padding-top: 60px;
+  }
+  .rows{
+    width: 98.5%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .box2{
+    width: auto;
+    height: 530px;
+  }
+  .containermini{
+    width: 105%;
+    height: 350px;
+  }
+  .bb{
+    font-size: 13px;
+  }
+  .cc{
+    font-size: 13px;
+  }
+  .rowincon{
+      width: 297px;
+  }
+  .rows{
+    width: 100%;
+  }
+  .bigcontainer{
+    padding-top: 55px;
+  }
+}
+
+</style>
+ <div class="box2">
+   <div class="bigcontainer">
+    <div class="bigcontainer3">
+      <div class="container3">
+        <div class="row">
+            <div class="bb">Trip Number</div>
+            <div class="bb">Time Depart</div>
+            <div class="bb">Time Arrive</div>
+            <div class="bb">Average Time</div>
+            <div class="bb">Price</div>
+        </div>
+      </div>
+    </div>
+    <div class="containermini">
+      <div class="rows rowincon">
+        <a href="/admin/schedule/create">
+        <div class="empty2"></div>
+            <i class="fa fa-plus" style="font-size:50px;color:#626567 ;text-align:center;display:block;"></i>
+        <div class="empty2"></div>
+        </a>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0912</div>
+        <div class="cc">Mo chit<br>24/05 07:00</div>
+        <div class="cc">Ching Mai<br>24/05 17:30</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath<br><a href="/admin/schedule/edit"><button class="edit">edit</button></a></div>
+      </div>
+   
+      <div class="row rowincon">
+        <div class="cc">CM0919</div>
+        <div class="cc">Mo chit<br>24/05 08:00</div>
+        <div class="cc">Ching Mai<br>24/05 18:30</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath<br><a href="/admin/schedule/edit"><button class="edit">edit</button></a></div>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0922</div>
+        <div class="cc">Mo chit<br>24/05 08:30</div>
+        <div class="cc">Ching Mai<br>24/05 19:00</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath<br><a href="/admin/schedule/edit"><button class="edit">edit</button></a></div>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0928</div>
+        <div class="cc">Mo chit<br>24/05 10:00</div>
+        <div class="cc">Ching Mai<br>24/05 20:30</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath<br><a href="/admin/schedule/edit"><button class="edit">edit</button></a></div>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0935</div>
+        <div class="cc">Mo chit<br>24/05 12:00</div>
+        <div class="cc">Ching Mai<br>24/05 22:30</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath<br><a href="/admin/schedule/edit"><button class="edit">edit</button></a></div>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0938</div>
+        <div class="cc">Mo chit<br>24/05 12:30</div>
+        <div class="cc">Ching Mai<br>24/05 23:00</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath<br><a href="/admin/schedule/edit"><button class="edit">edit</button></a></div>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0938</div>
+        <div class="cc">Mo chit<br>24/05 12:30</div>
+        <div class="cc">Ching Mai<br>24/05 23:00</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath<br><a href="/admin/schedule/edit"><button class="edit">edit</button></a></div>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0938</div>
+        <div class="cc">Mo chit<br>24/05 12:30</div>
+        <div class="cc">Ching Mai<br>24/05 23:00</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath<br><a href="/admin/schedule/edit"><button class="edit">edit</button></a></div>
+      </div>
+      <div class="row rowincon">
+        <div class="cc">CM0938</div>
+        <div class="cc">Mo chit<br>24/05 12:30</div>
+        <div class="cc">Ching Mai<br>24/05 23:00</div>
+        <div class="cc">10h 30m</div>
+        <div class="cc">823 Bath<br><a href="/admin/schedule/edit"><button class="edit">edit</button></a></div>
+      </div>
+    </div>
+   </div>
+ </div>
+<%- include("partials/footer") %>
