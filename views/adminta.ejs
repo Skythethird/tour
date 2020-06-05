@@ -1,0 +1,461 @@
+<%- include("partials/header2") %>
+<style>
+    /*nav bar*/
+ .box1 {
+     width: 90%;
+     margin: auto;
+     }
+ 
+ li a {
+     display: block;
+     color: black;
+     font-family: Oswald;
+     font-size: 20px;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     }
+   .buttonlogin {
+   float: right;
+ }
+ li a:hover {
+     color: #2ECC71;
+     }
+
+/*footer*/
+ .footer-distributed{
+     background-color: white;
+     box-sizing: border-box;
+     width: 100%;
+     text-align: left;
+     font-family: Oswald;
+     font-size: 15px;
+     margin-top: 0px;
+     }
+     
+ .container2{
+     margin: auto;
+     padding: 20px;
+     }
+   
+ .column {
+     width: 50%;
+     float: left;
+     }
+   
+ .left {
+     text-align: center;
+     }
+ 
+ .right{
+     text-align: center;
+     }
+   
+ .by{
+     margin-top: 5px;
+     background-color:#aaa;
+     text-align: center;
+     font-family: Oswald;
+     padding: 7px;
+     }
+ 
+ /* scrollbar */
+ /* width */
+ ::-webkit-scrollbar {
+   width: 15px;
+ }
+ 
+ /* Track */
+ ::-webkit-scrollbar-track {
+   border-radius: 10px;
+ }
+  
+ /* Handle */
+ ::-webkit-scrollbar-thumb {
+   background: #34495E  ; 
+   border-radius: 10px;
+ }
+ /* Handle on hover */
+ ::-webkit-scrollbar-thumb:hover {
+   background:#283747   ; 
+ }
+
+
+/*content*/
+ .box2 {
+   background-image: url("/messageImage_1587394152425.jpg");
+     width: 90%;
+     height: 727px;
+     margin: auto;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     }
+
+     * {
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Oswald";
+    outline: none;
+    border: none;
+  }
+
+ .travel{
+   font-family: Oswald;
+   font-size: 70px;
+   text-align: center;
+   color: white;
+   padding-top: 10px;
+ }
+
+ /*gallery*/
+ 
+ .gallery {
+   border: 1px solid #ccc;
+   font-family: Oswald;
+ }
+ 
+ .gallery:hover {
+   border: 1px solid #777;
+   background-color: #cccc;
+ }
+ 
+ .gallery img {
+   width: 100%;
+   height: auto;
+ }
+ 
+ .placename {
+   padding-top: 15px;
+   text-align: center;
+ }
+ .province {
+   padding-bottom: 15px;
+   text-align: center;
+ }
+ 
+ 
+ * {
+   box-sizing: border-box;
+ }
+ 
+ .responsive {
+   margin: 6px;
+   float: left;
+   width: 31.8%;
+   background: white;
+ }
+ 
+ .container {
+   width: 900px;
+   height: 563px;
+   margin: auto auto;
+   display: block;
+   overflow:auto;
+ }
+ 
+ .big {
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+   width: 30%;
+   margin-top: 10px;
+ }
+ 
+ .edit{
+    display: block;
+    background: #F4D03F;
+	padding: 8px;
+	border-radius: 12px;
+	color: #935116   ;
+	font-weight: 700;
+	font-size: 15px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+.edit:hover {
+    background-color: #F1C40F ;
+  }
+
+  .responsive2 {
+    margin: 6px;
+    float: left;
+    width: 31.8%;
+  }
+  .empty{
+    height: 109px;
+}
+.plus {
+    background-color: #aaa;
+    opacity: 0.8;
+  }
+  .plus:hover {
+    background-color: #909497;
+    opacity: 0.8;
+  }
+ 
+ /*responsive*/
+ @media only screen and (max-width: 1024px) {
+   .box2{
+         height: 1110px;
+     }
+   li a {
+         font-size: 30px;
+     }
+     .travel{
+       padding-top: 160px;
+     }
+   .container {
+     width: 900px;
+     height: 665px;
+     margin: auto auto;
+     display: block;
+     overflow:auto;
+     }
+ 
+   .responsive {
+     margin: 6px;
+     float: left ;
+     vertical-align: middle;
+     width: 31.8%;
+     background: white;
+     }
+     .footer-distributed{
+       font-size: 20px;
+     }
+     .empty{
+    height: 107px;
+    }
+ }
+ 
+ @media only screen and (max-width: 768px) {
+   li a {
+     font-size: 20px;
+     }
+   .box1{
+     width: auto;
+   }
+   .box2{
+     width: auto;
+     height: 833px;
+     }
+   .travel{
+     padding-top: 70px;
+     }
+     .container {
+     width: 900px;
+     height: 555px;
+     margin: auto auto;
+     display: block;
+     overflow:auto;
+     }
+ 
+   .responsive {
+     margin: 6px;
+     float: left ;
+     vertical-align: middle;
+     width: 31%;
+     background: white;
+     font-size: 13px;
+     }
+   .footer-distributed{
+     font-size: 15px;
+   }
+   .empty{
+       height: 82px;
+   }
+   .responsive2 {
+    width: 209px;
+    }
+ }
+ 
+ @media only screen and (max-width: 425px) {
+   .box2{
+     width: auto;
+     height: 632px;
+     }
+   .travel{
+     padding-top: 30px;
+     font-size: 50px;
+     }
+   .container {
+     width: 400px;
+     height: 480px;
+     margin: auto auto;
+     display: block;
+     overflow:auto;
+     }
+   .responsive {
+     width: 45%;
+     font-size: 13px;
+     float: left;
+     }
+    .responsive2{
+     width: 160px;
+    }
+    .empty{
+        height: 65px;
+    }
+ }
+ 
+ @media only screen and (max-width: 375px) {
+   .box2{
+     width: auto;
+     height: 625px;
+     }
+   .container {
+     width: 350px;
+     height: 448px;
+     margin: auto auto;
+     display: block;
+     overflow:auto;
+     }
+     .travel{
+     padding-top: 40px;
+     }
+     .responsive2{
+     width: 137px;
+    }
+    .empty{
+        height: 57px;
+    }
+ }
+ 
+ @media only screen and (max-width: 320px) {
+   .box2{
+     width: auto;
+     height: 525px;
+     }
+   .container {
+     width: 300px;
+     height: 404px;
+     margin: auto auto;
+     display: block;
+     overflow:auto;
+     }
+   .responsive{
+     font-size: 11px;
+   }
+   .travel{
+     padding-top: 20px;
+     font-size: 40px;
+     }
+     .responsive2{
+     width: 115px;
+    }
+    .empty{
+        height: 45px;
+    }
+ }
+ 
+ </style>
+   <div class="box2">
+     <div class="travel">Travel Advice</div>
+     <div class="container">
+ 
+       <div class="responsive">
+         <div class="gallery">
+             <div class="a">
+                <a href="/bangkok" ><img src="/1.jpg" style="height:auto;"></a>
+             </div>
+           <div class="placename" id="placename">Wat Phra Kaew</div>
+           <div class="province" id="province">Bangkok</div>
+            <div>
+                <a href="/admin/traveladvice/edit"><button class="edit">Edit</button></a>
+            </div>
+         </div>
+       </div>
+       <div class="responsive">
+         <div class="gallery">
+            <div class="a">
+                <a href="/ayutthaya"><img src="/2.jpg"></a>
+            </div>
+           <div class="placename" id="placename">Wat Chaiwatthanaram</div>
+           <div class="province" id="province">Ayutthaya</div>
+            <div>
+                <a href="/admin/traveladvice/edit"><button class="edit">Edit</button></a>
+            </div>
+         </div>
+       </div>
+ 
+ 
+ 
+       <div class="responsive">
+         <div id="3" class="gallery">
+            <div class="a"> 
+                <a href="/chiangmai"><img src="/3.jpg"></a>
+            </div>
+           <div class="placename" id="placename">Doi Inthanon</div>
+           <div class="province" id="province">Chiang Mai</div>
+            <div>
+                <a href="/admin/traveladvice/edit"><button class="edit">Edit</button></a>
+            </div>
+         </div>
+       </div>
+       <div class="responsive">
+         <div class="gallery">
+            <div class="a">
+                <a href="/chonburi"><img src="/4.jpg"></a>
+            </div>
+           <div class="placename" id="placename">Samea San Island</div>
+           <div class="province" id="province">Chonburi</div>
+            <div>
+                <a href="/admin/traveladvice/edit"><button class="edit">Edit</button></a>
+            </div>
+         </div>
+       </div>
+       <div class="responsive">
+         <div class="gallery">
+            <div class="a">
+                <a href="/krabi"><img src="/5.jpg"></a>
+            </div>
+           <div class="placename" id="placename">Maya Bay</div>
+           <div class="province" id="province">Krabi</div>
+            <div>
+                <a href="/admin/traveladvice/edit"><button class="edit">Edit</button></a>
+            </div>
+         </div>
+       </div>
+       
+       <div class="responsive">
+         <div class="gallery">
+             <div class="a">
+                <a href="/bangkok" ><img src="/1.jpg" style="height:auto;"></a>
+             </div>
+             <div class="placename" id="placename">Wat Phra Kaew</div>
+             <div class="province" id="province">Bangkok</div>
+             <div>
+                <a href="/admin/traveladvice/edit"><button class="edit">Edit</button></a>
+             </div>
+         </div>
+       </div>
+       <div class="responsive">
+        <div class="gallery">
+            <div class="a">
+               <a href="/bangkok" ><img src="/1.jpg" style="height:auto;"></a>
+            </div>
+            <div class="placename" id="placename">Wat Phra Kaew</div>
+            <div class="province" id="province">Bangkok</div>
+            <div>
+               <a href="/admin/traveladvice/edit"><button class="edit">Edit</button></a>
+            </div>
+        </div>
+      </div>
+
+
+       <div class="responsive2">
+        <div class="gallery plus">
+            <a href="/admin/traveladvice/create" >
+                <div class="empty"></div>
+                <i class="fa fa-plus" style="font-size:100px;color:#626567 ;text-align:center;display:block;"></i>
+                <div class="empty"></div>
+            </a>
+            </div>
+        </div>
+ 
+     </div>
+     </div>
+   </div>
+<%- include("partials/footer") %>

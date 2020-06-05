@@ -157,7 +157,9 @@ app.get('/admin/traveladvice/create', function(req, res){
     res.render('admintacreate');
 });
 
-
+app.get('/admin/traveladvice/edit', function(req, res){
+    res.render('admintaedit');
+});
 
 
 app.get("/index", function(req,res){
