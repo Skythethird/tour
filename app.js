@@ -149,6 +149,15 @@ app.get('/admin/schedule/edit', function(req, res){
     res.render('admineditschedule');
 });
 
+app.get('/admin/traveladvice', function(req, res){
+    res.render('adminta');
+});
+
+app.get('/admin/traveladvice/create', function(req, res){
+    res.render('admintacreate');
+});
+
+
 
 
 app.get("/index", function(req,res){
