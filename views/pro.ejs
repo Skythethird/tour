@@ -35,7 +35,13 @@ li a:hover {
 .w3-left, .w3-right, .w3-badge {cursor:pointer;}
 .w3-badge {height:13px;width:13px;padding:0;}
 
+.respon{
+    display: none;
+}
 
+.inres{
+    padding-bottom: 20px;
+}
 
 
 /*footer*/
@@ -96,6 +102,74 @@ border-radius: 10px;
 ::-webkit-scrollbar-thumb:hover {
 background:#283747   ; 
 }
+
+@media only screen and (max-width: 1024px) {
+  li a{
+    font-size: 30px;
+  }
+  .box2{
+    height: 1400px;
+  }
+  .footer-distributed{
+    font-size: 20px;
+    width: auto; 
+  }
+  .mySlides,.w3-content,.w3-display-container{
+      display: none;
+  }
+  .respon{
+      display: inline;
+  }
+  
+}
+
+@media only screen and (max-width: 768px) {
+  li a {
+    font-size: 20px;
+    }
+.box1{
+    width: auto;
+  }
+  .box2{
+    height: 1057px;
+  }
+  .footer-distributed{
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .box1{
+    width: auto;
+  }
+  .footer-distributed{
+    width: auto;
+  }
+  .box2{
+    height: 633px;
+  }
+  .f{
+    padding-top: 25px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .box2{
+    height: 537px;
+  }
+  .footer-distributed{
+    width: auto;
+  }
+  .f{
+    padding-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .box2{
+    height: 464px;
+  }
+}
     </style>
     <div class="box2">
       <div class="w3-content w3-display-container" style="max-width:100%">
@@ -111,5 +185,10 @@ background:#283747   ;
                 <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
             </div>
       </div>
+        <div class="respon">
+            <img class="inres f" src="promo2-3.jpg" style="width:100%">
+            <img class="inres" src="promo2-1.jpg" style="width:100%">
+            <img src="promo2-2.jpg" style="width:100%">
+        </div>
     </div>
     <%- include("partials/footer") %>
