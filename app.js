@@ -166,6 +166,7 @@ app.get('/admin/promotion', function(req, res){
 });
 
 
+
 app.get("/index", function(req,res){
     Bus.find({},function(error, aBus){
         if(error){
