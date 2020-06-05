@@ -161,6 +161,10 @@ app.get('/admin/traveladvice/edit', function(req, res){
     res.render('admintaedit');
 });
 
+app.get('/admin/promotion', function(req, res){
+    res.render('adminpro');
+});
+
 
 app.get("/index", function(req,res){
     Bus.find({},function(error, aBus){
