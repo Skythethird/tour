@@ -3,7 +3,6 @@
 
   <center>
  
-    <div ><%= city1 %><br><%= city2 %></div>
     
     
     <% Bus.forEach(function(bus){ %>
@@ -12,9 +11,12 @@
     <div class="containermini">
       <div class="row rowincon">
         <div ><%= bus.busnum %></div>
+        <div ><%= bus.city1 %></div>
+        <div ><%= bus.city2 %></div>
         <div ><%= bus.depart %></div>
+        <div ><%= bus.arrive %></div>
         <div ><%= bus.atime %> </div>
-        <div ><%= bus.price %></div>
+        <div ><%= bus.price %>bath</div>
       </div>
     </div>
     <% }); %> 

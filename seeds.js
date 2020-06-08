@@ -3,10 +3,22 @@ const Bus = require('./models/bus');
 
 const data = [
     {
-       busnum: "CM2502",
-        depart: "07:00",
-        atime: "10h 30m",
-        price: "823"
+        busnum: "111",
+        city1 : 'Bangkok',
+        city2: "Ayutthaya",
+        depart: '07:00',
+        arrive: '09:00',
+        atime : '2h',
+        price : '200'
+    },
+    {
+        busnum: "112",
+        city1 : 'Bangkok',
+        city2: "Ayutthaya",
+        depart: '10:00',
+        arrive: '12:00',
+        atime : '2h',
+        price : '200'
     },
    
 ]

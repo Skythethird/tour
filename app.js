@@ -11,6 +11,7 @@ const express = require('express'),
       seedDB = require('./seeds'),
       Bus = require('./models/bus'),
       indexRoutes = require('./routes/index'),
+      busfind = Bus.find({})
 
     
 mongoose.set('useUnifiedTopology',true);
@@ -21,7 +22,7 @@ app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
-seedDB();
+//seedDB();
 
 app.use(require('express-session')({
     secret: 'CSS227',
@@ -127,15 +128,7 @@ app.get('/profile/history/info/cancel',middleware.isloggedIn ,function(req, res)
     res.render('cancel');
 });
 
-app.post('/',function(req,res){
-    res.render('index',{city1:req.body.city1,city2:req.body.city2});
-})
 
-app.post('/step4',function(req,res){
-    let s = req.body.a1
-    console.log(s)
-
-});
 
 app.get('/admin/schedule', function(req, res){
     res.render('adminschedule');
@@ -167,16 +160,34 @@ app.get('/admin/promotion', function(req, res){
 
 
 
-app.get("/index", function(req,res){
-    Bus.find({},function(error, aBus){
-        if(error){
-            console.log("Error!");
-        } else {
-            res.render("index",{Bus:aBus});
-        }
-    });
-});
+// app.get("/index", function(req,res){
+//     Bus.find({},function(error, aBus){
+//         if(error){
+//             console.log("Error!");
+//         } else {
+//             res.render("index",{Bus:aBus});
+//         }
+//     });
+// });
 
+
+
+app.post('/',function(req,res){
+   var city1 = req.body.city1;
+   var city2 = req.body.city2;
+
+   if(city1 !='' && city2 !=''){
+       var cityParam ={$and:[{city1:city1},{city2:city2}]}
+   }else{
+     var cityParam={}
+   }
+   var busfilter = Bus.find(cityParam)
+   busfilter.exec(function(err,data){
+       if(err)throw err;
+       res.render('step2',{Bus:data})
+   })
+
+});
 
 app.use('/',indexRoutes);
 
