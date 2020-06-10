@@ -1,26 +1,92 @@
-<%- include("partials/header") %>
+<script type="text/javascript" src="js/index.js" defer></script>
 
-
-  <center>
- 
-    
-    
-    <% Bus.forEach(function(bus){ %>
-  
-
-    <div class="containermini">
-      <div class="row rowincon">
-        <div ><%= bus.busnum %></div>
-        <div ><%= bus.city1 %></div>
-        <div ><%= bus.city2 %></div>
-        <div ><%= bus.depart %></div>
-        <div ><%= bus.arrive %></div>
-        <div ><%= bus.atime %> </div>
-        <div ><%= bus.price %>bath</div>
+<div class="box2">
+  <div class="bigrow"> 
+      <div class="column1" id="left">
+          <div class="choose">
+            <div class="row">
+              <div class="seat a" onclick="myFunction1()"><span id="a1">A1</span> <div id="am1" value="1" type="hidden" > 1</div><div id="p1" value="100"> 100</div></div>
+              <div class="seat b" id="b1" onclick="myFunction2()">B1</div>
+              <div class="seat c" id="c1" onclick="myFunction3()">C1</div>
+            </div>
+            <div class="row">
+              <div class="seat a" id="a2">A2</div>
+              <div class="seat b" id="b2">B2</div>
+              <div class="seat c" id="c2">C2</div>
+          </div>  
+          <div class="row">
+            <div class="seat a" id="a3">A3</div>
+            <div class="seat b" id="b3">B3</div>
+            <div class="seat c" id="c3">C3</div>
+          </div>  
+          <div class="row">
+            <div class="seat a" id="a4">A4</div>
+            <div class="seat b" id="b4">B4</div>
+            <div class="seat c" id="c4">C4</div> 
+          </div>  
+          <div class="row">
+            <div class="seat a" id="a5">A5</div>
+            <div class="seat b" id="b5">B5</div>
+            <div class="seat c" id="c5">C5</div>
+          </div>  
+          <div class="row">
+            <div class="seat a" id="a6">A6</div>
+            <div class="seat b" id="b6">B6</div>
+            <div class="seat c" id="c6">C6</div>
+          </div>     
+          <div class="row">
+            <div class="seat a" id="a7">A7</div> 
+            <div class="seat b" id="b7">B7</div>
+            <div class="seat c" id="c7">C7</div>
+          </div>
+          </div>
       </div>
-    </div>
-    <% }); %> 
-
- </center>
-
- <%- include("partials/footer") %>
+      <div class="column1" id="right">
+        <div class="container3">
+          <form action="/step4" method="POST">
+          <div class="selectseat" name="sos">Selected Seat : <input type="text" id="Seat"></div>
+          <div class="amount">Amount : <input type="text" id="amount"></div>
+          <div class="totalprice">Total Price : <input type="text" id="Price"></div>
+          <div id="bookinfo">Booking info</div>
+          <div class="bigrow2">
+            <div class="row frow">
+              <div class="column column2 pd"><label for="fname">First Name</label>
+                                  <input type="text" id="fname">
+              </div>
+              <div class="column column2 pd"><label for="lname">Last Name</label>
+                                  <input type="text" id="lname">
+              </div>
+            </div>
+            <div class="row">
+              <div class="column column2 pd"><label for="idnum" >ID Number</label>
+                                  <input type="text" id="idnum">
+              </div>
+              <div class="column column2 pd"><label>Gender</label>
+                                  <div class="fill"></div>
+                                  <label class="gender male">Male
+                                  <input type="radio" checked="checked" name="radio">
+                                  <span class="checkmark"></span>
+                                  </label>
+                                  <label class="gender female">Female
+                                  <input type="radio" name="radio">
+                                  <span class="checkmark"></span>
+                                  </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column column2 pd"><label for="tel">Phone Number</label>
+                                  <input type="text" id="tel">
+              </div>
+              <div class="column column2 pd"><label for="email">E-mail</label>
+                                  <input type="text" id="email">
+              </div>
+            </div>
+          </div>
+          <!-- <a href="/step5"> -->
+            <button class="submit" type="submit" value='Submit'>Submit</button>
+          <!-- </a> -->
+        </form>
+        </div>
+      </div> 
+  </div>
+</div>

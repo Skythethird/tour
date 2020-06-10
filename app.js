@@ -160,15 +160,9 @@ app.get('/admin/promotion', function(req, res){
 
 
 
-// app.get("/index", function(req,res){
-//     Bus.find({},function(error, aBus){
-//         if(error){
-//             console.log("Error!");
-//         } else {
-//             res.render("index",{Bus:aBus});
-//         }
-//     });
-// });
+app.get("/index", function(req,res){
+    res.render('index');
+});
 
 
 
