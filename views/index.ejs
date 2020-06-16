@@ -5,8 +5,8 @@
       <div class="column1" id="left">
           <div class="choose">
             <div class="row">
-              <div class="seat a" onclick="myFunction1()"><span id="a1">A1</span> <div id="am1" value="1" type="hidden" > 1</div><div id="p1" value="100"> 100</div></div>
-              <div class="seat b" id="b1" onclick="myFunction2()">B1</div>
+              <div class="seat a" id="a1"onclick="myFunction1()">A1</div><div hidden id="p1" value="100"> 100</div></div>
+              <div class="seat b" id="b1" onclick="myFunction2()">B1</div><div hidden id="p2" value="100"> 100</div></div>
               <div class="seat c" id="c1" onclick="myFunction3()">C1</div>
             </div>
             <div class="row">
@@ -43,23 +43,24 @@
       </div>
       <div class="column1" id="right">
         <div class="container3">
-          <form action="/step4" method="POST">
-          <div class="selectseat" name="sos">Selected Seat : <input type="text" id="Seat"></div>
-          <div class="amount">Amount : <input type="text" id="amount"></div>
-          <div class="totalprice">Total Price : <input type="text" id="Price"></div>
+          <form action="/index" method="POST">
+            <input type="hidden" name="id" value="<%= currentUser._id %>" ></input>
+          <div class="selectseat" name="sos">Selected Seat : <input type="text" id="Seat" name="Seat"></input></div>
+          <div class="amount">Amount : <div type="text" id="amount" name="amount"></div></div>
+          <div class="totalprice">Total Price : <input type="text" id="Price" name="Price"></input></div>
           <div id="bookinfo">Booking info</div>
           <div class="bigrow2">
             <div class="row frow">
               <div class="column column2 pd"><label for="fname">First Name</label>
-                                  <input type="text" id="fname">
+                                  <input type="text" id="fname" name="fname">
               </div>
               <div class="column column2 pd"><label for="lname">Last Name</label>
-                                  <input type="text" id="lname">
+                                  <input type="text" id="lname" name="lname">
               </div>
             </div>
             <div class="row">
               <div class="column column2 pd"><label for="idnum" >ID Number</label>
-                                  <input type="text" id="idnum">
+                                  <input type="text" id="idnum" name="idnum">
               </div>
               <div class="column column2 pd"><label>Gender</label>
                                   <div class="fill"></div>

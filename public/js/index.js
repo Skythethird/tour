@@ -3,26 +3,42 @@
 var ss = [];
 
 function myFunction1() {
-    var x = document.getElementById("a1").innerHTML;
-    var y = Number(document.getElementById("am1").innerHTML);
+    var x = document.getElementById("a1").innerHTML;  
     var z = Number(document.getElementById("p1").innerHTML);
-    var a = Number(document.getElementById('amount').value);
     var b = Number(document.getElementById('Price').value);
-    ss.push(x);
-    document.getElementById('Seat').value = ss.join(" ");
-    document.getElementById('amount').value = y+a;
-    document.getElementById('Price').value = z+b;
-    console.log(ss);   
+    var y = Number(document.getElementById('amount').innerHTML);;
+    if(ss == '' || ss[0] != x && ss[1] != x && ss[2] != x){
+        ss.push(x);
+        document.getElementById('Seat').value = ss.join(" ");
+        document.getElementById('amount').innerHTML = y+1;
+        document.getElementById('Price').value = b+z;
+        console.log(ss); 
+    }else {
+        ss.pop(x);
+        document.getElementById('Seat').value = ss.join(" ");
+        document.getElementById('amount').innerHTML = y-1;
+        document.getElementById('Price').value = b-z;
+        console.log(ss); 
+           
+}
 }
 function myFunction2() {
-    var x = document.getElementById("b1").innerHTML;
-    ss.push(x);
-    document.getElementById('Seat').value = ss.join(" "); 
-    console.log(ss);  
-}
-function myFunction3() {
-    var x = document.getElementById("c1").innerHTML;
-    ss.push(x);
-    document.getElementById('Seat').value = ss.join(" "); 
-    console.log(ss);
-}
+    var x = document.getElementById("b1").innerHTML;  
+    var z = Number(document.getElementById("p2").innerHTML);
+    var b = Number(document.getElementById('Price').value);
+    var y = Number(document.getElementById('amount').innerHTML);
+    if(ss == '' || ss[0] != x && ss[1] != x && ss[2] != x){
+        ss.push(x);
+        document.getElementById('Seat').value = ss.join(" ");
+        document.getElementById('amount').innerHTML = y+1;
+        document.getElementById('Price').value = b+z;
+        console.log(ss); 
+    }else {
+        ss.pop(x);
+        document.getElementById('Seat').value = ss.join(" ");
+        document.getElementById('amount').innerHTML = y-1;
+        document.getElementById('Price').value = b-z;
+        console.log(ss); 
+    
+    }
+}    

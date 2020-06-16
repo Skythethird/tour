@@ -1,5 +1,6 @@
 const express = require('express'),
       mongoose = require('mongoose');
+const ticket = require('./models/ticket');
       flash = require('connect-flash'),
       bodyParser = require('body-Parser'),
       passport = require('passport'),
@@ -160,9 +161,42 @@ app.get('/admin/promotion', function(req, res){
 
 
 
-app.get("/index", function(req,res){
+app.get("/index",middleware.isloggedIn, function(req,res){
     res.render('index');
 });
+
+app.post("/index",middleware.isloggedIn, function(req,res){
+    let n_id = req.body.id;
+    let n_bid = req.body.bid;
+    let n_fname = req.body.fname; 
+    let n_lname = req.body.lname;
+    let n_idnum= req.body.idnum;
+    let n_price= req.body.Price;
+    let n_seat= req.body.Seat;
+    let n_depart= req.body.depart;
+    let n_city1 = req.body.city1;
+    let n_city2 = req.body.city2;
+
+    let n_ticket = {uid:n_id, busid :n_bid ,
+        fname : n_fname ,
+        lname :n_lname ,
+        ID : n_idnum,
+        seat : n_seat,
+        price : n_price,
+        depart : n_depart,
+        city1 : n_city1,
+        city2 : n_city2};
+    console.log(n_ticket);
+    ticket.create(n_ticket, function(error,newt){
+        if(error){
+            console.log(error); 
+        } else {
+            console.log("New tik added.");
+            res.redirect("/");
+        }
+    });
+});
+
 
 
 

@@ -2,9 +2,16 @@ const mongoose = require('mongoose'),
       passportlocalMongoose = require('passport-local-mongoose');
 
 let ticketSchema = new mongoose.Schema({
-        username : String,
-        password : String,
-        email : String
+        uid : String,
+        busid : String,
+        fname : String,
+        lname : String,
+        ID : String,
+        seat : String,
+        price : String,
+        depart : String,
+        city1 : String,
+        city2 : String
 });
     
 ticketSchema.plugin(passportlocalMongoose);
