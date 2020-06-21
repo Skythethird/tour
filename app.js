@@ -11,6 +11,7 @@ const ticket = require('./models/ticket');
       path = require('path'),
       seedDB = require('./seeds'),
       Bus = require('./models/bus'),
+      Seat = require('./models/seat')
       indexRoutes = require('./routes/index'),
       busfind = Bus.find({})
 
@@ -161,9 +162,17 @@ app.get('/admin/promotion', function(req, res){
 
 
 
-app.get("/index",middleware.isloggedIn, function(req,res){
-    res.render('index');
+app.get("/bus/:id",middleware.isloggedIn, function(req,res){
+    Bus.findById(req.params.id, function(error, busid){
+        if(error){
+            console.log("Error");
+        } else {
+            res.render("index",{bus:busid});
+        }
+    });
 });
+
+
 
 app.post("/index",middleware.isloggedIn, function(req,res){
     let n_id = req.body.id;
@@ -173,7 +182,7 @@ app.post("/index",middleware.isloggedIn, function(req,res){
     let n_idnum= req.body.idnum;
     let n_price= req.body.Price;
     let n_seat= req.body.Seat;
-    let n_depart= req.body.depart;
+    let n_depart= req.body.date;
     let n_city1 = req.body.city1;
     let n_city2 = req.body.city2;
 
@@ -201,8 +210,11 @@ app.post("/index",middleware.isloggedIn, function(req,res){
 
 
 app.post('/',function(req,res){
-   var city1 = req.body.city1;
-   var city2 = req.body.city2;
+    var city1 = req.body.city1;
+    var city2 = req.body.city2;
+    var date = req.body.date;
+    // console.log(date);
+    // res.send('index',{city1:city1,city2:city2,date:date})
 
    if(city1 !='' && city2 !=''){
        var cityParam ={$and:[{city1:city1},{city2:city2}]}
@@ -216,6 +228,9 @@ app.post('/',function(req,res){
    })
 
 });
+
+
+
 
 app.use('/',indexRoutes);
 

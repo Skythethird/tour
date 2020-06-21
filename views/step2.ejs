@@ -310,17 +310,18 @@ li a:hover {
     </div>
    
     <div class="containermini">
-      <a href="/step4">
+     
       <% Bus.forEach(function(bus){ %>
       <div class="row rowincon">
         <div class="cc"><%= bus.busnum %></div>
         <div class="cc"><%= bus.city1 %><br><%= bus.depart %></div>
         <div class="cc"><%= bus.city2 %><br><%= bus.arrive %></div>
         <div class="cc"><%= bus.atime %></div>
-        <div class="cc"><%= bus.price %> bath</div>
+        <div class="cc"><%= bus.price %> bath</div> 
+        <a href="/bus/<%= bus._id %>"> next </a> 
       </div>
    <% }); %> 
-  </a> 
+  
       <!-- <div class="row rowincon">
         <div class="cc">CM0919</div>
         <div class="cc">Mo chit<br>24/05 08:00</div>

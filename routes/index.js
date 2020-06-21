@@ -17,9 +17,15 @@ router.get('/signup', function(req, res){
 });
 
 router.post('/login', passport.authenticate('local',{
-    successRedirect: '/step4',
     failureRedirect: 'login'
 }),function(req, res){
+    if (req.session.oldUrl){
+        var oldUrl = req.session.oldUrl;
+        req.session.oldUrl = null;
+        res.redirect(oldUrl);
+    } else {
+        res.redirect('/profile');
+    }
 });
 
 router.post('/signup', function(req, res){

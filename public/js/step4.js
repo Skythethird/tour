@@ -66,113 +66,45 @@ $("#c7").click(function() {
 });
 
 /*add number seat*/
-$(document).ready(function(){
-    $("#a1").click(function(){
-      $("#texta1").toggle();
-    });
-  });    
-$(document).ready(function(){
-    $("#a2").click(function(){
-      $("#texta2").toggle();
-    });
-  });      
-$(document).ready(function(){
-    $("#a3").click(function(){
-      $("#texta3").toggle();
-    });
-  });  
-      
-$(document).ready(function(){
-    $("#a4").click(function(){
-      $("#texta4").toggle();
-    });
-  });      
-$(document).ready(function(){
-    $("#a5").click(function(){
-      $("#texta5").toggle();
-    });
-  });      
-$(document).ready(function(){
-    $("#a6").click(function(){
-      $("#texta6").toggle();
-    });
-  });      
-$(document).ready(function(){
-    $("#a7").click(function(){
-      $("#texta7").toggle();
-    });
-  });  
+var ss = [];
 
-$(document).ready(function(){
-    $("#b1").click(function(){
-      $("#textb1").toggle();
-    });
-  });    
-$(document).ready(function(){
-    $("#b2").click(function(){
-      $("#textb2").toggle();
-    });
-  });      
-$(document).ready(function(){
-    $("#b3").click(function(){
-      $("#textb3").toggle();
-    });
-  });  
-      
-$(document).ready(function(){
-    $("#b4").click(function(){
-      $("#textb4").toggle();
-    });
-  });      
-$(document).ready(function(){
-    $("#b5").click(function(){
-      $("#textb5").toggle();
-    });
-  });      
-$(document).ready(function(){
-    $("#b6").click(function(){
-      $("#textb6").toggle();
-    });
-  });      
-$(document).ready(function(){
-    $("#b7").click(function(){
-      $("#textb7").toggle();
-    });
-  });  
-
-  $(document).ready(function(){
-    $("#c1").click(function(){
-      $("#textc1").toggle();
-    });
-  });    
-$(document).ready(function(){
-    $("#c2").click(function(){
-      $("#textc2").toggle();
-    });
-  });      
-$(document).ready(function(){
-    $("#c3").click(function(){
-      $("#textc3").toggle();
-    });
-  });  
-      
-$(document).ready(function(){
-    $("#c4").click(function(){
-      $("#textc4").toggle();
-    });
-  });      
-$(document).ready(function(){
-    $("#c5").click(function(){
-      $("#textc5").toggle();
-    });
-  });      
-$(document).ready(function(){
-    $("#c6").click(function(){
-      $("#textc6").toggle();
-    });
-  });      
-$(document).ready(function(){
-    $("#c7").click(function(){
-      $("#textc7").toggle();
-    });
-  });  
+function myFunction1() {
+    var x = document.getElementById("a1").innerHTML;  
+    var z = Number(document.getElementById("p1").innerHTML);
+    var b = Number(document.getElementById('Price').value);
+    var y = Number(document.getElementById('amount').innerHTML);;
+    if(ss == '' || ss[0] != x && ss[1] != x && ss[2] != x){
+        ss.push(x);
+        document.getElementById('Seat').value = ss.join(" ");
+        document.getElementById('amount').innerHTML = y+1;
+        document.getElementById('Price').value = b+z;
+        console.log(ss); 
+    }else {
+        ss.pop(x);
+        document.getElementById('Seat').value = ss.join(" ");
+        document.getElementById('amount').innerHTML = y-1;
+        document.getElementById('Price').value = b-z;
+        console.log(ss); 
+           
+}
+}
+function myFunction2() {
+    var x = document.getElementById("b1").innerHTML;  
+    var z = Number(document.getElementById("p2").innerHTML);
+    var b = Number(document.getElementById('Price').value);
+    var y = Number(document.getElementById('amount').innerHTML);
+    if(ss == '' || ss[0] != x && ss[1] != x && ss[2] != x){
+        ss.push(x);
+        document.getElementById('Seat').value = ss.join(" ");
+        document.getElementById('amount').innerHTML = y+1;
+        document.getElementById('Price').value = b+z;
+        console.log(ss); 
+    }else {
+        ss.pop(x);
+        document.getElementById('Seat').value = ss.join(" ");
+        document.getElementById('amount').innerHTML = y-1;
+        document.getElementById('Price').value = b-z;
+        console.log(ss); 
+    
+    }
+}

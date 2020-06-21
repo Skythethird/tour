@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Bus = require('./models/bus');
+const Seat = require('./models/seat');
+const bus = require('./models/bus');
 
 const data = [
     {
@@ -9,7 +11,12 @@ const data = [
         depart: '07:00',
         arrive: '09:00',
         atime : '2h',
-        price : '200'
+        price : '200',
+        s1 : 'A1',
+        s2 : 'B1',
+        s3 : 'C1',
+        s4 : 'A2'
+        
     },
     {
         busnum: "112",
@@ -18,7 +25,11 @@ const data = [
         depart: '10:00',
         arrive: '12:00',
         atime : '2h',
-        price : '200'
+        price : '200',
+        s1 : 'A1',
+        s2 : 'B1',
+        s3 : 'C1',
+        s4 : 'A2'
     },
    
 ]
@@ -34,6 +45,7 @@ function seedDB(){
                     console.log(err);
                 } else {
                     console.log('Added a bus');
+                   
                 }
             });
         });

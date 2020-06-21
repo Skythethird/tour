@@ -8,7 +8,11 @@ let busSchema = new mongoose.Schema({
         depart: String,
         arrive: String,
         atime : String,
-        price : String
+        price : String,
+        s1 : String,
+        s2 : String,
+        s3 : String,
+        s4 : String,
 });
 
 module.exports = mongoose.model('Bus', busSchema);

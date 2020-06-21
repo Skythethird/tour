@@ -1,16 +1,526 @@
-<script type="text/javascript" src="js/index.js" defer></script>
-
+<%- include("partials/header") %>
+<script type="text/javascript" src="/js/index.js" defer></script>
+<style>
+  /*nav bar*/
+  .box1 {
+      width: 90%;
+      margin: auto;
+      }
+  
+  li a {
+      display: block;
+      color: black;
+      font-family: Oswald;
+      font-size: 20px;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      }
+    .buttonlogin {
+    float: right;
+  }
+  li a:hover {
+      color: #2ECC71;
+      } 
+  
+  /*footer*/
+  .footer-distributed{
+      background-color: white;
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      font-family: Oswald;
+      font-size: 15px;
+      margin-top: 0px;
+      }
+      
+  .container2{
+      margin: auto;
+      padding: 20px;
+      }
+    
+  .column {
+      width: 50%;
+      float: left;
+      }
+    
+  .left {
+      text-align: center;
+      }
+  
+  .right{
+      text-align: center;
+      }
+    
+  .by{
+      margin-top: 5px;
+      background-color:#aaa;
+      text-align: center;
+      font-family: Oswald;
+      padding: 7px;
+      }
+  
+  /* scrollbar */
+  /* width */
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #34495E  ; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background:#283747   ; 
+  }
+  
+  
+  /*content*/
+  /*menuubar*/
+  * {
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: "Oswald";
+      outline: none;
+      border: none;
+    }
+  .box2 {
+      width: 90%;
+      background-image: url("/S__15843402.jpg");
+      height: 727px;
+      margin: auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: Oswald;
+      }
+   /*progress bar*/
+   .image {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    padding-top: 15px;
+  }
+  .bigrow{
+    display: flex;
+    justify-content: center;
+    height: 530px;
+    margin-top: 25px;
+  }
+  .column1 #left{
+    width: 30%;
+  }
+  .column1 #right{
+    width: 50%;
+  }
+  /*left*/
+  
+  .choose {
+      border: 5px solid tomato;
+      background-color: tomato;
+      width: 380px;
+      height: 520px;
+      border-radius: 10px;
+      padding-top: 10px;
+      padding-left: 4px;
+      margin-top: 5px; 
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  .seat {
+      border: 2px solid black;
+      width: 85px;
+      height: 65px;
+      border-radius: 10px;
+      margin-bottom: 5px;
+      list-style-type: none;
+      padding-left: 10px;
+      background-color: cornflowerblue;
+  }
+  
+  .a {
+    margin-left: 30px;
+  }
+  .b{
+    margin-left: 70px;
+    margin-right: 5px;
+  }
+  
+  #a3,#a5,#b6,#c4,#c6 {
+    background-image: url("/seat.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+  
+  #a1.selected,#a2.selected,#a3.selected,#a4.selected,#a5.selected,#a6.selected,#a7.selected{
+    background: #FDD835;
+  }
+  #b1.selected,#b2.selected,#b3.selected,#b4.selected,#b5.selected,#b6.selected,#b7.selected{
+    background: #FDD835;
+  }
+  #c1.selected,#c2.selected,#c3.selected,#c4.selected,#c5.selected,#c6.selected,#c7.selected{
+    background: #FDD835;
+  }
+  
+  /*right*/
+  .column2{
+    width: 50%;
+  }
+  .container3 {
+    background-color: #bbbb;
+    width: 700px;
+    height: 520px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 4px;
+    margin-top: 5px; 
+    margin-left: 15px;
+    font-family: Oswald;
+    font-size: 17px;
+  }
+  
+  #texta1,#texta2,#texta3,#texta4,#texta5,#texta6,#texta7 {
+    display: none;
+  }
+  #textb1,#textb2,#textb3,#textb4,#textb5,#textb6,#textb7 {
+    display: none;
+  }
+  #textc1,#textc2,#textc3,#textc4,#textc5,#textc6,#textc7 {
+    display: none;
+  }
+  
+  .selectseat {
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+  .amount,.totalprice {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  
+  .ss{
+    margin-right:5px;
+  }
+  
+  #bookinfo {
+    margin-top: 10px;
+    background-color: #F39C12 ;
+    margin-right: 5px;
+    padding: 5px;
+  }
+  .bigrow2{
+    width: 95%;
+    margin-left: 15px;
+  }
+  
+  .amount {
+    margin-left: 50px;
+  }
+  .totalprice {
+    margin-left: 30px;
+  }
+  #bookinfo {
+    font-size: 22px;
+  }
+  .fill {
+    padding: 11px;
+  }
+  
+  .pd{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /*radio*/
+  /* The container */
+  .gender {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 17px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    float:left;
+  }
+  
+  
+  /* Hide the browser's default radio button */
+  .gender input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+    margin-left:10px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .gender:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .gender input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .gender input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .gender .checkmark:after {
+     top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+  
+  
+  input[type=text]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 15px;
+  }
+  
+  .submit {
+    display: block;
+    background: #4CAF50;
+    padding: 14px 52px;
+    border-radius: 12px;
+    color: #003B15;
+    font-weight: 700;
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .submit:hover {
+      background-color: #45a049;
+    }
+  
+  label{
+      margin-bottom: -10px;
+    }
+  
+  .frow{
+    margin-top: 10px;
+  }
+  
+  
+  /*responsive*/
+  @media only screen and (max-width: 1024px) {
+    .image{
+      padding-top: 60px;
+    }
+      .box2{
+          height: 1330px;
+      }
+      li a {
+          font-size: 30px;
+      }
+      .footer-distributed{
+          font-size: 20px;
+      }
+      .bigrow{
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+      }
+      #left{
+        margin-bottom: 20px;
+      }
+      .container3{
+        margin-left: 0px;
+      }
+      
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .image{
+      padding-top: 20px;
+    }
+      .box1 {
+          width: 100%;
+      }
+      .box2{
+          width: 100%;
+          height: 1290px;
+      }
+      li a {
+          font-size: 20px;
+      }
+      .footer-distributed{
+          font-size: 15px;
+      }
+      .bigrow{
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+      }
+  }
+  
+  @media only screen and (max-width: 425px) {
+    .image{
+      width: 100%;
+      padding-top: 10px;
+    }
+      .box2{
+          width: 100%;
+          height: 1533px;
+      }
+      .bigrow{
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+      }
+      .container3{
+        width: 400px;
+        height: 815px;
+        font-size: 16px;
+        
+      }
+      .column2{
+        width: 100%;
+        display: grid;
+      }
+      input[type=text]{
+        width: 90%;
+        margin-left: 15px;
+      }
+      label{
+        margin-left: 15px;
+        margin-bottom: 0px;
+      }
+      .pd{
+      padding-left: 10px;
+      padding-right: 10px;
+      }
+      .fill{
+      padding: 7px;
+      }
+      .submit{
+        margin-top: 10px ;
+      }
+  }
+  
+  
+  @media only screen and (max-width: 375px) {
+      .box1 {
+          width: 100%;
+      }
+      .box2{
+          width: 100%;
+          height: 1450px;
+      }
+      .bigrow{
+        width: 320px;
+      }
+      .choose{
+        width: 320px;
+        height: 445px;
+      }
+      .seat{
+        width: 75px;
+        height: 55px;
+      }
+      .container3{
+        width: 320px;
+        height: 815px;
+      }
+      .b{
+        margin-left: 40px;
+      }
+      input[type=text]{
+        width: 85%;
+        margin-left: 15px;
+      }
+    }
+  
+    @media only screen and (max-width: 320px) {
+      .box2{
+          width: 100%;
+          height: 1370px;
+      }
+      .choose{
+        width: 280px;
+        height: 375px;
+      }
+      .seat{
+        width: 65px;
+        height: 45px;
+      }
+      .container3{
+        width: 280px;
+        height: 815px;
+      }
+      .a{
+        margin-left: 25px;
+      }
+      .pd{
+      padding-left: 4px;
+      }
+      .submit{
+        padding: 14px 10px;
+      }
+    }
+  </style>
 <div class="box2">
   <div class="bigrow"> 
       <div class="column1" id="left">
           <div class="choose">
             <div class="row">
-              <div class="seat a" id="a1"onclick="myFunction1()">A1</div><div hidden id="p1" value="100"> 100</div></div>
-              <div class="seat b" id="b1" onclick="myFunction2()">B1</div><div hidden id="p2" value="100"> 100</div></div>
-              <div class="seat c" id="c1" onclick="myFunction3()">C1</div>
+              <div class="seat a" id="a1" onclick="myFunction1()"><%= bus.s1 %></div><span hidden id='p1'><%= bus.price %> </span>
+              <div class="seat b" id="b1" onclick="myFunction2()"><%= bus.s2 %></div><span hidden id='p2'><%= bus.price %> </span>
+              <div class="seat c" id="c1" onclick="myFunction3()"><%= bus.s3 %></div><span hidden id='p3'><%= bus.price %> </span>
             </div>
             <div class="row">
-              <div class="seat a" id="a2">A2</div>
+              <div class="seat a" id="a2" onclick="myFunction4()"><%= bus.s4 %></div><span hidden id='p4'><%= bus.price %> </span>
               <div class="seat b" id="b2">B2</div>
               <div class="seat c" id="c2">C2</div>
           </div>  
@@ -44,7 +554,6 @@
       <div class="column1" id="right">
         <div class="container3">
           <form action="/index" method="POST">
-            <input type="hidden" name="id" value="<%= currentUser._id %>" ></input>
           <div class="selectseat" name="sos">Selected Seat : <input type="text" id="Seat" name="Seat"></input></div>
           <div class="amount">Amount : <div type="text" id="amount" name="amount"></div></div>
           <div class="totalprice">Total Price : <input type="text" id="Price" name="Price"></input></div>
@@ -91,3 +600,4 @@
       </div> 
   </div>
 </div>
+<%- include("partials/footer") %>

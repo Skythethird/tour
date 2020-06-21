@@ -1,5 +1,5 @@
 <%- include("partials/header") %>
-        <script type="text/javascript" src="js/step4.js" defer></script>
+        <script type="text/javascript" src="/js/step4.js" defer></script>
 
 <style>
 /*nav bar*/
@@ -95,7 +95,7 @@ li a:hover {
   }
 .box2 {
     width: 90%;
-    background-image: url("S__15843402.jpg");
+    background-image: url("/S__15843402.jpg");
     height: 727px;
     margin: auto;
     background-position: center;
@@ -157,7 +157,7 @@ li a:hover {
 }
 
 #a3,#a5,#b6,#c4,#c6 {
-  background-image: url("seat.jpg");
+  background-image: url("/seat.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -512,13 +512,13 @@ label{
   }
 </style>
 <div class="box2">
-      <img src="step4.png" class="image">
+      <img src="/step4.png" class="image">
       <div class="bigrow"> 
           <div class="column1" id="left">
               <div class="choose">
                   <div class="row">
-                    <div class="seat a" id="a1">A1</div>
-                    <div class="seat b" id="b1">B1</div>
+                    <div class="seat a" id="a1"onclick="myFunction1()"><%= bus.s1 %></div><div hidden id="p1" ><%= bus.price %></div></div>
+                    <div class="seat a" id="a1"onclick="myFunction2()"><%= bus.s2 %></div><div hidden id="p2" ><%= bus.price %></div></div>
                     <div class="seat c" id="c1">C1</div>
                   </div>
                   <div class="row">
