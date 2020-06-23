@@ -122,7 +122,7 @@ app.get('/profile/:id/delete',function(req,res){
             res.redirect('/login');
         }
     })
-})
+});
 
 
 app.get('/profile/history/:id',middleware.isloggedIn ,function(req, res){
@@ -169,14 +169,27 @@ app.post('/profile/password',middleware.isloggedIn, function(req,res){
 
 
 
-app.get('/profile/history/info',middleware.isloggedIn ,function(req, res){
-    res.render('info');
-});
+app.get('/profile/history/info/:id',middleware.isloggedIn ,function(req, res){
+    ticket.findById(req.params.id, function(error, ticid){
+        if(error){
+            console.log("Error");
+        } else {
+            res.render("info",{tic:ticid});
+        }
+    });
+});   
 
 
 
-app.get('/profile/history/info/cancel',middleware.isloggedIn ,function(req, res){
-    res.render('cancel');
+app.get('/profile/history/info/:id/delete',middleware.isloggedIn ,function(req, res){
+    ticket.remove({_id:req.params.id},function(err){
+        if(err){
+            console.log(err);
+        }else{
+            req.flash('success','You trip have been Cancel');
+            res.redirect('/profile');
+        }
+    })
 });
 
 
@@ -238,6 +251,7 @@ app.post("/bus/:id",middleware.isloggedIn, function(req,res){
     let n_seat= req.body.Seat;
     let n_city1 = req.body.city1;
     let n_city2 = req.body.city2;
+    let n_date = req.body.date;
 
     let n_ticket = {
         uid : n_id,
@@ -248,7 +262,8 @@ app.post("/bus/:id",middleware.isloggedIn, function(req,res){
         seat : n_seat,
         price : n_price,
         city1 : n_city1,
-        city2 : n_city2
+        city2 : n_city2,
+        date : n_date
     };
     console.log(n_ticket);
     ticket.create(n_ticket, function(error,ticket){
@@ -268,11 +283,13 @@ app.post('/',function(req,res){
     var city1 = req.body.city1;
     var city2 = req.body.city2;
     var date = req.body.date;
-    // console.log(date);
-    // res.render('index',{date:date})
+    console.log(date);
 
-   if(city1 !='' && city2 !=''){
-       var cityParam ={$and:[{city1:city1},{city2:city2}]}
+   if(city1 !='' && city2 !='' && date !=''){
+       var cityParam ={$and:[{city1:city1},
+        {$and:[{city2:city2},{date:date}]}
+       ]
+    }
    }else{
      var cityParam={}
    }

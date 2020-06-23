@@ -9,6 +9,7 @@ let busSchema = new mongoose.Schema({
         arrive: String,
         atime : String,
         price : String,
+        date : String,
         s1 : String,
         s2 : String,
         s3 : String,

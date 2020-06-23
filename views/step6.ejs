@@ -319,7 +319,7 @@ li a:hover {
         <% ticket.forEach(function(ticket){ %>
         <div class="name">Name : <%= ticket.fname %> &nbsp <%= ticket.lname %> </div>
         <div class="text1">ID Number : <%= ticket.ID %> </div>
-        <div class="text2">Time Depart :</div>
+        <div class="text2">Time Depart :  <%= ticket.date %></div>
         <div class="text3">From - To :<%= ticket.city1%>-<%= ticket.city2 %></div>
         <div class="text4">Seat :<%= ticket.seat %> </div>
         <div class="text5">Price :<%= ticket.price %> </div>

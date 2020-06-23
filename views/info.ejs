@@ -331,18 +331,17 @@
            <li class="profile nav"><a href="/profile">Profile</a></li> 
         </div>
         <div class="column right">
-           <li class="history nav"><a href="/profile/history">History</a></li> 
+           <li class="history nav"><a href="/profile/history/<%= currentUser.id %>">History</a></li> 
         </div>
     </div>
   </div>
   <div class="container">
-    <div class="name aa">Name :</div>
-    <div class="tripnum aa">Trip Number :</div>
-    <div class="time aa">Time Depart :</div>
-    <div class="fromto aa">From - To :</div>
-    <div class="gate aa">Gate:</div>
-    <div class="seat aa">Seat:</div>
-    <a href="/profile/history/info/cancel">
+    <div class="name aa">Name : <%= tic.fname %>  &nbsp <%= tic.lname %></div>
+    <div class="tripnum aa">Trip Number : <%= tic.bnum %></div>
+    <div class="time aa">Time Depart : <%= tic.date %></div>
+    <div class="fromto aa">From - To : <%= tic.city1 %>-<%= tic.city2 %></div>
+    <div class="seat aa">Seat: <%= tic.seat %></div>
+    <a href="/profile/history/info/<%= tic._id %>/delete">
         <button class="cancel aa">Cancel Ticket</button>
     </a>
   </div>

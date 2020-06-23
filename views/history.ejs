@@ -349,7 +349,7 @@ li a:hover {
                <li class="profile nav"><a href="/profile">Profile</a></li> 
             </div class="row">
             <div class="column right">
-               <li class="history nav"><a href="/history">History</a></li> 
+               <li class="history nav"><a href="/profile/history/<%= currentUser.id %>">History</a></li> 
             </div>
         </div>
     </div>
@@ -365,10 +365,12 @@ li a:hover {
         
         <div class="containermini">
           <% ticket.forEach(function(ticket){ %>
+            <a href="/profile/history/info/<%= ticket._id %>">
             <div class="row round">
                 <div class="cc"><%= ticket.city1 %>-<%= ticket.city2 %></div>
-                <div class="cc">24/05</div>
-            </div> 
+                <div class="cc"><%= ticket.date %></div>
+            </div>
+          </a> 
             <% }); %> 
             <!-- <div class="row round">
                   <div class="cc">BKK - CM</div>
