@@ -555,7 +555,7 @@
         <div class="container3">
           <form action="/bus/:id" method="POST">
           <input type="hidden" name="id" value="<%= currentUser._id %>" ></input>
-          <input type="hidden" name="bid" value="<%= bus._id %>" ></input>
+          <input type="hidden" name="bid" value="<%= bus.busnum %>" ></input>
           <input type="hidden" name="city1" value="<%= bus.city1 %>" ></input>
           <input type="hidden" name="city2" value="<%= bus.city2 %>" ></input>
           <div class="selectseat" name="sos" >Selected Seat : <input type="text" id="Seat" name="Seat" ></input></div>
@@ -596,9 +596,7 @@
               </div>
             </div>
           </div>
-          <!-- <a href="/step5"> -->
             <button class="submit" type="submit" value='Submit'>Submit</button>
-          <!-- </a> -->
         </form>
         </div>
       </div> 

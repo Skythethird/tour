@@ -362,12 +362,15 @@ li a:hover {
             </div>
           </div>
         </div>
+        
         <div class="containermini">
+          <% ticket.forEach(function(ticket){ %>
             <div class="row round">
-                <div class="cc">BKK - CM</div>
+                <div class="cc"><%= ticket.city1 %>-<%= ticket.city2 %></div>
                 <div class="cc">24/05</div>
-            </div>
-            <div class="row round">
+            </div> 
+            <% }); %> 
+            <!-- <div class="row round">
                   <div class="cc">BKK - CM</div>
                   <div class="cc">24/05</div>
             </div>
@@ -378,8 +381,9 @@ li a:hover {
             <div class="row round">
               <div class="cc">BKK - CM</div>
               <div class="cc">24/05</div>
-            </div>
+            </div> -->
         </div>
+       
     </div>    
     
 </div>

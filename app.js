@@ -1,6 +1,7 @@
 const express = require('express'),
       mongoose = require('mongoose');
 const ticket = require('./models/ticket');
+const user = require('./models/user');
       flash = require('connect-flash'),
       bodyParser = require('body-Parser'),
       passport = require('passport'),
@@ -124,8 +125,14 @@ app.get('/profile/:id/delete',function(req,res){
 })
 
 
-app.get('/profile/history',middleware.isloggedIn ,function(req, res){
-    res.render('history');
+app.get('/profile/history/:id',middleware.isloggedIn ,function(req, res){
+    ticket.find({uid:req.params.id},function(error, allTicket){
+        if(error){
+            console.log("Error!");
+        } else {
+            res.render("history",{ticket:allTicket});
+        }
+    })
 });
 
 
@@ -209,10 +216,15 @@ app.get("/bus/:id",middleware.isloggedIn, function(req,res){
         if(error){
             console.log("Error");
         } else {
-            res.render("index",{bus:busid});
+            res.render("step4",{bus:busid});
         }
     });
 });
+
+
+
+
+
 
 
 
@@ -224,26 +236,27 @@ app.post("/bus/:id",middleware.isloggedIn, function(req,res){
     let n_idnum= req.body.idnum;
     let n_price= req.body.Price;
     let n_seat= req.body.Seat;
-    let n_depart= req.body.date;
     let n_city1 = req.body.city1;
     let n_city2 = req.body.city2;
 
-    let n_ticket = {uid:n_id, busid :n_bid,
-        fname : n_fname ,
-        lname :n_lname ,
+    let n_ticket = {
+        uid : n_id,
+        bnum : n_bid,
+        fname : n_fname,
+        lname :n_lname,
         ID : n_idnum,
         seat : n_seat,
         price : n_price,
-        depart : n_depart,
         city1 : n_city1,
-        city2 : n_city2};
+        city2 : n_city2
+    };
     console.log(n_ticket);
-    ticket.create(n_ticket, function(error,newt){
+    ticket.create(n_ticket, function(error,ticket){
         if(error){
             console.log(error); 
         } else {
             console.log("New tik added.");
-            res.redirect("/step5");
+            res.render("step5",{n_price,n_id,n_seat});
         }
     });
 });
@@ -271,15 +284,21 @@ app.post('/',function(req,res){
 
 });
 
-// app.get("/step6",middleware.isloggedIn, function(req,res){
-//     ticket.findById(req.params.id, function(error, busid){
-//         if(error){
-//             console.log("Error");
-//         } else {
-//             res.render("index",{bus:busid});
-//         }
-//     });
-// });
+app.post("/booking",middleware.isloggedIn, function(req,res){
+    var uid = req.body.id;
+    var bid = req.body.bid;
+    if(uid  !='' && bid !=''){
+        var cityParam ={$and:[{uid:uid},{seat:bid}]}
+    }else{
+      var cityParam={}
+    }
+    var busfilter = ticket.find(cityParam)
+    busfilter.exec(function(err,data){
+        if(err)throw err;
+        res.render('step6',{ticket:data})
+    });
+});
+
 
 
 app.use('/',indexRoutes);

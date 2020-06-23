@@ -1,5 +1,5 @@
 <%- include("partials/header") %>
-        <script type="text/javascript" src="js/step5.js" defer></script>
+        <script type="text/javascript" src="/js/step5.js" defer></script>
 
     <style>
 /*nav bar*/
@@ -95,7 +95,7 @@ li a:hover {
   }
 .box2 {
     width: 90%;
-    background-image: url("S__15843402.jpg");
+    background-image: url("/S__15843402.jpg");
     height: 727px;
     margin: auto;
     background-position: center;
@@ -308,20 +308,22 @@ li a:hover {
 
 </style>
 <div class="box2">
-  <img src="step5.png" class="image">
+  <img src="/step5.png" class="image">
       <div class="container">
-          <div class="amount">Payment Amount :</div>
+          <div class="amount">Payment Amount : <%= n_price %></div>
           <div class="text2">Kasikorn Bank 043-8-40XXX-X TourThai co,ltd.</div>
           <div class="text2">Please uplode receipt after complete the payment</div>
-          <br><img src="qrcode.png" class="qr"><br>
+          <br><img src="/qrcode.png" class="qr"><br>
           <div class="uplode">
           <input type="file" id="real-file" hidden="hidden" />
             <button type="button" id="custom-button">Upload a receipt</button><br>
           </div>
             <span id="custom-text">No file chosen, yet.</span>
-          <a href="/step6">
-              <button class="submit">Submit</button>
-          </a>
+            <form action="/booking" method="POST">
+              <input hidden name="id" value="<%= n_id %>" >
+              <input hidden name="bid" value="<%= n_seat %>">
+              <button class="submit" type="submit" value='Submit' >Submit</button>
+            </form> 
       </div>
 </div>
 <%- include("partials/footer") %>

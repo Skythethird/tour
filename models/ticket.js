@@ -3,15 +3,14 @@ const mongoose = require('mongoose'),
 
 let ticketSchema = new mongoose.Schema({
         uid : String,
-        busid : String,
+        bnum : String,
         fname : String,
         lname : String,
         ID : String,
         seat : String,
         price : String,
-        depart : String,
         city1 : String,
-        city2 : String
+        city2 : String,
 });
     
 ticketSchema.plugin(passportlocalMongoose);
