@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Bus = require('./models/bus');
 const Seat = require('./models/seat');
-const bus = require('./models/bus');
+
 
 const data = [
     {
@@ -15,7 +15,24 @@ const data = [
         s1 : 'A1',
         s2 : 'B1',
         s3 : 'C1',
-        s4 : 'A2'
+        s4 : 'A2',
+        s5 : 'B2',
+        s6 : 'C2',
+        s7 : 'A3',
+        s8 : 'B3',
+        s9 : 'C3',
+        s10 : 'A4',
+        s11 : 'B4',
+        s12 : 'C4',
+        s13 : 'A5',
+        s14 : 'B5',
+        s15 : 'C5',
+        s16 : 'A6',
+        s17 : 'B6',
+        s18 : 'C6',
+        s19 : 'A7',
+        s20 : 'B7',
+        s21 : 'C7',
         
     },
     {
@@ -29,7 +46,24 @@ const data = [
         s1 : 'A1',
         s2 : 'B1',
         s3 : 'C1',
-        s4 : 'A2'
+        s4 : 'A2',
+        s5 : 'B2',
+        s6 : 'C2',
+        s7 : 'A3',
+        s8 : 'B3',
+        s9 : 'C3',
+        s10 : 'A4',
+        s11 : 'B4',
+        s12 : 'C4',
+        s13 : 'A5',
+        s14 : 'B5',
+        s15 : 'C5',
+        s16 : 'A6',
+        s17 : 'B6',
+        s18 : 'C6',
+        s19 : 'A7',
+        s20 : 'B7',
+        s21 : 'C7',
     },
    
 ]
@@ -40,7 +74,7 @@ function seedDB(){
         }
         console.log('Drop database success');
         data.forEach(function(seed){
-            Bus.create(seed, function(err, tarot){
+            Bus.create(seed, function(err, bus){
                 if(err){
                     console.log(err);
                 } else {

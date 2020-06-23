@@ -354,16 +354,20 @@ input[type=text]{
         </div>
     </div>
   </div>
-  <form class="edit" action="/profile/edit" method="POST">
+  
+  <form class="edit" action="/profile/edit" method="POST"></form>
   <div class="container">
     <input type="hidden" name="id" value="<%= currentUser._id %>" ></input>
     <label for="username" class="username" >Username</label><br>
-    <input type="text" id="username">
+    <input type="text" id="username" name='username'>
     <label for="email" class="email" >E-mail</label><br>
-    <input type="text" id="email">
+    <input type="text" id="email" name="email">
     <button class="save" type="submit">Save Change</button> 
-    <button class="delete">Delete Account</button>
-  </div>
   </form>
+  <a href="/profile/<%= currentUser._id %>/delete" >
+    <button class="delete">Delete Account</button>
+  </a>
+  </div>
+
 </div>
     <%- include("partials/footer") %>

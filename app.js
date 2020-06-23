@@ -112,6 +112,17 @@ app.post("/profile/edit",middleware.isloggedIn, function(req,res){
     });
 });
 
+app.get('/profile/:id/delete',function(req,res){
+    User.remove({_id:req.params.id},function(err){
+        if(err){
+            console.log(err);
+        }else{
+            req.flash('success','You changed successfully please login again');
+            res.redirect('/login');
+        }
+    })
+})
+
 
 app.get('/profile/history',middleware.isloggedIn ,function(req, res){
     res.render('history');
@@ -122,9 +133,40 @@ app.get('/profile/password',middleware.isloggedIn,function(req, res){
     res.render('password');
 });
 
+app.post('/profile/password',middleware.isloggedIn, function(req,res){
+    if(req.body.newpassword == req.body.CNpassword){
+        User.findById(req.user.id, function(err,foundUser){
+            if(err){
+                console.log("ERROR!");
+            } else{
+                foundUser.changePassword(req.body.oldpassword, req.body.newpassword, function(err){
+                    if(err){
+                        console.log(err);
+                    } else {
+                        req.flash('success','You changed successfully please login again');
+                        res.redirect("/login");
+                    }
+                });
+            }
+        });
+
+    } else{
+        req.flash('error',"Password and Confirm password isn't match.");
+        res.redirect("/profile/password");
+    }
+});
+
+
+
+
+
+
+
 app.get('/profile/history/info',middleware.isloggedIn ,function(req, res){
     res.render('info');
 });
+
+
 
 app.get('/profile/history/info/cancel',middleware.isloggedIn ,function(req, res){
     res.render('cancel');
@@ -174,7 +216,7 @@ app.get("/bus/:id",middleware.isloggedIn, function(req,res){
 
 
 
-app.post("/index",middleware.isloggedIn, function(req,res){
+app.post("/bus/:id",middleware.isloggedIn, function(req,res){
     let n_id = req.body.id;
     let n_bid = req.body.bid;
     let n_fname = req.body.fname; 
@@ -186,7 +228,7 @@ app.post("/index",middleware.isloggedIn, function(req,res){
     let n_city1 = req.body.city1;
     let n_city2 = req.body.city2;
 
-    let n_ticket = {uid:n_id, busid :n_bid ,
+    let n_ticket = {uid:n_id, busid :n_bid,
         fname : n_fname ,
         lname :n_lname ,
         ID : n_idnum,
@@ -201,7 +243,7 @@ app.post("/index",middleware.isloggedIn, function(req,res){
             console.log(error); 
         } else {
             console.log("New tik added.");
-            res.redirect("/");
+            res.redirect("/step5");
         }
     });
 });
@@ -214,7 +256,7 @@ app.post('/',function(req,res){
     var city2 = req.body.city2;
     var date = req.body.date;
     // console.log(date);
-    // res.send('index',{city1:city1,city2:city2,date:date})
+    // res.render('index',{date:date})
 
    if(city1 !='' && city2 !=''){
        var cityParam ={$and:[{city1:city1},{city2:city2}]}
@@ -229,7 +271,15 @@ app.post('/',function(req,res){
 
 });
 
-
+// app.get("/step6",middleware.isloggedIn, function(req,res){
+//     ticket.findById(req.params.id, function(error, busid){
+//         if(error){
+//             console.log("Error");
+//         } else {
+//             res.render("index",{bus:busid});
+//         }
+//     });
+// });
 
 
 app.use('/',indexRoutes);

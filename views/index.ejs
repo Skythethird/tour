@@ -155,13 +155,13 @@
     margin-right: 5px;
   }
   
-  #a3,#a5,#b6,#c4,#c6 {
+  /* #a3,#a5,#b6,#c4,#c6 {
     background-image: url("/seat.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   
-  }
+  } */
   
   #a1.selected,#a2.selected,#a3.selected,#a4.selected,#a5.selected,#a6.selected,#a7.selected{
     background: #FDD835;
@@ -521,42 +521,46 @@
             </div>
             <div class="row">
               <div class="seat a" id="a2" onclick="myFunction4()"><%= bus.s4 %></div><span hidden id='p4'><%= bus.price %> </span>
-              <div class="seat b" id="b2">B2</div>
-              <div class="seat c" id="c2">C2</div>
+              <div class="seat b" id="b2" onclick="myFunction5()"><%= bus.s5 %></div><span hidden id='p5'><%= bus.price %> </span>
+              <div class="seat c" id="c2" onclick="myFunction6()"><%= bus.s6 %></div><span hidden id='p6'><%= bus.price %> </span>
           </div>  
           <div class="row">
-            <div class="seat a" id="a3">A3</div>
-            <div class="seat b" id="b3">B3</div>
-            <div class="seat c" id="c3">C3</div>
+            <div class="seat a" id="a3" onclick="myFunction7()"><%= bus.s7 %></div><span hidden id='p7'><%= bus.price %> </span>
+            <div class="seat b" id="b3" onclick="myFunction8()"><%= bus.s8 %></div><span hidden id='p8'><%= bus.price %> </span>
+            <div class="seat c" id="c3" onclick="myFunction9()"><%= bus.s9 %></div><span hidden id='p9'><%= bus.price %> </span>
           </div>  
           <div class="row">
-            <div class="seat a" id="a4">A4</div>
-            <div class="seat b" id="b4">B4</div>
-            <div class="seat c" id="c4">C4</div> 
+            <div class="seat a" id="a4" onclick="myFunction10()"><%= bus.s10 %></div><span hidden id='p10'><%= bus.price %> </span>
+            <div class="seat b" id="b4" onclick="myFunction11()"><%= bus.s11 %></div><span hidden id='p11'><%= bus.price %> </span>
+            <div class="seat c" id="c4" onclick="myFunction12()"><%= bus.s12 %></div><span hidden id='p12'><%= bus.price %> </span> 
           </div>  
           <div class="row">
-            <div class="seat a" id="a5">A5</div>
-            <div class="seat b" id="b5">B5</div>
-            <div class="seat c" id="c5">C5</div>
+            <div class="seat a" id="a5" onclick="myFunction13()"><%= bus.s13 %></div><span hidden id='p13'><%= bus.price %> </span>
+            <div class="seat b" id="b5" onclick="myFunction14()"><%= bus.s14 %></div><span hidden id='p14'><%= bus.price %> </span>
+            <div class="seat c" id="c5" onclick="myFunction15()"><%= bus.s15 %></div><span hidden id='p15'><%= bus.price %> </span>
           </div>  
           <div class="row">
-            <div class="seat a" id="a6">A6</div>
-            <div class="seat b" id="b6">B6</div>
-            <div class="seat c" id="c6">C6</div>
+            <div class="seat a" id="a6" onclick="myFunction16()"><%= bus.s16 %></div><span hidden id='p16'><%= bus.price %> </span>
+            <div class="seat b" id="b6" onclick="myFunction17()"><%= bus.s17 %></div><span hidden id='p17'><%= bus.price %> </span>
+            <div class="seat c" id="c6" onclick="myFunction18()"><%= bus.s18 %></div><span hidden id='p18'><%= bus.price %> </span>
           </div>     
           <div class="row">
-            <div class="seat a" id="a7">A7</div> 
-            <div class="seat b" id="b7">B7</div>
-            <div class="seat c" id="c7">C7</div>
+            <div class="seat a" id="a7" onclick="myFunction19()"><%= bus.s19 %></div><span hidden id='p19'><%= bus.price %> </span> 
+            <div class="seat b" id="b7" onclick="myFunction20()"><%= bus.s20 %></div><span hidden id='p20'><%= bus.price %> </span>
+            <div class="seat c" id="c7" onclick="myFunction21()"><%= bus.s21 %></div><span hidden id='p21'><%= bus.price %> </span>
           </div>
           </div>
       </div>
       <div class="column1" id="right">
         <div class="container3">
-          <form action="/index" method="POST">
-          <div class="selectseat" name="sos">Selected Seat : <input type="text" id="Seat" name="Seat"></input></div>
+          <form action="/bus/:id" method="POST">
+          <input type="hidden" name="id" value="<%= currentUser._id %>" ></input>
+          <input type="hidden" name="bid" value="<%= bus._id %>" ></input>
+          <input type="hidden" name="city1" value="<%= bus.city1 %>" ></input>
+          <input type="hidden" name="city2" value="<%= bus.city2 %>" ></input>
+          <div class="selectseat" name="sos" >Selected Seat : <input type="text" id="Seat" name="Seat" ></input></div>
           <div class="amount">Amount : <div type="text" id="amount" name="amount"></div></div>
-          <div class="totalprice">Total Price : <input type="text" id="Price" name="Price"></input></div>
+          <div class="totalprice">Total Price : <input type="text" id="Price" name="Price" ></input></div>
           <div id="bookinfo">Booking info</div>
           <div class="bigrow2">
             <div class="row frow">
