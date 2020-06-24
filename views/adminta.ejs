@@ -359,20 +359,21 @@
    <div class="box2">
      <div class="travel">Travel Advice</div>
      <div class="container">
- 
+      <% ta.forEach(function(ta){ %> 
        <div class="responsive">
          <div class="gallery">
              <div class="a">
-                <a href="/bangkok" ><img src="/1.jpg" style="height:auto;"></a>
+              <a href="/admin/traveladvices/<%= ta._id %>" > <img src="<%= '../uploads/'+ ta.image %>" style="height:auto;"></a>
              </div>
-           <div class="placename" id="placename">Wat Phra Kaew</div>
-           <div class="province" id="province">Bangkok</div>
+           <div class="placename" id="placename"><%= ta.pname %></div>
+           <div class="province" id="province"><%= ta.province %></div>
             <div>
-                <a href="/admin/traveladvice/edit"><button class="edit">Edit</button></a>
+                <a href="/admin/traveladvice/<%= ta._id %>"><button class="edit">Edit</button></a>
             </div>
          </div>
        </div>
-       <div class="responsive">
+       <% }); %>
+       <!-- <div class="responsive">
          <div class="gallery">
             <div class="a">
                 <a href="/ayutthaya"><img src="/2.jpg"></a>
@@ -447,7 +448,7 @@
                <a href="/admin/traveladvice/edit"><button class="edit">Edit</button></a>
             </div>
         </div>
-      </div>
+      </div> -->
 
 
        <div class="responsive2">

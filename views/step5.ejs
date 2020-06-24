@@ -315,11 +315,11 @@ li a:hover {
           <div class="text2">Please uplode receipt after complete the payment</div>
           <br><img src="/qrcode.png" class="qr"><br>
           <div class="uplode">
-          <input type="file" id="real-file" hidden="hidden" />
+            <form action="/booking" method="POST" enctype='multipart/form-data'>
+          <input type="file" id="real-file" hidden="hidden" name="image" accept="image/*"/>
             <button type="button" id="custom-button">Upload a receipt</button><br>
           </div>
             <span id="custom-text">No file chosen, yet.</span>
-            <form action="/booking" method="POST">
               <input hidden name="id" value="<%= n_id %>" >
               <input hidden name="bid" value="<%= n_seat %>">
               <input hidden name="bnum" value="<%= n_bid %>">

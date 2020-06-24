@@ -6,6 +6,26 @@ const Bus = require('../models/bus');
 const busfind = Bus.find({});
 const path = require('path');
 const middleware = require('../middleware');
+const ta = require('../models/ta');
+const multer = require('multer');
+const fs = require('fs');
+
+const storage = multer.diskStorage({
+    destination: './public/uploads',
+    filename : function(req, file, cb) {
+        cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
+const imageFilter = function(req, file, cb){
+    var ext = path.extname(file.originalname);
+    if(ext !== '.png' && ext !== '.gif' && ext !== '.jpg' && ext !== '.jpeg'){
+        return cb(new Error('Only image is allowed'), false)
+        }
+        cb(null, true);
+};
+
+const upload = multer({storage: storage, fileFilter: imageFilter})
 
 
 
@@ -151,19 +171,137 @@ router.get('/schedule/delete/:id',middleware.isloggedIn,middleware.admin, functi
 });
 
 
-router.get('/traveladvice',middleware.isloggedIn, function(req, res){
-    res.render('adminta');
+router.get('/traveladvice', middleware.isloggedIn,middleware.admin,function(req, res){
+    ta.find({},function(error, allTa){
+        if(error){
+            console.log("Error!");
+        } else {
+            res.render("adminta",{ta:allTa});
+        }
+    })
 });
 
-router.get('/traveladvice/create',middleware.isloggedIn, function(req, res){
+router.get('/traveladvice/create',middleware.isloggedIn,middleware.admin, function(req, res){
     res.render('admintacreate');
 });
 
-router.get('/traveladvice/edit',middleware.isloggedIn, function(req, res){
-    res.render('admintaedit');
+router.post("/traveladvice/create",middleware.isloggedIn,middleware.admin,upload.single('image') ,function(req,res){
+    let pname = req.body.placename;
+    let Province= req.body.Province;
+    let info = req.body.info;
+    let howtogo = req.body.howtogo;
+    let activity = req.body.activity;
+    let availability = req.body.availability;
+    let n_image = req.file.filename;
+
+    let n_ta = {
+        pname: pname,
+        province : Province,
+        info: info,
+        htg: howtogo,
+        activity: activity,
+        availability : availability,
+        image : n_image
+    };
+    ta.create(n_ta, function(err, newTa){
+        if(err){
+            console.log(err)
+        } else {
+            console.log("new ta add")
+            res.redirect('/admin/traveladvice');
+        }
+    });
 });
 
-router.get('/promotion',middleware.isloggedIn, function(req, res){
+router.get('/traveladvices/:id',middleware.isloggedIn,middleware.admin, function(req, res){
+    ta.findById(req.params.id, function(err, foundTa){
+        res.render("ta2", {ta: foundTa});
+    });
+});
+
+
+
+
+router.get('/traveladvice/:id',middleware.isloggedIn,middleware.admin, function(req, res){
+    ta.findById(req.params.id, function(err, foundTa){
+        res.render("admintaedit", {ta: foundTa});
+    });
+});
+
+router.put("/:id",middleware.isloggedIn,middleware.admin, upload.single('image'), function(req,res){
+    let pname = req.body.placename;
+    let Province= req.body.Province;
+    let info = req.body.info;
+    let howtogo = req.body.howtogo;
+    let activity = req.body.activity;
+    let availability = req.body.availability;
+    if(req.file){
+        let n_image = req.file.filename;
+        ta.findById(req.params.id, function(err, foundTa){
+            if(err){
+                res.redirect('/admin/traveladvice');
+            } else {
+                const imagePath = './public/uploads/' + foundTa.image;
+                fs.unlink(imagePath, function(err){
+                    if(err){
+                        console.log(err);
+                        res.redirect('/admin/traveladvice');
+                    }
+                })
+            }
+        })
+        var n_ta = {pname: pname,
+            province : Province,
+            info: info,
+            htg: howtogo,
+            activity: activity,
+            availability : availability,
+            image : n_image};
+    } else {
+        var n_ta = {pname: pname,
+            province : Province,
+            info: info,
+            htg: howtogo,
+            activity: activity,
+            availability : availability};
+    }
+    ta.findByIdAndUpdate(req.params.id, n_ta, function(err, updatedTarot){
+        if(err){
+            res.redirect('/admin/traveladvice');
+        } else {
+            res.redirect('/admin/traveladvice');
+        }
+    });
+});
+
+router.delete("/:id",middleware.isloggedIn,middleware.admin, function(req,res){
+    ta.findById(req.params.id, function(err, foundTa){
+        if(err){
+            res.redirect('/admin/traveladvice');
+        } else {
+            const imagePath = './public/uploads/' + foundTa.image;
+            fs.unlink(imagePath, function(err){
+                if(err){
+                    console.log(err);
+                    res.redirect('/admin/traveladvice');
+                }
+            })
+        }
+    })
+    ta.findByIdAndRemove(req.params.id, function(err){
+        if(err){
+            res.redirect('/admin/traveladvice'); 
+        } else {
+            res.redirect('/admin/traveladvice');
+        }
+    });
+})
+
+
+
+
+
+router.get('/promotion',  function(req, res){
     res.render('adminpro');
 });
 

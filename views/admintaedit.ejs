@@ -1,6 +1,6 @@
 <%- include("partials/header2") %>
-<!-- <script type="text/javascript" src="js/adminta.js" defer></script> -->
-<!-- เชื่อม js ไม่ได้ -->
+<script type="text/javascript" src="/js/adminta.js" defer></script>
+
 
 
 <style>
@@ -315,46 +315,40 @@ input[type=text]{
 </style>
 <div class="box2">
     <div class="empty"></div>
-        <div class="container">
+    <form action="/admin/<%= ta._id %>?_method=PUT" method="POST" enctype='multipart/form-data'>
+       <div class="container">
             <label for="placename">Place Name</label><br>
-            <input type="text" id="placename"><br>
+            <input type="text" id="placename" name="placename" value="<%= ta.pname %>"><br>
+            <label for="info">Province</label><br>
+            <textarea id="info" name="Province" ><%= ta.province %></textarea><br>
             <label for="info">Info</label><br>
-            <textarea id="info" name="info"></textarea><br>
+            <textarea id="info" name="info" ><%= ta.info %></textarea><br>
             <label for="howtogo">How to go</label><br>
-            <textarea id="howtogo" name="howtogo"></textarea><br>
-            <label for="activity">How to go</label><br>
-            <textarea id="activity" name="activity"></textarea><br>
+            <textarea id="howtogo" name="howtogo"><%= ta.htg %></textarea><br>
+            <label for="activity">Activity</label><br>
+            <textarea id="activity" name="activity" ><%= ta.activity %></textarea><br>
             <label for="availability">Availability</label><br>
-            <textarea id="availability" name="activity"></textarea><br><br>
+            <textarea id="availability" name="availability" ><%= ta.availability %></textarea><br><br>
             
             <div class="row">
                 <div class="column2">
-                    <input type="file" id="real-file1" hidden="hidden">
-                    <button type="button" id="custom-button1">Upload a receipt</button>
+                    <input type="file" id="real-file1" hidden="hidden" name="image"  accept="image/*">
+                    <button type="button" id="custom-button1">Upload a image</button>
                     <div class="empty2"></div>
-                    <span id="custom-text1">No file chosen, yet.</span>
+                    <span id="custom-text">No file chosen, yet.</span>
                 </div>
-                <div class="column2">
-                    <input type="file" id="real-file2" hidden="hidden">
-                    <button type="button" id="custom-button2">Upload a receipt</button>
-                    <div class="empty2"></div>
-                    <span id="custom-text1">No file chosen, yet.</span>
-                </div>
-                <div class="column2">
-                    <input type="file" id="real-file3" hidden="hidden">
-                    <button type="button" id="custom-button3">Upload a receipt</button>
-                    <div class="empty2"></div>
-                    <span id="custom-text1">No file chosen, yet.</span>
-                </div>
+                <button class="save" type="submit">Save Place</button>
             </div>
-            <a href="/admin/traveladvice">
-                <button class="save">Save Place</button>
-            </a>
-            <a href="/admin/traveladvice">
+       </div>
+      </form>
+
+           
+          <form id="delete-form" action="/admin/<%= ta._id %>?_method=DELETE" method="POST">
                 <button class="delete">Delete Place</button>
+          </form>
             </a>
             
        
-        </div> 
+      </div>
 </div>
 <%- include("partials/footer") %>

@@ -281,18 +281,19 @@ li a:hover {
   <div class="box2">
     <div class="travel">Travel Advice</div>
     <div class="container">
-
+      <% ta.forEach(function(ta){ %>  
       <div class="responsive">
         <div class="gallery">
             <div class="a">
-            <a href="/bangkok" ><img src="1.jpg" style="height:auto;">
+            <a href="/traveladvice/<%= ta._id %>" ><img src="<%= '../uploads/'+ ta.image %>" style="height:auto;">
             </a>
             </div>
-          <div class="placename" id="placename">Wat Phra Kaew</div>
-          <div class="province" id="province">Bangkok</div>
+          <div class="placename" id="placename"><%= ta.pname %></div>
+          <div class="province" id="province"><%= ta.province %></div>
         </div>
       </div>
-      <div class="responsive">
+      <% }); %>
+      <!-- <div class="responsive">
         <div class="gallery">
             <div class="a">
             <a href="/ayutthaya">
@@ -354,7 +355,7 @@ li a:hover {
             <div class="placename" id="placename">Wat Phra Kaew</div>
             <div class="province" id="province">Bangkok</div>
         </div>
-      </div>
+      </div> -->
 
 
     </div>

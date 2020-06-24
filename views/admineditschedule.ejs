@@ -365,12 +365,12 @@ li a:hover {
         <form action="/admin/schedule/<%= bus._id %>" method="POST">
             <div class="row frow">
                 <div class="column column2 pd"><label for="tripnum">Trip Number</label>
-                                               <input type="text" id="tripnum" name="busnum"><br>
+                                               <input type="text" id="tripnum" name="busnum" value="<%= bus.busnum %>"><br>
                 </div>
             </div>
             <div class="row">
                 <div class="column column2 pd"><label for="from">From</label><br>
-                                               <select class="city" id="from" name="city1" >
+                                               <select class="city" id="from" name="city1"  value="<%= bus.city1 %>">
                                                     <option>Select Province</option>
                                                     <option>Ayutthaya</option>
                                                     <option>Bangkok</option>
@@ -380,7 +380,7 @@ li a:hover {
                                                 </select>
                 </div>
                 <div class="column column2 pd"><label for="to">To</label><br>
-                                                <select class="city" name="city2" >
+                                                <select class="city" name="city2"  value="<%= bus.city2 %>">
                                                     <option>Select Province</option>
                                                     <option>Ayutthaya</option>
                                                     <option>Bangkok</option>
@@ -392,21 +392,21 @@ li a:hover {
             </div>
             <div class="row">
                 <div class="column column2 pd"><label for="dayde">Day Depart</label><br>
-                                               <input id="today" class="date" type="date" name="date">
-                                               <input type="time" class="time" value="00:00" name="depart"><br>
+                                               <input id="today" class="date" type="date" name="date"  value="<%= bus.date %>">
+                                               <input type="time" class="time"  value="<%= bus.depart %>" name="depart"><br>
                 </div>
                 <div class="column column2 pd"><label for="dayar">Day Arrive</label><br>
-                                               <input id="today2" class="date" type="date">
-                                               <input type="time" class="time" value="00:00" name="arrive">
+                                               <input id="today2" class="date" type="date"  value="<%= bus.date %>">
+                                               <input type="time" class="time"  value="<%= bus.arrive %>" name="arrive">
                 </div>
             </div>
             <div class="row">
                 <div class="column column2 pd"><label for="averagetime" id="averagetime">Average Time</label>
-                                               <input type="text"placeholder="" name="atime">
+                                               <input type="text"placeholder="" name="atime"  value="<%= bus.atime %>">
                                     
                 </div>
-                <div class="column column2 pd"><label for="price" id="price">Price</label>
-                                               <input type="text"placeholder="" name="price">
+                <div class="column column2 pd"><label for="price" id="price" >Price</label>
+                                               <input type="text"placeholder="" name="price"  value="<%= bus.price%>">
                                     
                 </div>
             </div>

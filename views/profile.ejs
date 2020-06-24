@@ -361,8 +361,16 @@ li a:hover {
     <div class="username">Usename : <%= currentUser.username %></div>
     <div class="email">E-mail : <%= currentUser.email %> </div>
     <br>
-    <div class="row3">
-        <div class="column">
+   
+    <div class="row3"> 
+    <% if(currentUser.type == 'admin') { %>
+       <div class="column">
+            <a href="/admin" >
+           <button class="edit">admin</button> 
+           </a>
+         </div>
+    <% } else { %> 
+      <div class="column">
            <a href="/profile/edit" >
           <button class="edit">Edit Profile</button> 
           </a>
@@ -372,6 +380,8 @@ li a:hover {
            <button class="change">Change Password</button> 
           </a>
         </div>
+          
+    <% } %>  
     </div>
     <a href="/logout">
     <button class="logout">Logout</button></a>

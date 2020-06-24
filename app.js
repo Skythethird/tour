@@ -2,18 +2,23 @@ const express = require('express'),
       mongoose = require('mongoose');
 const ticket = require('./models/ticket');
 const user = require('./models/user');
+const ta = require('./models/ta');
+const receipt = require('./models/receipt');
+const bus = require('./models/bus');
       flash = require('connect-flash'),
       bodyParser = require('body-Parser'),
       passport = require('passport'),
       passportlocal = require('passport-local'),
-      passportlocalMongoose = require('passport-local-mongoose') ,
+      passportlocalMongoose = require('passport-local-mongoose'),
       middleware = require('./middleware'),
       User = require('./models/user'),
       path = require('path'),
+      methodOverride = require('method-override'),
       seedDB = require('./seeds'),
       Bus = require('./models/bus'),
       indexRoutes = require('./routes/index'),
       adminRoutes = require('./routes/admin'),
+      multer = require('multer'),
       busfind = Bus.find({})
 
     
@@ -25,6 +30,7 @@ app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
+app.use(methodOverride("_method"));
 //seedDB();
 
 app.use(require('express-session')({
@@ -45,6 +51,24 @@ app.use(function(req,res,next){
 passport.use(new passportlocal(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+const storage = multer.diskStorage({
+    destination: 'public/uploads',
+    filename: function(req, file, cb) {
+        cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
+const imageFilter = function(req, file, cb){
+    var ext = path.extname(file.originalname);
+    if(ext !== '.png' && ext !== '.gif' && ext !== '.jpg' && ext !== '.jpeg'){
+        return cb(new Error('Only image is allowed'), false)
+        }
+        cb(null, true);
+};
+
+const upload = multer({storage: storage, fileFilter: imageFilter})
+
 
 
 app.get('/step2', function(req, res){
@@ -69,11 +93,19 @@ app.get('/promotion', function(req, res){
 });
 
 app.get('/traveladvice', function(req, res){
-    res.render('advice');
+    ta.find({},function(error, allTa){
+        if(error){
+            console.log("Error!");
+        } else {
+            res.render("advice",{ta:allTa});
+        }
+    })
 });
 
-app.get('/bangkok', function(req, res){
-    res.render('ta1');
+app.get('/traveladvice/:id', function(req, res){
+    ta.findById(req.params.id, function(err, foundTa){
+        res.render("ta1", {ta: foundTa});
+    });
 });
 
 app.get('/ayutthaya', function(req, res){
@@ -249,6 +281,7 @@ app.post("/bus/:id",middleware.isloggedIn, function(req,res){
             res.render("step5",{n_price,n_id,n_seat,n_bid});
         }
     });
+
 });
 
 
@@ -276,11 +309,18 @@ app.post('/',function(req,res){
 
 });
 
-app.post("/booking",middleware.isloggedIn, function(req,res){
+app.post("/booking",middleware.isloggedIn,upload.single('image') , function(req,res){
     var uid = req.body.id;
     var bid = req.body.bid;
     var bnum = req.body.bnum;
-    if(uid  !='' && bid !=''){
+    var image = req.file.filename;
+    let n_re = {
+        uid: uid,
+        bid : bid,
+        bnum: bnum,
+        image :image
+    };
+    if(uid  !='' && bid !='' && bnum !=''){
         var cityParam ={$and:[{uid:uid},
             {$and:[{seat:bid},{bnum:bnum}]}
            ]
@@ -289,12 +329,31 @@ app.post("/booking",middleware.isloggedIn, function(req,res){
       var cityParam={}
     }
     var busfilter = ticket.find(cityParam)
+    receipt.create(n_re, function(err, newTa){
+        if(err){
+            console.log(err)
+        } else {
+            console.log("new re add")
+        }
+    });
     busfilter.exec(function(err,data){
         if(err)throw err;
         res.render('step6',{ticket:data})
     });
 });
 
+// app.get('/bus/seat/:id',middleware.isloggedIn, function(req,res){
+//     let seat = "EMPTY";
+//     bus.findOneAndUpdate({_id:req.params.id}, function(err, fobj){
+//         if(err){
+//             console.log(err)
+//             res.redirect('/bus/'+ req.params.id);
+//         } else {
+//             fobj.s1 = seat;
+//         }
+       
+//     });
+// })
 
 
 app.use('/',indexRoutes);

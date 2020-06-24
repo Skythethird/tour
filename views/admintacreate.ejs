@@ -1,6 +1,6 @@
 <%- include("partials/header2") %>
-<!-- <script type="text/javascript" src="js/adminta.js" defer></script> -->
-<!-- เชื่อม js ไม่ได้ -->
+<script type="text/javascript" src="/js/adminta.js" defer></script>
+
 
 
 <style>
@@ -297,41 +297,31 @@ input[type=text]{
 <div class="box2">
     <div class="empty"></div>
         <div class="container">
+          <form action="/admin/traveladvice/create" method="post" enctype='multipart/form-data'>
             <label for="placename">Place Name</label><br>
-            <input type="text" id="placename"><br>
+            <input type="text" id="placename" name="placename"><br>
+            <label for="info">Province</label><br>
+            <textarea id="info" name="Province"></textarea><br>
             <label for="info">Info</label><br>
             <textarea id="info" name="info"></textarea><br>
             <label for="howtogo">How to go</label><br>
             <textarea id="howtogo" name="howtogo"></textarea><br>
-            <label for="activity">How to go</label><br>
+            <label for="activity">Activity</label><br>
             <textarea id="activity" name="activity"></textarea><br>
             <label for="availability">Availability</label><br>
-            <textarea id="availability" name="activity"></textarea><br><br>
+            <textarea id="availability" name="availability"></textarea><br><br>
             
             <div class="row">
                 <div class="column2">
-                    <input type="file" id="real-file1" hidden="hidden">
-                    <button type="button" id="custom-button1">Upload a receipt</button>
+                  <input type="file" id="real-file1" hidden="hidden" name="image" accept="image/*">
+                  <button type="button" id="custom-button1">Upload a receipt</button>
+                  <!-- <input type="file" class="form-control" name="image" accept="image/*">
+                    <button type="button" id="custom-button1" accept="image/*">Upload a receipt</button> -->
                     <div class="empty2"></div>
-                    <span id="custom-text1">No file chosen, yet.</span>
-                </div>
-                <div class="column2">
-                    <input type="file" id="real-file2" hidden="hidden">
-                    <button type="button" id="custom-button2">Upload a receipt</button>
-                    <div class="empty2"></div>
-                    <span id="custom-text1">No file chosen, yet.</span>
-                </div>
-                <div class="column2">
-                    <input type="file" id="real-file3" hidden="hidden">
-                    <button type="button" id="custom-button3">Upload a receipt</button>
-                    <div class="empty2"></div>
-                    <span id="custom-text1">No file chosen, yet.</span>
                 </div>
             </div>
-            <a href="/admin/traveladvice">
                 <button class="save">Save Place</button>
-            </a> 
-       
+          </form>
         </div> 
 </div>
 <%- include("partials/footer") %>

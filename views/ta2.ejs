@@ -1,12 +1,7 @@
 <%- include("partials/header") %>
-        <script type="text/javascript" src="js/ta2.js" defer></script>
-
+<script type="text/javascript" src="/js/ta2.js" defer></script>
+    
 <style>
-/*slide show*/
-.mySlides {display:none}
-.w3-left, .w3-right, .w3-badge {cursor:pointer}
-.w3-badge {height:13px;width:13px;padding:0}
-
 /*nav bar*/
 .box1 {
     width: 90%;
@@ -38,53 +33,13 @@ li a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     }
-/* text */
-.minibox {
-  margin-left: auto;
-  margin-right: auto;
-  width: 1200px;
-  padding: 30px;
-  font-family: Oswald;
-}
 
-.indent  { 
-  padding-left: 30px;
-  font-size: 17px; 
-  padding-bottom: 30px;
-  }
-  
-.bigtext {
-  font-family: Oswald;
-  text-align: center;
-  font-size: 35px;
-}
+/*slide show*/
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
 
-.headtext {
-  font-size: 25px;
-  margin-bottom: 15px;
-}
 
-/* booking */
-.booking {
-width: 30%;
-background-color: #F4D03F;
-color: #935116;
-padding: 14px 20px;
-margin-left: auto;
-margin-right: auto;
-display: block;
-border: none;
-border-radius: 12px;
-cursor: pointer;
-font-family: Oswald;
-font-size: 17px;
-text-align: center;
-
-}
-
-.booking:hover {
-background-color: #F1C40F;
-}
 
 /*footer*/
 .footer-distributed{
@@ -145,6 +100,53 @@ background-color: #F1C40F;
   background:#283747   ; 
 }
 
+/* text */
+.minibox {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  padding: 30px;
+  font-family: Oswald;
+}
+
+.indent  { 
+  padding-left: 30px;
+  font-size: 17px; 
+  padding-bottom: 30px;
+  }
+  
+.bigtext {
+  font-family: Oswald;
+  text-align: center;
+  font-size: 35px;
+}
+
+.headtext {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+/* booking */
+.booking {
+width: 30%;
+background-color: #F4D03F;
+color: #935116;
+padding: 14px 20px;
+margin-left: auto;
+margin-right: auto;
+display: block;
+border: none;
+border-radius: 12px;
+cursor: pointer;
+font-family: Oswald;
+font-size: 17px;
+text-align: center;
+
+}
+
+.booking:hover {
+background-color: #F1C40F;
+}
 
 /*responsive*/
 @media only screen and (max-width: 1024px) {
@@ -238,54 +240,33 @@ background-color: #F1C40F;
     font-size: 14px;
   }
 }
-
-    </style> 
-<div class="box2">   
-      <div class="w3-content w3-display-container" style="max-width:100%">
-        <img class="mySlides" src="/ta2-1.jpg" style="width:100%">
-        <img class="mySlides" src="/ta2-2.jpg" style="width:100%">
-        <img class="mySlides" src="/ta2-3.jpg" style="width:100%">
-
-            <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-                <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-                <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-            </div>
+</style>
+<div class="box2"style="max-width:100%">
+      <div class="w3-content w3-display-container">
+        <img class="mySlides" src="<%= '/../uploads/'+ ta.image %>" style="width:100%">
       </div>
-</div> 
-
-<div class="minibox">
-  <div class="bigtext" id="placename">Wat Chaiwattanaram</div>
-  <div class="bigtext" id="province">Phra Nakhon Si Ayutthaya</div>
-  <div class="headtext">Info</div>
-  <div class="indent" id="info">Located on the bank of the Maenam Chao Phraya, to the west of the city Island is Wat 
-    Chaiwatthanaram. Built in 1630 by King Prasat Thong to honor his mother, Wat Chai Wattanaram was conceived as a 
-    replica of the Angkor Temple.One of the most visited historical 
-    site of Ayutthaya, Wat Chaiwattanaram rests on the bank of the Chao Phraya river, to the west of the
-    city Island. The Temple was ordered to built in 1630 by King Prasat Thong to honor his mother, featuring 
-    the architectural style influenced by Angkor temple in Cambodia-its unique feature is a large, central 
-    prang (Khmer-style pagoda) surrounded by smaller prangs, symbolizing Mount Sumeru, the gods' mountain 
-    according to Hindu belief. The lighting at night makes the temple even more exotic and beautiful.
-  </div>
-  <div class="headtext">How to go</div>
-  <div class="indent" id="howtogo">You can catch a train at Hua Lum Pong train station to Ayutthaya station.
-    First departure is 4:20 and last departure is 22:45. Then you ride Tuk-Tuk to Wat Chaiwattanaram.
-  </div>
-  <div class="headtext">Activity</div>
-  <div class="indent" id="activity">- Explore the temple<br>
-                      - Take some picture at the statue , walkway and ancient agoda
-  </div>
-  <div class="headtext">Avialabiltity</div>
-       <div class="indent" id="availability">Buy ticket : 6:30 – 19:30<br>
-                                            Visiting : 6:30 – 22:00
+</div>      
+      <div class="minibox">
+        <div class="bigtext" id="placename"><%= ta.pname %></div>
+        <div class="bigtext" id="province"><%= ta.province %></div>
+        <div class="headtext">Info</div>
+        <div class="indent" id="info"><%= ta.info %>
+        </div>
+        <div class="headtext">How to go</div>
+        <div class="indent" id="howtogo"><%= ta.htg %>
+        </div>
+        <div class="headtext">Activity</div>
+        <div class="indent" id="activity"><%= ta.activity %>
+        </div>
+        <div class="headtext">Avialabiltity</div>
+             <div class="indent" id="availability"><%= ta.availability %></div>
+             <a href="/admin/traveladvice">
+             <input class="booking" value="Back">
+            </a>
       </div>
-       <a href="/">
-       <input class="booking" value="Booking">
-      </a>
-</div>
 
 
+
+         
 
     <%- include("partials/footer") %>
