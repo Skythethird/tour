@@ -113,7 +113,7 @@
     display: flex;
     justify-content: center;
     height: 530px;
-    margin-top: 25px;
+    padding-top: 71px;
   }
   .column1 #left{
     width: 30%;
@@ -127,7 +127,7 @@
       border: 5px solid tomato;
       background-color: tomato;
       width: 380px;
-      height: 520px;
+      height: 570px;
       border-radius: 10px;
       padding-top: 10px;
       padding-left: 4px;
@@ -154,7 +154,9 @@
     margin-left: 70px;
     margin-right: 5px;
   }
-  
+  .first{
+    margin-top: 27px;
+  }
   /* #a3,#a5,#b6,#c4,#c6 {
     background-image: url("/seat.jpg");
     background-position: center;
@@ -180,7 +182,7 @@
   .container3 {
     background-color: #bbbb;
     width: 700px;
-    height: 520px;
+    height: 575px;
     border-radius: 10px;
     padding-top: 10px;
     padding-left: 4px;
@@ -204,8 +206,15 @@
     margin-top: 5px;
     margin-left: 10px;
   }
+  #Seat{
+    width: 83%;
+    overflow:auto;
+  }
+  #Price{
+    width: 12%;
+    margin-right: 10px;
+  }
   .amount,.totalprice {
-    margin-top: 10px;
     margin-left: 10px;
   }
   
@@ -214,7 +223,7 @@
   }
   
   #bookinfo {
-    margin-top: 10px;
+    margin-top: 5px;
     background-color: #F39C12 ;
     margin-right: 5px;
     padding: 5px;
@@ -417,13 +426,13 @@
         width: 400px;
         margin-left: auto;
         margin-right: auto;
+        padding-top: 35px;
         display: grid;
       }
       .container3{
-        width: 400px;
-        height: 815px;
-        font-size: 16px;
-        
+        width: 380px;
+        height: 857px;
+        font-size: 16px;  
       }
       .column2{
         width: 100%;
@@ -447,6 +456,15 @@
       .submit{
         margin-top: 10px ;
       }
+      #Price{
+      width: 25%;
+      }
+      #Seat{
+      width: 67%;
+      }
+      #amount{
+      margin-left: 12px;
+      }
   }
   
   
@@ -460,6 +478,7 @@
       }
       .bigrow{
         width: 320px;
+        padding-top: 56px;
       }
       .choose{
         width: 320px;
@@ -471,7 +490,7 @@
       }
       .container3{
         width: 320px;
-        height: 815px;
+        height: 860px;
       }
       .b{
         margin-left: 40px;
@@ -480,12 +499,21 @@
         width: 85%;
         margin-left: 15px;
       }
+      #Seat{
+      width: 60%;
+      }
+      .first{
+        margin-top: 0px;
+      }
     }
   
     @media only screen and (max-width: 320px) {
       .box2{
           width: 100%;
           height: 1370px;
+      }
+      .bigrow{
+        padding-top: 50px;
       }
       .choose{
         width: 280px;
@@ -497,7 +525,7 @@
       }
       .container3{
         width: 280px;
-        height: 815px;
+        height: 860px;
       }
       .a{
         margin-left: 25px;
@@ -508,6 +536,12 @@
       .submit{
         padding: 14px 10px;
       }
+      #Seat{
+      width: 53%;
+      }
+      #Price{
+      width: 30%;
+      }
     }
   </style>
 <div class="box2">
@@ -515,9 +549,9 @@
       <div class="column1" id="left">
           <div class="choose">
             <div class="row">
-              <div class="seat a" id="a1" onclick="myFunction1()"><%= bus.s1 %></div><span hidden id='p1'><%= bus.price %> </span>
-              <div class="seat b" id="b1" onclick="myFunction2()"><%= bus.s2 %></div><span hidden id='p2'><%= bus.price %> </span>
-              <div class="seat c" id="c1" onclick="myFunction3()"><%= bus.s3 %></div><span hidden id='p3'><%= bus.price %> </span>
+              <div class="seat a first" id="a1" onclick="myFunction1()"><%= bus.s1 %></div><span hidden id='p1'><%= bus.price %> </span>
+              <div class="seat b first" id="b1" onclick="myFunction2()"><%= bus.s2 %></div><span hidden id='p2'><%= bus.price %> </span>
+              <div class="seat c first" id="c1" onclick="myFunction3()"><%= bus.s3 %></div><span hidden id='p3'><%= bus.price %> </span>
             </div>
             <div class="row">
               <div class="seat a" id="a2" onclick="myFunction4()"><%= bus.s4 %></div><span hidden id='p4'><%= bus.price %> </span>
@@ -560,9 +594,9 @@
           <input type="hidden" name="city2" value="<%= bus.city2 %>" ></input>
           <input type="hidden" name="date" value="<%= bus.date %>" ></input>
           <input type="hidden" name="depart" value="<%= bus.depart %>" ></input>
-          <div class="selectseat" name="sos" >Selected Seat : <input type="text" id="Seat" name="Seat" ></input></div>
-          <div class="amount">Amount : <div type="text" id="amount" name="amount"></div></div>
-          <div class="totalprice">Total Price : <input type="text" id="Price" name="Price" ></input></div>
+          <div class="selectseat" name="sos" >Selected Seat : <input type="text" id="Seat" name="Seat" readonly/></input></div>
+          <div class="amount">Amount : <span type="text" id="amount" name="amount"></span></div>
+          <div class="totalprice">Total Price : <input type="text" id="Price" name="Price" readonly/>Bath</input></div>
           <div id="bookinfo">Booking info</div>
           <div class="bigrow2">
             <div class="row frow">
