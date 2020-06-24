@@ -1,5 +1,4 @@
 <%- include("partials/header2") %>
-<script type="text/javascript" src="js/login.js" defer></script>
 
 <style>
 /*nav bar*/
@@ -9,7 +8,7 @@
     }
 
 li a {
-    display: block;
+    display:block;
     color: black;
     font-family: Oswald;
     font-size: 20px;
@@ -17,12 +16,112 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
     }
-  .buttonlogin {
-  float: right;
-}
+  
 li a:hover {
     color: #2ECC71;
-    } 
+    }
+/*content*/
+.box2 {
+    background-image: url("S__15843402.jpg");
+    width: 90%;
+    height: 727px;
+    margin: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+.find {
+    color: #F1C40F;
+    font-family: Oswald;
+    font-size: 85px;
+    text-align: center;
+    padding-top: 190px;
+    }
+
+.where {
+    color: white;
+    font-family: Oswald;
+    font-size: 30px;
+    margin-left: 120px;
+    }
+
+/*container1*/
+.container1 {
+    width: 90%;
+    height: 125px;
+    border-radius: 10px;
+    margin :  auto;
+    background-color: #bbbb;
+    padding: 10px;
+    font-family: Oswald;
+    font-size: 17px;
+    }
+
+.column1 {
+  float: left;
+  margin: 5px;
+}
+.a ,.b {
+  width: 27%;
+}
+.c {
+  width: 21%;
+}
+.d {
+  width: 20.8%;
+}
+
+/* select */
+select {
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    color: #616A6B ;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: Oswald;
+    font-size: 17px;
+  }
+
+.city {
+    width:100%;
+    opacity:1;   
+  }
+
+/* dd/mm/yy */
+.date {
+    position: relative;
+    width: 100%;
+    height: 53px;
+    color: #616A6B;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    color: #616A6B ;
+    border-radius: 10px;
+    font-size: 17px;
+    box-sizing: border-box;
+  }
+
+/* button */
+.search {
+    width: 100%;
+    background-color: #F4D03F;
+    color: #935116;
+    padding: 14px 20px;
+    margin-top: 33px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: Oswald;
+    font-size: 17px;
+    text-align: center;
+  }
+  
+.search:hover {
+    background-color: #F1C40F;
+  }
 
 /*footer*/
 .footer-distributed{
@@ -83,286 +182,157 @@ li a:hover {
   background:#283747   ; 
 }
 
-/*content*/
-/*menuubar*/
-* {
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: "Oswald";
-    outline: none;
-    border: none;
-  }
-.box2 {
-  background-image: url("/messageImage_1586493383111.jpg");
-    width: 90%;
-    height: 727px;
-    margin: auto;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    }
-  /*login*/
-.align {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding-top: 130px;
- }
-
-.card {
-  height: 100%;
-  height: 446px;
-  width: 396px;
-  background:#bbbb;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: max-height 0.2s ;
- }
-
-.extend {
-  max-height: 480%;
- }
-
-.head {
-  width: 100%;
-  display: flex;
-  height: 72px;
-  border-bottom: 1px solid #34495E;
-  justify-content: space-between;
- }
-
-.head a{
-  height: 100%;
-  padding: 0 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #34495E;
-  font-size:20px;
-  font-weight:500;
- }
-
-  .head .selected {
-     position: relative;
-     color: #D35400;
-     font-weight:700;
- }
-
-
- .head .selected:after {
-     position: absolute;
-     content: "";
-     bottom: 0;
-     left: 0;
-     height: 5px;
-     width: 100%;
-     background: #D35400;
-     border-radius: 99px 99px 0 0;
- }
-
-.tabs {
-  height: calc(100% - 72px);
-  display: flex;
- }
-
-form { 
-  width: 100%;
-  height: 100%;
-  padding-left: 38px;
-  padding-right: 38px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-.inputs {
-  width: 100%;
-  height: 100%;
-  padding-top: 60px;
-  padding-bottom: center;
-}
-
-.input {
-  position: relative;
-  margin-bottom: 20px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.input input {
-  width: 100%;
-  font-size: 17px;
-  background:white;
-  border-radius: 8px;
-  padding: 16px 18px 16px 51px;
-  color: black;
-  opacity: 1;
-}
-
-.input img {
-  width: 16px;
-  position: absolute;
-  left: 19px;
-}
-
-.checkbox {
-  height: 10px;
-  display: flex;
-  align-items: center;
-	position: relative;
-	cursor: pointer;
-}
-
-.checkbox input {
-	position: absolute;
-	opacity: 0;
-	height: 0;
-	width: 0;
-}
-
-.checkbox span {
-	display: flex;
-	align-items: center;
-	color: #34495E;
-	font-size: 16px;
-	user-select: none;
-}
-
-.checkbox span:before {
-	content: "";
-	width: 22px;
-	height: 22px;
-	border-radius: 6px;
-	margin-right: 16px;
-  background-color: white;
-  opacity:0.6; 
-}
-
-.checkbox:hover input ~ span:before {
-  background-color: white;
-  opacity:0.8;
-}
-
-.checkbox input:checked ~ span:before {
-	background-image: url("checked2.png");
-  background-size: cover;
-  opacity: 1;
-}
-
-.loginb {
-	display: block;
-  background: #4CAF50;
-	padding: 14px 52px;
-	border-radius: 12px;
-	color: #003B15;
-	font-weight: 700;
-	font-size: 21px;
-  margin-bottom: 60px;
-}
-
-.loginb:hover {
-    background-color: #45a049;
-  }
-
+/*responsive*/
 @media only screen and (max-width: 1024px) {
-  li a{
-    font-size: 30px;
-  }
-  .box2{
-    height: 1110px;
-  }
-  .footer-distributed{
-    font-size: 20px;
-  }
-  .align {
-  padding-top: 320px;
- }
+    .box2{
+        height: 1110px;
+    }
+    .find {
+        padding-top: 380px;
+    }
+    .a ,.b {
+        width: 25%;
+    }
+    .c {
+        width: 25%;
+    }
+    .d {
+        width: 20%;
+    }
+    li a {
+        font-size: 30px;
+    }
+    .footer-distributed{
+        font-size: 20px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
-  li a {
-    font-size: 20px;
+    .box1 {
+        width: 100%;
     }
-  .box1{
-    width: auto;
-  }
-  .box2{
-    width: auto;
+    .box2{
+        width: 100%;
         height: 834px;
     }
-  .footer-distributed{
-    font-size: 15px;
-  }
-  .align {
-    padding-top: 190px;
- }
+    
+    .find {
+        padding-top: 285px;
+        font-size: 55px;
+    }
+
+    .where {
+        margin-left: 65px;
+        font-size: 25px;
+    }
+
+    .column1 {
+        margin: 3px;
+    }
+
+    .container1 {
+        height: 120px;
+    }
+
+    .city , .date , .search {
+        width:100%;   
+    }
+
+    .a ,.b {
+        width: 25%;
+    }
+    .c {
+        width: 25%;
+    }
+    .d {
+        width: 21%;
+    }
+
+    li a {
+        font-size: 20px;
+    }
+    .footer-distributed{
+        font-size: 15px;
+    }
 }
 
 @media only screen and (max-width: 425px) {
-  .box2{
-    width: auto;
-    height: 632px;
+    .find {
+        padding-top: 60px;
+        font-size: 45px;
     }
-  .align {
-    padding-top: 95px;
- }
- .card{
-    width: 350px;
-  }
+    .box2{
+        width: 100%;
+        height: 633px;
+    }
+    .a ,.b ,.c ,.d{
+        width: 100%;
+      }
+      .container1 {
+        height: 395px;
+    }
+
+    .city , .date , .search {
+        width:100%;   
+      }
 }
+
 
 @media only screen and (max-width: 375px) {
-  .box2{
-    width: auto;
-    height: 625px;
+    .box1 {
+        width: 100%;
     }
-  .card{
-    width: 300px;
+    .box2{
+        width: 100%;
+        height: 624px;
+    }
+    
+    .find {
+        padding-top: 80px;
+        font-size: 40px;
+    }
+
+    .where {
+        margin-left: 20px;
+        font-size: 17px;
+    }
+
+    .search {
+        margin-top: 15px;
+        margin-bottom: 0px;
+    }
+
+    .column1 {
+        margin: 0px;
+    }
+
+    .a ,.b ,.c ,.d{
+        width: 100%;
+      }
+
+    .container1 {
+        height: 355px;
+    }
+
+    .city , .date , .search {
+        width:100%;   
+      }
   }
 
-}
-
-@media only screen and (max-width: 320px) {
-  .box2{
-    width: auto;
-    height: 525px;
+  @media only screen and (max-width: 320px) {
+    .box2{
+        width: 100%;
+        height: 525px;
     }
-  .card{
-    width: 280px;
+    .find {
+        padding-top: 38px;
+        font-size: 35px;
+    }
   }
-  .align {
-    padding-top: 40px;
- }
-}
 
 </style>
 <div class="box2">
-    <div class="align">
-		<div class="card">
-			<div class="head">
-				<div></div>
-				<a id="login" class="selected" href="/admin">Login</a>
-				<div></div>
-			</div>
-			<div class="tabs">
-				<form class="login" action="/admin/login" method="POST">
-					<div class="inputs">
-						<div class="input">
-							<input placeholder="Username" type="text" name="username">
-							<img src="/user.svg">
-						</div>
-						<div class="input">
-							<input placeholder="Password" type="password" name="password">
-							<img src="/pass.svg">
-						</div>
-					</div>
-					<button class="loginb">Login</button>
-				</form>
-			</div>
-		</div>
-	</div>
-	</div>
-  <%- include("partials/footer") %>
+  
+</div>
+
+<%- include("partials/footer") %>

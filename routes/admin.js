@@ -1,4 +1,4 @@
-const admin = require('../models/admin');
+
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
@@ -9,47 +9,12 @@ const middleware = require('../middleware');
 
 
 
-router.get('/', function(req, res){
+router.get('/',middleware.isloggedIn,middleware.admin, function(req, res){
     res.render('index');
 });
 
-router.get('/signup', function(req, res){
-    res.render('index2');
-});
 
-
-router.post('/login', passport.authenticate('local',{
-    failureRedirect: 'login'
-}),function(req, res){
-    if (req.session.oldUrl){
-        var oldUrl = req.session.oldUrl;
-        req.session.oldUrl = null;
-        res.redirect(oldUrl);
-    } else {
-        res.redirect('/admin');
-    }
-});
-
-
-router.post('/signup', function(req, res){
-    admin.register(new admin({username: req.body.username}), req.body.password, function(err, user){
-        if(err){
-            console.log(err);
-            return res.render('login');
-        }
-        passport.authenticate('local')(req,res,function(){
-            res.redirect('/admin');
-        });
-    });
-});
-
-router.get('/logout',function(req, res){
-    req.logout();
-    req.flash('success','You Logout');
-    res.redirect('/');
-});
-
-router.get('/schedule',middleware.isloggedIn, function(req, res){
+router.get('/schedule',middleware.isloggedIn,middleware.admin, function(req, res){
     Bus.find({},function(error, allBus){
         if(error){
             console.log("Error!");
@@ -59,11 +24,11 @@ router.get('/schedule',middleware.isloggedIn, function(req, res){
     })
 });
 
-router.get('/schedule/create',middleware.isloggedIn, function(req, res){
+router.get('/schedule/create',middleware.isloggedIn,middleware.admin, function(req, res){
     res.render('admincreateschedule');
 });
 
-router.post('/schedule/create',middleware.isloggedIn, function(req, res){
+router.post('/schedule/create',middleware.isloggedIn,middleware.admin, function(req, res){
     let n_id = req.body.busnum;
     let n_price= req.body.price;
     let n_city1 = req.body.city1;
@@ -116,12 +81,13 @@ router.post('/schedule/create',middleware.isloggedIn, function(req, res){
 });
 
 
-router.get('/schedule/:id',middleware.isloggedIn, function(req, res){
-    res.render('admineditschedule');
+router.get('/schedule/:id',middleware.isloggedIn,middleware.admin, function(req, res){
+    Bus.findById(req.params.id, function(err, foundBus){
+        res.render("admineditschedule", {bus: foundBus});
+    });
 });
 
-router.post("/schedule/:id", middleware.isloggedIn, function(req,res){
-    let iid = req.body.id
+router.post("/schedule/:id", middleware.isloggedIn,middleware.admin, function(req,res){
     let n_id = req.body.busnum;
     let n_price= req.body.price;
     let n_city1 = req.body.city1;
@@ -172,7 +138,17 @@ router.post("/schedule/:id", middleware.isloggedIn, function(req,res){
     });
 });
 
-
+router.get('/schedule/delete/:id',middleware.isloggedIn,middleware.admin, function(req, res){
+    Bus.findByIdAndRemove(req.params.id,function(err){
+        console.log(req.params.id)
+        if(err){
+            console.log(err);
+        }else{
+            console.log('delete')
+            res.redirect('/admin/schedule');
+        }
+    })
+});
 
 
 router.get('/traveladvice',middleware.isloggedIn, function(req, res){

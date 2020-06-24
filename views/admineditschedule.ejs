@@ -362,8 +362,7 @@ li a:hover {
 <div class="box2">
     <div class="empty"></div>
     <div class="container">
-        <form action="/admin/schedule/:id" method="POST">
-            <input hidden name="id" value="<%= >">
+        <form action="/admin/schedule/<%= bus._id %>" method="POST">
             <div class="row frow">
                 <div class="column column2 pd"><label for="tripnum">Trip Number</label>
                                                <input type="text" id="tripnum" name="busnum"><br>
@@ -411,18 +410,15 @@ li a:hover {
                                     
                 </div>
             </div>
-            <div class="row">
                 <div class="column column1">
-                        <button class="save" type="submit">Save Trip</button> 
+                        <button class="save" type="submit">Save Trip</button>
                 </div>
                 </form>
+           
                 <div class="column column1">
-                    <a href="/admin/schedule">
-                        <button class="delete">Delete Trip</button>
-                    </a> 
+                        <a href="/admin/schedule/delete/<%= bus._id %>"><button class="delete">Delete Trip</button></a>
                 </div>
-            </div>
-
+          
     </div>
 </div>
 
