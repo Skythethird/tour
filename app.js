@@ -252,6 +252,7 @@ app.post("/bus/:id",middleware.isloggedIn, function(req,res){
     let n_city1 = req.body.city1;
     let n_city2 = req.body.city2;
     let n_date = req.body.date;
+    let n_de = req.body.depart
 
     let n_ticket = {
         uid : n_id,
@@ -263,7 +264,8 @@ app.post("/bus/:id",middleware.isloggedIn, function(req,res){
         price : n_price,
         city1 : n_city1,
         city2 : n_city2,
-        date : n_date
+        date : n_date,
+        time : n_de
     };
     console.log(n_ticket);
     ticket.create(n_ticket, function(error,ticket){

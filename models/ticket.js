@@ -11,7 +11,8 @@ let ticketSchema = new mongoose.Schema({
         price : String,
         city1 : String,
         city2 : String,
-        date : String
+        date : String,
+        time : String
 });
     
 ticketSchema.plugin(passportlocalMongoose);

@@ -317,12 +317,12 @@ li a:hover {
         <img src="step6.png" class="image">
       <div class="container">
         <% ticket.forEach(function(ticket){ %>
-        <div class="name">Name : <%= ticket.fname %> &nbsp <%= ticket.lname %> </div>
+        <div class="name">Name :  <%= ticket.fname %> &nbsp <%= ticket.lname %> </div>
         <div class="text1">ID Number : <%= ticket.ID %> </div>
-        <div class="text2">Time Depart :  <%= ticket.date %></div>
-        <div class="text3">From - To :<%= ticket.city1%>-<%= ticket.city2 %></div>
-        <div class="text4">Seat :<%= ticket.seat %> </div>
-        <div class="text5">Price :<%= ticket.price %> </div>
+        <div class="text2">Time Depart :  <%= ticket.date %>   <%= ticket.time %> </div>
+        <div class="text3">From - To :  <%= ticket.city1%>-<%= ticket.city2 %></div>
+        <div class="text4">Seat :  <%= ticket.seat %> </div>
+        <div class="text5">Price :  <%= ticket.price %> </div>
         <div class="booking">Booking Complete!</div>
         <div class="text6">Please show your ID Card and this page before you take the ticket.</div>
         <% }); %> 
