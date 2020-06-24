@@ -1,5 +1,6 @@
-<%- include("partials/header") %>
-<script type="text/javascript" src="js/login.js" defer></script>
+<%- include("partials/header2") %>
+
+<!-- <script type="text/javascript" src="js/login.js" defer></script> -->
 
 <style>
 /*nav bar*/
@@ -82,6 +83,7 @@ li a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background:#283747   ; 
 }
+
 
 /*content*/
 /*menuubar*/
@@ -177,11 +179,11 @@ form {
   position: relative;
 }
 
-.inputs {
-  width: 100%;
-  height: 100%;
-  padding-top: 60px;
-  padding-bottom: center;
+.inputs2 {
+    width: 100%;
+    height: 100%;
+    padding-top: 40px;
+    padding-bottom: center;
 }
 
 .input {
@@ -252,22 +254,23 @@ form {
   opacity: 1;
 }
 
-.loginb {
+.regis {
 	display: block;
-  background: #4CAF50;
+  background: #F4D03F;
 	padding: 14px 52px;
 	border-radius: 12px;
-	color: #003B15;
+	color: #935116;
 	font-weight: 700;
 	font-size: 21px;
-  margin-bottom: 60px;
+  cursor: pointer;
+  margin-bottom: 40px;
 }
 
-.loginb:hover {
-    background-color: #45a049;
+.regis:hover {
+    background-color: #F1C40F;
   }
 
-@media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1024px) {
   li a{
     font-size: 30px;
   }
@@ -322,7 +325,6 @@ form {
   .card{
     width: 300px;
   }
-
 }
 
 @media only screen and (max-width: 320px) {
@@ -343,31 +345,25 @@ form {
     <div class="align">
 		<div class="card">
 			<div class="head">
-				<div></div>
-				<a id="login" class="selected" href="/login">Login</a>
-				<a id="register" href="/signup">Register</a>
+        <div></div>
+				<a id="login"  href="/admin">Login</a>
+				<a id="register" class="selected" href="/admin/signup">Register</a>
 				<div></div>
 			</div>
-			<div class="tabs">
-				<form class="login" action="/login" method="POST">
-					<div class="inputs">
+            <form class="register" action="/admin/signup" method="POST">
 						<div class="input">
 							<input placeholder="Username" type="text" name="username">
-							<img src="user.svg">
+							<img src="/user.svg">
 						</div>
 						<div class="input">
 							<input placeholder="Password" type="password" name="password">
-							<img src="pass.svg">
+							<img src="/pass.svg">
 						</div>
-						<label class="checkbox">
-							<input type="checkbox">
-							<span>Remember me</span>
-						</label>
 					</div>
-					<button class="loginb">Login</button>
+					<button class="regis">Register</button>
 				</form>
 			</div>
 		</div>
-	</div>
-	</div>
-  <%- include("partials/footer") %>
+    </div>
+    </div>
+    <%- include("partials/footer") %>

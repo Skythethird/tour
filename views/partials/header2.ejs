@@ -31,12 +31,14 @@
           <li class="nav-item">
             <a class="nav-link" href="/admin/traveladvice">Travel Advice</a>
           </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
           <li style="float: right;" >
-            <form action = '/login' method = 'POST'>
+            <form action = '/admin' method = 'POST'>
                 <% if(!currentUser) { %>
-                  <a href="/login">Login</a>
+                  <a href="/admin">Login</a>
                 <% } else { %>
-                  <a href='/profile'>Profile</a>
+                  <a href='/logout'>logout</a>
                 <% } %>  
               </form>
           </li>

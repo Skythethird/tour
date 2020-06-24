@@ -363,15 +363,16 @@ li a:hover {
         <div class="empty2"></div>
         </a>
       </div>
+      <% bus.forEach(function(bus){ %>
       <div class="row rowincon">
-        <div class="cc">CM0912</div>
-        <div class="cc">Mo chit<br>24/05 07:00</div>
-        <div class="cc">Ching Mai<br>24/05 17:30</div>
-        <div class="cc">10h 30m</div>
-        <div class="cc">823 Bath<br><a href="/admin/schedule/edit"><button class="edit">edit</button></a></div>
+        <div class="cc"><%= bus.busnum %></div>
+        <div class="cc"><%= bus.city1 %><br><%= bus.date %> <%= bus.depart %></div>
+        <div class="cc"><%= bus.city2 %><br><%= bus.date %> <%= bus.arrive %></div>
+        <div class="cc"><%= bus.atime %></div>
+        <div class="cc"><%= bus.price %> Bath<br><a href="/admin/schedule/<%= bus._id %>"><button class="edit">edit</button></a></div>
       </div>
-   
-      <div class="row rowincon">
+      <% }); %>
+      <!-- <div class="row rowincon">
         <div class="cc">CM0919</div>
         <div class="cc">Mo chit<br>24/05 08:00</div>
         <div class="cc">Ching Mai<br>24/05 18:30</div>
@@ -426,7 +427,7 @@ li a:hover {
         <div class="cc">Ching Mai<br>24/05 23:00</div>
         <div class="cc">10h 30m</div>
         <div class="cc">823 Bath<br><a href="/admin/schedule/edit"><button class="edit">edit</button></a></div>
-      </div>
+      </div> -->
     </div>
    </div>
  </div>

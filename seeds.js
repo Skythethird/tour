@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Bus = require('./models/bus');
-const Seat = require('./models/seat');
 
 
 const data = [

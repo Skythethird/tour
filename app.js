@@ -12,8 +12,8 @@ const user = require('./models/user');
       path = require('path'),
       seedDB = require('./seeds'),
       Bus = require('./models/bus'),
-      Seat = require('./models/seat')
       indexRoutes = require('./routes/index'),
+      adminRoutes = require('./routes/admin'),
       busfind = Bus.find({})
 
     
@@ -194,33 +194,6 @@ app.get('/profile/history/info/:id/delete',middleware.isloggedIn ,function(req, 
 
 
 
-app.get('/admin/schedule', function(req, res){
-    res.render('adminschedule');
-});
-
-app.get('/admin/schedule/create', function(req, res){
-    res.render('admincreateschedule');
-});
-
-app.get('/admin/schedule/edit', function(req, res){
-    res.render('admineditschedule');
-});
-
-app.get('/admin/traveladvice', function(req, res){
-    res.render('adminta');
-});
-
-app.get('/admin/traveladvice/create', function(req, res){
-    res.render('admintacreate');
-});
-
-app.get('/admin/traveladvice/edit', function(req, res){
-    res.render('admintaedit');
-});
-
-app.get('/admin/promotion', function(req, res){
-    res.render('adminpro');
-});
 
 
 
@@ -273,7 +246,7 @@ app.post("/bus/:id",middleware.isloggedIn, function(req,res){
             console.log(error); 
         } else {
             console.log("New tik added.");
-            res.render("step5",{n_price,n_id,n_seat});
+            res.render("step5",{n_price,n_id,n_seat,n_bid});
         }
     });
 });
@@ -306,8 +279,12 @@ app.post('/',function(req,res){
 app.post("/booking",middleware.isloggedIn, function(req,res){
     var uid = req.body.id;
     var bid = req.body.bid;
+    var bnum = req.body.bnum;
     if(uid  !='' && bid !=''){
-        var cityParam ={$and:[{uid:uid},{seat:bid}]}
+        var cityParam ={$and:[{uid:uid},
+            {$and:[{seat:bid},{bnum:bnum}]}
+           ]
+        }
     }else{
       var cityParam={}
     }
@@ -321,6 +298,7 @@ app.post("/booking",middleware.isloggedIn, function(req,res){
 
 
 app.use('/',indexRoutes);
+app.use('/admin',adminRoutes);
 
 
 app.listen(3000, function(req,res){

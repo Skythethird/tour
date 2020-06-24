@@ -1,605 +1,368 @@
-<%- include("partials/header") %>
-<script type="text/javascript" src="/js/index.js" defer></script>
+<%- include("partials/header2") %>
+<script type="text/javascript" src="js/login.js" defer></script>
+
 <style>
-  /*nav bar*/
-  .box1 {
-      width: 90%;
-      margin: auto;
-      }
-  
-  li a {
-      display: block;
-      color: black;
-      font-family: Oswald;
-      font-size: 20px;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      }
-    .buttonlogin {
-    float: right;
-  }
-  li a:hover {
-      color: #2ECC71;
-      } 
-  
-  /*footer*/
-  .footer-distributed{
-      background-color: white;
-      box-sizing: border-box;
-      width: 100%;
-      text-align: left;
-      font-family: Oswald;
-      font-size: 15px;
-      margin-top: 0px;
-      }
-      
-  .container2{
-      margin: auto;
-      padding: 20px;
-      }
-    
-  .column {
-      width: 50%;
-      float: left;
-      }
-    
-  .left {
-      text-align: center;
-      }
-  
-  .right{
-      text-align: center;
-      }
-    
-  .by{
-      margin-top: 5px;
-      background-color:#aaa;
-      text-align: center;
-      font-family: Oswald;
-      padding: 7px;
-      }
-  
-  /* scrollbar */
-  /* width */
-  ::-webkit-scrollbar {
-    width: 15px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    border-radius: 10px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #34495E  ; 
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background:#283747   ; 
-  }
-  
-  
-  /*content*/
-  /*menuubar*/
-  * {
-      box-sizing: border-box;
-      text-decoration: none;
-      font-family: "Oswald";
-      outline: none;
-      border: none;
+/*nav bar*/
+.box1 {
+    width: 90%;
+    margin: auto;
     }
-  .box2 {
-      width: 90%;
-      background-image: url("/S__15843402.jpg");
-      height: 727px;
-      margin: auto;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      font-family: Oswald;
-      }
-   /*progress bar*/
-   .image {
-    margin-right: auto;
-    margin-left: auto;
+
+li a {
     display: block;
-    padding-top: 15px;
-  }
-  .bigrow{
-    display: flex;
-    justify-content: center;
-    height: 530px;
-    margin-top: 25px;
-  }
-  .column1 #left{
-    width: 30%;
-  }
-  .column1 #right{
+    color: black;
+    font-family: Oswald;
+    font-size: 20px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+  .buttonlogin {
+  float: right;
+}
+li a:hover {
+    color: #2ECC71;
+    } 
+
+/*footer*/
+.footer-distributed{
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font-family: Oswald;
+    font-size: 15px;
+    margin-top: 0px;
+    }
+    
+.container2{
+    margin: auto;
+    padding: 20px;
+    }
+  
+.column {
     width: 50%;
-  }
-  /*left*/
+    float: left;
+    }
   
-  .choose {
-      border: 5px solid tomato;
-      background-color: tomato;
-      width: 380px;
-      height: 520px;
-      border-radius: 10px;
-      padding-top: 10px;
-      padding-left: 4px;
-      margin-top: 5px; 
-      margin-left: auto;
-      margin-right: auto;
-  }
+.left {
+    text-align: center;
+    }
+
+.right{
+    text-align: center;
+    }
   
-  .seat {
-      border: 2px solid black;
-      width: 85px;
-      height: 65px;
-      border-radius: 10px;
-      margin-bottom: 5px;
-      list-style-type: none;
-      padding-left: 10px;
-      background-color: cornflowerblue;
+.by{
+    margin-top: 5px;
+    background-color:#aaa;
+    text-align: center;
+    font-family: Oswald;
+    padding: 7px;
+    }
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #34495E  ; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:#283747   ; 
+}
+
+/*content*/
+/*menuubar*/
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Oswald";
+    outline: none;
+    border: none;
   }
-  
-  .a {
-    margin-left: 30px;
-  }
-  .b{
-    margin-left: 70px;
-    margin-right: 5px;
-  }
-  
-  /* #a3,#a5,#b6,#c4,#c6 {
-    background-image: url("/seat.jpg");
+.box2 {
+  background-image: url("/messageImage_1586493383111.jpg");
+    width: 90%;
+    height: 727px;
+    margin: auto;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  
-  } */
-  
-  #a1.selected,#a2.selected,#a3.selected,#a4.selected,#a5.selected,#a6.selected,#a7.selected{
-    background: #FDD835;
+    }
+  /*login*/
+.align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 130px;
+ }
+
+.card {
+  height: 100%;
+  height: 446px;
+  width: 396px;
+  background:#bbbb;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: max-height 0.2s ;
+ }
+
+.extend {
+  max-height: 480%;
+ }
+
+.head {
+  width: 100%;
+  display: flex;
+  height: 72px;
+  border-bottom: 1px solid #34495E;
+  justify-content: space-between;
+ }
+
+.head a{
+  height: 100%;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #34495E;
+  font-size:20px;
+  font-weight:500;
+ }
+
+  .head .selected {
+     position: relative;
+     color: #D35400;
+     font-weight:700;
+ }
+
+
+ .head .selected:after {
+     position: absolute;
+     content: "";
+     bottom: 0;
+     left: 0;
+     height: 5px;
+     width: 100%;
+     background: #D35400;
+     border-radius: 99px 99px 0 0;
+ }
+
+.tabs {
+  height: calc(100% - 72px);
+  display: flex;
+ }
+
+form { 
+  width: 100%;
+  height: 100%;
+  padding-left: 38px;
+  padding-right: 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.inputs {
+  width: 100%;
+  height: 100%;
+  padding-top: 60px;
+  padding-bottom: center;
+}
+
+.input {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.input input {
+  width: 100%;
+  font-size: 17px;
+  background:white;
+  border-radius: 8px;
+  padding: 16px 18px 16px 51px;
+  color: black;
+  opacity: 1;
+}
+
+.input img {
+  width: 16px;
+  position: absolute;
+  left: 19px;
+}
+
+.checkbox {
+  height: 10px;
+  display: flex;
+  align-items: center;
+	position: relative;
+	cursor: pointer;
+}
+
+.checkbox input {
+	position: absolute;
+	opacity: 0;
+	height: 0;
+	width: 0;
+}
+
+.checkbox span {
+	display: flex;
+	align-items: center;
+	color: #34495E;
+	font-size: 16px;
+	user-select: none;
+}
+
+.checkbox span:before {
+	content: "";
+	width: 22px;
+	height: 22px;
+	border-radius: 6px;
+	margin-right: 16px;
+  background-color: white;
+  opacity:0.6; 
+}
+
+.checkbox:hover input ~ span:before {
+  background-color: white;
+  opacity:0.8;
+}
+
+.checkbox input:checked ~ span:before {
+	background-image: url("checked2.png");
+  background-size: cover;
+  opacity: 1;
+}
+
+.loginb {
+	display: block;
+  background: #4CAF50;
+	padding: 14px 52px;
+	border-radius: 12px;
+	color: #003B15;
+	font-weight: 700;
+	font-size: 21px;
+  margin-bottom: 60px;
+}
+
+.loginb:hover {
+    background-color: #45a049;
   }
-  #b1.selected,#b2.selected,#b3.selected,#b4.selected,#b5.selected,#b6.selected,#b7.selected{
-    background: #FDD835;
+
+@media only screen and (max-width: 1024px) {
+  li a{
+    font-size: 30px;
   }
-  #c1.selected,#c2.selected,#c3.selected,#c4.selected,#c5.selected,#c6.selected,#c7.selected{
-    background: #FDD835;
+  .box2{
+    height: 1110px;
   }
-  
-  /*right*/
-  .column2{
-    width: 50%;
+  .footer-distributed{
+    font-size: 20px;
   }
-  .container3 {
-    background-color: #bbbb;
-    width: 700px;
-    height: 520px;
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-left: 4px;
-    margin-top: 5px; 
-    margin-left: 15px;
-    font-family: Oswald;
-    font-size: 17px;
+  .align {
+  padding-top: 320px;
+ }
+}
+
+@media only screen and (max-width: 768px) {
+  li a {
+    font-size: 20px;
+    }
+  .box1{
+    width: auto;
   }
-  
-  #texta1,#texta2,#texta3,#texta4,#texta5,#texta6,#texta7 {
-    display: none;
-  }
-  #textb1,#textb2,#textb3,#textb4,#textb5,#textb6,#textb7 {
-    display: none;
-  }
-  #textc1,#textc2,#textc3,#textc4,#textc5,#textc6,#textc7 {
-    display: none;
-  }
-  
-  .selectseat {
-    margin-top: 5px;
-    margin-left: 10px;
-  }
-  .amount,.totalprice {
-    margin-top: 10px;
-    margin-left: 10px;
-  }
-  
-  .ss{
-    margin-right:5px;
-  }
-  
-  #bookinfo {
-    margin-top: 10px;
-    background-color: #F39C12 ;
-    margin-right: 5px;
-    padding: 5px;
-  }
-  .bigrow2{
-    width: 95%;
-    margin-left: 15px;
-  }
-  
-  .amount {
-    margin-left: 50px;
-  }
-  .totalprice {
-    margin-left: 30px;
-  }
-  #bookinfo {
-    font-size: 22px;
-  }
-  .fill {
-    padding: 11px;
-  }
-  
-  .pd{
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  
-  /*radio*/
-  /* The container */
-  .gender {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 17px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    float:left;
-  }
-  
-  
-  /* Hide the browser's default radio button */
-  .gender input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-  }
-  
-  /* Create a custom radio button */
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: #eee;
-    border-radius: 50%;
-    margin-left:10px;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .gender:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
-  
-  /* When the radio button is checked, add a blue background */
-  .gender input:checked ~ .checkmark {
-    background-color: #2196F3;
-  }
-  
-  /* Create the indicator (the dot/circle - hidden when not checked) */
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  /* Show the indicator (dot/circle) when checked */
-  .gender input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  /* Style the indicator (dot/circle) */
-  .gender .checkmark:after {
-     top: 6px;
-    left: 6px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: white;
-  }
-  
-  
-  input[type=text]{
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    width: 100%;
+  .box2{
+    width: auto;
+        height: 834px;
+    }
+  .footer-distributed{
     font-size: 15px;
   }
-  
-  .submit {
-    display: block;
-    background: #4CAF50;
-    padding: 14px 52px;
-    border-radius: 12px;
-    color: #003B15;
-    font-weight: 700;
-    font-size: 17px;
-    cursor: pointer;
-    margin-top: 5px;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+  .align {
+    padding-top: 190px;
+ }
+}
+
+@media only screen and (max-width: 425px) {
+  .box2{
+    width: auto;
+    height: 632px;
+    }
+  .align {
+    padding-top: 95px;
+ }
+ .card{
+    width: 350px;
   }
-  
-  .submit:hover {
-      background-color: #45a049;
+}
+
+@media only screen and (max-width: 375px) {
+  .box2{
+    width: auto;
+    height: 625px;
     }
-  
-  label{
-      margin-bottom: -10px;
-    }
-  
-  .frow{
-    margin-top: 10px;
+  .card{
+    width: 300px;
   }
-  
-  
-  /*responsive*/
-  @media only screen and (max-width: 1024px) {
-    .image{
-      padding-top: 60px;
+
+}
+
+@media only screen and (max-width: 320px) {
+  .box2{
+    width: auto;
+    height: 525px;
     }
-      .box2{
-          height: 1330px;
-      }
-      li a {
-          font-size: 30px;
-      }
-      .footer-distributed{
-          font-size: 20px;
-      }
-      .bigrow{
-        width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        display: grid;
-      }
-      #left{
-        margin-bottom: 20px;
-      }
-      .container3{
-        margin-left: 0px;
-      }
-      
+  .card{
+    width: 280px;
   }
-  
-  @media only screen and (max-width: 768px) {
-    .image{
-      padding-top: 20px;
-    }
-      .box1 {
-          width: 100%;
-      }
-      .box2{
-          width: 100%;
-          height: 1290px;
-      }
-      li a {
-          font-size: 20px;
-      }
-      .footer-distributed{
-          font-size: 15px;
-      }
-      .bigrow{
-        width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-        display: grid;
-      }
-  }
-  
-  @media only screen and (max-width: 425px) {
-    .image{
-      width: 100%;
-      padding-top: 10px;
-    }
-      .box2{
-          width: 100%;
-          height: 1533px;
-      }
-      .bigrow{
-        width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-        display: grid;
-      }
-      .container3{
-        width: 400px;
-        height: 815px;
-        font-size: 16px;
-        
-      }
-      .column2{
-        width: 100%;
-        display: grid;
-      }
-      input[type=text]{
-        width: 90%;
-        margin-left: 15px;
-      }
-      label{
-        margin-left: 15px;
-        margin-bottom: 0px;
-      }
-      .pd{
-      padding-left: 10px;
-      padding-right: 10px;
-      }
-      .fill{
-      padding: 7px;
-      }
-      .submit{
-        margin-top: 10px ;
-      }
-  }
-  
-  
-  @media only screen and (max-width: 375px) {
-      .box1 {
-          width: 100%;
-      }
-      .box2{
-          width: 100%;
-          height: 1450px;
-      }
-      .bigrow{
-        width: 320px;
-      }
-      .choose{
-        width: 320px;
-        height: 445px;
-      }
-      .seat{
-        width: 75px;
-        height: 55px;
-      }
-      .container3{
-        width: 320px;
-        height: 815px;
-      }
-      .b{
-        margin-left: 40px;
-      }
-      input[type=text]{
-        width: 85%;
-        margin-left: 15px;
-      }
-    }
-  
-    @media only screen and (max-width: 320px) {
-      .box2{
-          width: 100%;
-          height: 1370px;
-      }
-      .choose{
-        width: 280px;
-        height: 375px;
-      }
-      .seat{
-        width: 65px;
-        height: 45px;
-      }
-      .container3{
-        width: 280px;
-        height: 815px;
-      }
-      .a{
-        margin-left: 25px;
-      }
-      .pd{
-      padding-left: 4px;
-      }
-      .submit{
-        padding: 14px 10px;
-      }
-    }
-  </style>
+  .align {
+    padding-top: 40px;
+ }
+}
+
+</style>
 <div class="box2">
-  <div class="bigrow"> 
-      <div class="column1" id="left">
-          <div class="choose">
-            <div class="row">
-              <div class="seat a" id="a1" onclick="myFunction1()"><%= bus.s1 %></div><span hidden id='p1'><%= bus.price %> </span>
-              <div class="seat b" id="b1" onclick="myFunction2()"><%= bus.s2 %></div><span hidden id='p2'><%= bus.price %> </span>
-              <div class="seat c" id="c1" onclick="myFunction3()"><%= bus.s3 %></div><span hidden id='p3'><%= bus.price %> </span>
-            </div>
-            <div class="row">
-              <div class="seat a" id="a2" onclick="myFunction4()"><%= bus.s4 %></div><span hidden id='p4'><%= bus.price %> </span>
-              <div class="seat b" id="b2" onclick="myFunction5()"><%= bus.s5 %></div><span hidden id='p5'><%= bus.price %> </span>
-              <div class="seat c" id="c2" onclick="myFunction6()"><%= bus.s6 %></div><span hidden id='p6'><%= bus.price %> </span>
-          </div>  
-          <div class="row">
-            <div class="seat a" id="a3" onclick="myFunction7()"><%= bus.s7 %></div><span hidden id='p7'><%= bus.price %> </span>
-            <div class="seat b" id="b3" onclick="myFunction8()"><%= bus.s8 %></div><span hidden id='p8'><%= bus.price %> </span>
-            <div class="seat c" id="c3" onclick="myFunction9()"><%= bus.s9 %></div><span hidden id='p9'><%= bus.price %> </span>
-          </div>  
-          <div class="row">
-            <div class="seat a" id="a4" onclick="myFunction10()"><%= bus.s10 %></div><span hidden id='p10'><%= bus.price %> </span>
-            <div class="seat b" id="b4" onclick="myFunction11()"><%= bus.s11 %></div><span hidden id='p11'><%= bus.price %> </span>
-            <div class="seat c" id="c4" onclick="myFunction12()"><%= bus.s12 %></div><span hidden id='p12'><%= bus.price %> </span> 
-          </div>  
-          <div class="row">
-            <div class="seat a" id="a5" onclick="myFunction13()"><%= bus.s13 %></div><span hidden id='p13'><%= bus.price %> </span>
-            <div class="seat b" id="b5" onclick="myFunction14()"><%= bus.s14 %></div><span hidden id='p14'><%= bus.price %> </span>
-            <div class="seat c" id="c5" onclick="myFunction15()"><%= bus.s15 %></div><span hidden id='p15'><%= bus.price %> </span>
-          </div>  
-          <div class="row">
-            <div class="seat a" id="a6" onclick="myFunction16()"><%= bus.s16 %></div><span hidden id='p16'><%= bus.price %> </span>
-            <div class="seat b" id="b6" onclick="myFunction17()"><%= bus.s17 %></div><span hidden id='p17'><%= bus.price %> </span>
-            <div class="seat c" id="c6" onclick="myFunction18()"><%= bus.s18 %></div><span hidden id='p18'><%= bus.price %> </span>
-          </div>     
-          <div class="row">
-            <div class="seat a" id="a7" onclick="myFunction19()"><%= bus.s19 %></div><span hidden id='p19'><%= bus.price %> </span> 
-            <div class="seat b" id="b7" onclick="myFunction20()"><%= bus.s20 %></div><span hidden id='p20'><%= bus.price %> </span>
-            <div class="seat c" id="c7" onclick="myFunction21()"><%= bus.s21 %></div><span hidden id='p21'><%= bus.price %> </span>
-          </div>
-          </div>
-      </div>
-      <div class="column1" id="right">
-        <div class="container3">
-          <form action="/bus/:id" method="POST">
-          <input type="hidden" name="id" value="<%= currentUser._id %>" ></input>
-          <input type="hidden" name="bid" value="<%= bus.busnum %>" ></input>
-          <input type="hidden" name="city1" value="<%= bus.city1 %>" ></input>
-          <input type="hidden" name="city2" value="<%= bus.city2 %>" ></input>
-          <div class="selectseat" name="sos" >Selected Seat : <input type="text" id="Seat" name="Seat" ></input></div>
-          <div class="amount">Amount : <div type="text" id="amount" name="amount"></div></div>
-          <div class="totalprice">Total Price : <input type="text" id="Price" name="Price" ></input></div>
-          <div id="bookinfo">Booking info</div>
-          <div class="bigrow2">
-            <div class="row frow">
-              <div class="column column2 pd"><label for="fname">First Name</label>
-                                  <input type="text" id="fname" name="fname">
-              </div>
-              <div class="column column2 pd"><label for="lname">Last Name</label>
-                                  <input type="text" id="lname" name="lname">
-              </div>
-            </div>
-            <div class="row">
-              <div class="column column2 pd"><label for="idnum" >ID Number</label>
-                                  <input type="text" id="idnum" name="idnum">
-              </div>
-              <div class="column column2 pd"><label>Gender</label>
-                                  <div class="fill"></div>
-                                  <label class="gender male">Male
-                                  <input type="radio" checked="checked" name="radio">
-                                  <span class="checkmark"></span>
-                                  </label>
-                                  <label class="gender female">Female
-                                  <input type="radio" name="radio">
-                                  <span class="checkmark"></span>
-                                  </label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="column column2 pd"><label for="tel">Phone Number</label>
-                                  <input type="text" id="tel">
-              </div>
-              <div class="column column2 pd"><label for="email">E-mail</label>
-                                  <input type="text" id="email">
-              </div>
-            </div>
-          </div>
-            <button class="submit" type="submit" value='Submit'>Submit</button>
-        </form>
-        </div>
-      </div> 
-  </div>
-</div>
-<%- include("partials/footer") %>
+    <div class="align">
+		<div class="card">
+			<div class="head">
+				<div></div>
+				<a id="login" class="selected" href="/admin">Login</a>
+				<div></div>
+			</div>
+			<div class="tabs">
+				<form class="login" action="/admin/login" method="POST">
+					<div class="inputs">
+						<div class="input">
+							<input placeholder="Username" type="text" name="username">
+							<img src="/user.svg">
+						</div>
+						<div class="input">
+							<input placeholder="Password" type="password" name="password">
+							<img src="/pass.svg">
+						</div>
+					</div>
+					<button class="loginb">Login</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+  <%- include("partials/footer") %>

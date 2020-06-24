@@ -31,7 +31,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/traveladvice">Travel Advice</a>
           </li>
-          <li style="float: right;" >
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
             <form action = '/login' method = 'POST'>
               <% if(!currentUser) { %>
                 <a href="/login">Login</a>
