@@ -343,8 +343,11 @@ app.post("/booking",middleware.isloggedIn,upload.single('image') , function(req,
         }
     });
     busfilter.exec(function(err,data){
-        if(err)throw err;
+        if(err){
+            console.log(err);
+        }else{
         res.render('step6',{ticket:data})
+        }
     });
 });
 
