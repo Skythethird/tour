@@ -21,6 +21,8 @@ const bus = require('./models/bus');
       multer = require('multer'),
       busfind = Bus.find({})
 
+
+const port=process.env.PORT || 3000;
     
 mongoose.set('useUnifiedTopology',true);
 mongoose.connect('mongodb+srv://sky:N0904061927@tour-qagqr.mongodb.net/<dbname>?retryWrites=true&w=majority',{useNewUrlParser: true});
