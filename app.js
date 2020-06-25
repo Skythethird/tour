@@ -38,7 +38,8 @@ seedDB();
 app.use(require('express-session')({
     secret: 'CSS227',
     resave: false,
-    saveIninitialized: false
+    saveIninitialized: false,
+    resave: false
 }));
 
 app.use(passport.initialize());
