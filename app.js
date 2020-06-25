@@ -25,7 +25,7 @@ const bus = require('./models/bus');
 const port=process.env.PORT || 3000;
     
 mongoose.set('useUnifiedTopology',true);
-mongoose.connect('mongodb+srv://sky:N0904061927@tour-qagqr.mongodb.net/<dbname>?retryWrites=true&w=majority',{useNewUrlParser: true});
+mongoose.connect('mongodb+srv://sky:N0904061927@tour-qagqr.mongodb.net/<dbname>?retryWrites=true&w=majority',{useNewUrlParser: true,useUnifiedTopology:true});
 mongoose.set('useFindAndModify', false);
 let app = express();
 app.set('view engine','ejs');
