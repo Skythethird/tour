@@ -6,6 +6,7 @@ const ta = require('./models/ta');
 const receipt = require('./models/receipt');
 const bus = require('./models/bus');
       flash = require('connect-flash'),
+      bodyParser = require('body-parser'),
       passport = require('passport'),
       passportlocal = require('passport-local'),
       passportlocalMongoose = require('passport-local-mongoose'),
@@ -28,8 +29,7 @@ mongoose.connect('mongodb+srv://sky:N0904061927@tour-qagqr.mongodb.net/<dbname>?
 mongoose.set('useFindAndModify', false);
 let app = express();
 app.set('view engine','ejs');
-app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 app.use(methodOverride("_method"));
