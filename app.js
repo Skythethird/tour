@@ -23,7 +23,7 @@ const bus = require('./models/bus');
 
     
 mongoose.set('useUnifiedTopology',true);
-mongoose.connect('mongodb://localhost/auth_test',{useNewUrlParser: true});
+mongoose.connect('mongodb+srv://sky:N0904061927@tour-qagqr.mongodb.net/<dbname>?retryWrites=true&w=majority',{useNewUrlParser: true});
 mongoose.set('useFindAndModify', false);
 let app = express();
 app.set('view engine','ejs');
@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 app.use(methodOverride("_method"));
-//seedDB();
+seedDB();
 
 app.use(require('express-session')({
     secret: 'CSS227',
