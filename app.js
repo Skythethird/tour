@@ -36,10 +36,13 @@ app.use(methodOverride("_method"));
 seedDB();
 
 app.use(require('express-session')({
+    cookie:{
+        secure: true,
+        maxAge:60000
+           },
     secret: 'CSS227',
     resave: false,
-    saveIninitialized: false,
-    resave: false
+    saveIninitialized: true,
 }));
 
 app.use(passport.initialize());
